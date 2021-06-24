@@ -1,10 +1,10 @@
-# title: Pandora Coin
+title: Pandora Coin 
 
 
 # baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://pandoracoin.info" # the base hostname & protocol for your site, e.g. http://example.com  https://pdccoin.github.io
-external_url: "https://pandoracoin.info"
-# internal_url: https://pandoracoin.info
-# link: https://pandoracoin.info
+external_url: 'https://pandoracoin.info/'
 ProxyPass: "https://pandoracoin.info"
 ProxyPassReverse: "https://pdccoin.github.io"
+
+theme: jekyll-theme-cayman
