@@ -247,7 +247,7 @@ For convenience, a dictionary, which holds the key-value pairs directly, is also
 <div class="section" id="argument-4-fee-rate">
 <h2>Argument #4 - fee_rate<a class="headerlink" href="send.html#argument-4-fee-rate" title="Permalink to this headline">¶</a></h2>
 <p><strong>Type:</strong> numeric or string, optional, default=not set, fall back to wallet fee estimation</p>
-<p>Specify a fee rate in sat/vB.</p>
+<p>Specify a fee rate in jus/vB.</p>
 </div>
 <div class="section" id="argument-5-options">
 <h2>Argument #5 - options<a class="headerlink" href="send.html#argument-5-options" title="Permalink to this headline">¶</a></h2>
@@ -308,15 +308,15 @@ Allows this transaction to be replaced by a transaction with higher fees
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pandora-cli send <span class="s1">&#39;{&quot;bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl&quot;: 0.1}&#39;</span> <span class="m">6</span> economical
 </pre></div>
 </div>
-<p>Send 0.2 PDC with a fee rate of 1.1 sat/vB using positional arguments:</p>
+<p>Send 0.2 PDC with a fee rate of 1.1 jus/vB using positional arguments:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pandora-cli send <span class="s1">&#39;{&quot;bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl&quot;: 0.2}&#39;</span> null <span class="s2">&quot;unset&quot;</span> <span class="m">1</span>.1
 </pre></div>
 </div>
-<p>Send 0.2 PDC with a fee rate of 1 sat/vB using the options argument:</p>
+<p>Send 0.2 PDC with a fee rate of 1 jus/vB using the options argument:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pandora-cli send <span class="s1">&#39;{&quot;bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl&quot;: 0.2}&#39;</span> null <span class="s2">&quot;unset&quot;</span> null <span class="s1">&#39;{&quot;fee_rate&quot;: 1}&#39;</span>
 </pre></div>
 </div>
-<p>Send 0.3 PDC with a fee rate of 25 sat/vB using named arguments:</p>
+<p>Send 0.3 PDC with a fee rate of 25 jus/vB using named arguments:</p>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pandora-cli -named send <span class="nv">outputs</span><span class="o">=</span><span class="s1">&#39;{&quot;bc1q09vm5lfy0j5reeulh4x5752q25uqqvz34hufdl&quot;: 0.3}&#39;</span> <span class="nv">fee_rate</span><span class="o">=</span><span class="m">25</span>
 </pre></div>
 </div>
@@ -360,12 +360,8 @@ Allows this transaction to be replaced by a transaction with higher fees
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../../">Developers</a>
               </li>
@@ -386,11 +382,8 @@ Allows this transaction to be replaced by a transaction with higher fees
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -409,13 +402,10 @@ Allows this transaction to be replaced by a transaction with higher fees
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -446,7 +436,7 @@ Allows this transaction to be replaced by a transaction with higher fees
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">

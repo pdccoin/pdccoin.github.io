@@ -1262,7 +1262,7 @@ c0000233 ........................... Address: 192.0.2.51
 <tr class="row-even"><td><p>8</p></td>
 <td><p>feerate</p></td>
 <td><p>uint64_t</p></td>
-<td><p>The fee rate (in satoshis per kilobyte) below which transactions should not be relayed to this peer.</p></td>
+<td><p>The fee rate (in jus per kilobyte) below which transactions should not be relayed to this peer.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1271,7 +1271,7 @@ c0000233 ........................... Address: 192.0.2.51
 <p>Note however that feefilter has no effect on block propagation or responses to getdata messages. For example, if a node requests a merkleblock from its peer by sending a getdata message with inv type MSG_FILTERED_BLOCK and it has previously sent a feefilter to that peer, the peer should respond with a merkleblock containing <em>all</em> the transactions matching the bloom filter, even if they are below the feefilter fee rate.</p>
 <p>inv messages generated from a mempool message are subject to a fee filter if it exists.</p>
 <p>The annotated hexdump below shows a <a class="reference external" href="p2p_networking.html#feefilter">“feefilter” message</a>. (The message header has been omitted.)</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>7cbd000000000000 ... satoshis per kilobyte: 48,508
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>7cbd000000000000 ... jus per kilobyte: 48,508
 </pre></div>
 </div>
 </div>
@@ -1434,7 +1434,7 @@ b50f ....... Filter: 1010 1101 1111 0000
 | ffffffff ................................. Sequence number: UINT32_MAX
 
 01 ......................................... Number of outputs
-| f0ca052a01000000 ......................... Satoshis (49.99990000 PDC)
+| f0ca052a01000000 ......................... jus (49.99990000 PDC)
 |
 | 19 ....................................... Bytes in pubkey script: 25
 | | 76 ..................................... OP_DUP
@@ -1901,12 +1901,8 @@ cf050500 ........................... Start height: 329167
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../">Developers</a>
               </li>
@@ -1927,11 +1923,8 @@ cf050500 ........................... Start height: 329167
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -1950,13 +1943,10 @@ cf050500 ........................... Start height: 329167
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -1987,7 +1977,7 @@ cf050500 ........................... Start height: 329167
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">

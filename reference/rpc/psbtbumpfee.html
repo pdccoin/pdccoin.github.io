@@ -216,10 +216,10 @@
 <p>The command will fail if the wallet or mempool contains a transaction that spends one of T’s outputs.</p>
 <p>By default, the new fee will be calculated automatically using the estimatesmartfee RPC.</p>
 <p>The user can specify a confirmation target for estimatesmartfee.</p>
-<p>Alternatively, the user can specify a fee rate in sat/vB for the new transaction.</p>
+<p>Alternatively, the user can specify a fee rate in jus/vB for the new transaction.</p>
 <p>At a minimum, the new fee rate must be high enough to pay an additional new relay fee (incrementalfee
 returned by getnetworkinfo) to enter the node’s mempool.</p>
-<p>* WARNING: before version 0.21, fee_rate was in PDC/kvB. As of 0.21, fee_rate is in sat/vB. *</p>
+<p>* WARNING: before version 0.21, fee_rate was in PDC/kvB. As of 0.21, fee_rate is in jus/vB. *</p>
 <div class="section" id="argument-1-txid">
 <h2>Argument #1 - txid<a class="headerlink" href="psbtbumpfee.html#argument-1-txid" title="Permalink to this headline">¶</a></h2>
 <p><strong>Type:</strong> string, required</p>
@@ -308,12 +308,8 @@ returned by getnetworkinfo) to enter the node’s mempool.</p>
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../../">Developers</a>
               </li>
@@ -334,11 +330,8 @@ returned by getnetworkinfo) to enter the node’s mempool.</p>
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -357,13 +350,10 @@ returned by getnetworkinfo) to enter the node’s mempool.</p>
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -394,7 +384,7 @@ returned by getnetworkinfo) to enter the node’s mempool.</p>
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">

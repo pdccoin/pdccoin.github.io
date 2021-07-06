@@ -206,12 +206,12 @@
 <p>A Pandora wallet can refer to either a wallet program or a wallet file.</p>
 <div class="section" id="introductions">
 <h2>Introductions<a class="headerlink" href="wallets.html#introductions" title="Permalink to this headline">¶</a></h2>
-<p>Wallet programs create public keys to receive satoshis and use the corresponding private keys to spend those satoshis. Wallet files store private keys and (optionally) other information related to transactions for the wallet program.</p>
+<p>Wallet programs create public keys to receive jus and use the corresponding private keys to spend those jus. Wallet files store private keys and (optionally) other information related to transactions for the wallet program.</p>
 <p>Wallet programs and wallet files are addressed below in separate subsections, and this document attempts to always make it clear whether we’re talking about wallet programs or wallet files.</p>
 </div>
 <div class="section" id="wallet-programs">
 <h2>Wallet Programs<a class="headerlink" href="wallets.html#wallet-programs" title="Permalink to this headline">¶</a></h2>
-<p>Permitting receiving and spending of satoshis is the only essential feature of wallet software—but a particular wallet program doesn’t need to do both things. Two wallet programs can work together, one program distributing public keys in order to receive satoshis and another program signing transactions spending those satoshis.</p>
+<p>Permitting receiving and spending of jus is the only essential feature of wallet software—but a particular wallet program doesn’t need to do both things. Two wallet programs can work together, one program distributing public keys in order to receive jus and another program signing transactions spending those jus.</p>
 <p>Wallet programs also need to interact with the <a class="reference external" href="p2p_network.html">peer-to-peer network</a> to get information from the block chain and to broadcast new transactions. However, the programs which distribute public keys or sign transactions don’t need to interact with the <a class="reference external" href="p2p_network.html">peer-to-peer network</a> themselves.</p>
 <p>This leaves us with three necessary, but separable, parts of a wallet system: a public key distribution program, a signing program, and a networked program. In the subsections below, we will describe common combinations of these parts.</p>
 <p>Note: we speak about distributing public keys generically. In many cases, P2PKH or P2SH hashes will be distributed instead of public keys, with the actual public keys only being distributed when the outputs they control are spent.</p>
@@ -222,7 +222,7 @@
 <img alt="Full-Service Wallets" src="../images/en-wallets-full-service.svg" /><p class="caption"><span class="caption-text">Full-Service Wallets</span><a class="headerlink" href="wallets.html#id1" title="Permalink to this image">¶</a></p>
 </div>
 <p>As of this writing, almost all popular wallets can be used as full-service wallets.</p>
-<p>The main advantage of full-service wallets is that they are easy to use. A single program does everything the user needs to receive and spend satoshis.</p>
+<p>The main advantage of full-service wallets is that they are easy to use. A single program does everything the user needs to receive and spend jus.</p>
 <p>The main disadvantage of full-service wallets is that they store the private keys on a device connected to the Internet. The compromise of such devices is a common occurrence, and an Internet connection makes it easy to transmit private keys from a compromised device to an attacker.</p>
 <p>To help protect against theft, many wallet programs offer users the option of encrypting the wallet files which contain the private keys. This protects the private keys when they aren’t being used, but it cannot protect against an attack designed to capture the encryption key or to read the decrypted keys from memory.</p>
 </div>
@@ -245,11 +245,11 @@
 <p>The offline wallet is so named because it is intended to be run on a device which does not connect to any <a class="reference external" href="p2p_network.html">network</a>, greatly reducing the number of attack vectors. If this is the case, it is usually up to the user to handle all data transfer using removable media such as USB drives. The user’s workflow is something like:</p>
 <ol class="arabic simple">
 <li><p>(Offline) Disable all <a class="reference external" href="p2p_network.html">network</a> connections on a device and install the wallet software. Start the wallet software in offline mode to create the parent private and public keys. Copy the parent public key to removable media.</p></li>
-<li><p>(Online) Install the wallet software on another device, this one connected to the Internet, and import the parent public key from the removable media. As you would with a full-service wallet, distribute public keys to receive payment. When ready to spend satoshis, fill in the output details and save the unsigned transaction generated by the wallet to removable media.</p></li>
+<li><p>(Online) Install the wallet software on another device, this one connected to the Internet, and import the parent public key from the removable media. As you would with a full-service wallet, distribute public keys to receive payment. When ready to spend jus, fill in the output details and save the unsigned transaction generated by the wallet to removable media.</p></li>
 <li><p>(Offline) Open the unsigned transaction in the offline instance, review the output details to make sure they spend the correct amount to the correct address. This prevents malware on the online wallet from tricking the user into signing a transaction which pays an attacker. After review, sign the transaction and save it to removable media.</p></li>
 <li><p>(Online) Open the signed transaction in the online instance so it can broadcast it to the <a class="reference external" href="p2p_network.html">peer-to-peer network</a>.</p></li>
 </ol>
-<p>The primary advantage of offline wallets is their possibility for greatly improved security over full-service wallets. As long as the offline wallet is not compromised (or flawed) and the user reviews all outgoing transactions before signing, the user’s satoshis are safe even if the online wallet is compromised.</p>
+<p>The primary advantage of offline wallets is their possibility for greatly improved security over full-service wallets. As long as the offline wallet is not compromised (or flawed) and the user reviews all outgoing transactions before signing, the user’s jus are safe even if the online wallet is compromised.</p>
 <p>The primary disadvantage of offline wallets is hassle. For maximum security, they require the user dedicate a device to only offline tasks. The offline device must be booted up whenever funds are to be spent, and the user must physically copy data from the online device to the offline device and back.</p>
 </div>
 <div class="section" id="hardware-wallets">
@@ -257,7 +257,7 @@
 <p>Hardware wallets are devices dedicated to running a signing-only wallet. Their dedication lets them eliminate many of the vulnerabilities present in operating systems designed for general use, allowing them to safely communicate directly with other devices so users don’t need to transfer data manually. The user’s workflow is something like:</p>
 <ol class="arabic simple">
 <li><p>(Hardware) Create parent private and public keys. Connect hardware wallet to a networked device so it can get the parent public key.</p></li>
-<li><p>(Networked) As you would with a full-service wallet, distribute public keys to receive payment. When ready to spend satoshis, fill in the transaction details, connect the hardware wallet, and click Spend. The networked wallet will automatically send the transaction details to the hardware wallet.</p></li>
+<li><p>(Networked) As you would with a full-service wallet, distribute public keys to receive payment. When ready to spend jus, fill in the transaction details, connect the hardware wallet, and click Spend. The networked wallet will automatically send the transaction details to the hardware wallet.</p></li>
 <li><p>(Hardware) Review the transaction details on the hardware wallet’s screen. Some hardware wallets may prompt for a passphrase or PIN number. The hardware wallet signs the transaction and uploads it to the networked wallet.</p></li>
 <li><p>(Networked) The networked wallet receives the signed transaction from the hardware wallet and broadcasts it to the <a class="reference external" href="p2p_network.html">network</a>.</p></li>
 </ol>
@@ -284,7 +284,7 @@
 <p>Pandora wallets at their core are a collection of private keys. These collections are stored digitally in a file, or can even be physically stored on pieces of paper.</p>
 <div class="section" id="private-key-formats">
 <h3>Private Key Formats<a class="headerlink" href="wallets.html#private-key-formats" title="Permalink to this headline">¶</a></h3>
-<p>Private keys are what are used to unlock satoshis from a particular address. In Pandora, a private key in standard format is simply a 256-bit number, between the values:</p>
+<p>Private keys are what are used to unlock jus from a particular address. In Pandora, a private key in standard format is simply a 256-bit number, between the values:</p>
 <p>0x01 and 0xFFFF FFFF FFFF FFFF FFFF FFFF FFFF FFFE BAAE DCE6 AF48 A03B BFD2 5E8C D036 4140, representing nearly the entire range of 2256-1 values. The range is governed by the <a class="reference external" href="http://www.secg.org/sec2-v2.pdf">secp256k1</a> <a class="reference external" href="https://en.wikipedia.org/wiki/Elliptic_Curve_DSA">ECDSA</a> encryption standard used by Pandora.</p>
 <div class="section" id="wallet-import-format-wif">
 <h4>Wallet Import Format (WIF)<a class="headerlink" href="wallets.html#wallet-import-format-wif" title="Permalink to this headline">¶</a></h4>
@@ -439,7 +439,7 @@ For consistent word ordering:
 <h3>Loose-Key Wallets<a class="headerlink" href="wallets.html#loose-key-wallets" title="Permalink to this headline">¶</a></h3>
 <p>Loose-Key wallets, also called “Just a Bunch Of Keys (JBOK)”, are a deprecated form of wallet that originated from the Pandora Core client wallet. The Pandora Core client wallet would create 100 private key/public key pairs automatically via a Pseudo-Random-Number Generator (PRNG) for later use.</p>
 <p>These unused private keys are stored in a virtual “key pool”, with new keys being generated whenever a previously-generated key was used, ensuring the pool maintained 100 unused keys. (If the wallet is encrypted, new keys are only generated while the wallet is unlocked.)</p>
-<p>This created considerable difficulty in backing up one’s keys, considering backups have to be run manually to save the newly-generated private keys. If a new <a class="reference internal" href="../terms.html#term-key-pair"><span class="std std-ref">key pair</span></a> set is generated, used, and then lost prior to a backup, the stored satoshis are likely lost forever. Many older-style mobile wallets followed a similar format, but only generated a new private key upon user demand.</p>
+<p>This created considerable difficulty in backing up one’s keys, considering backups have to be run manually to save the newly-generated private keys. If a new <a class="reference internal" href="../terms.html#term-key-pair"><span class="std std-ref">key pair</span></a> set is generated, used, and then lost prior to a backup, the stored jus are likely lost forever. Many older-style mobile wallets followed a similar format, but only generated a new private key upon user demand.</p>
 <p>This wallet type is being actively phased out and discouraged from being used due to the backup hassle.</p>
 </div>
 </div>
@@ -478,12 +478,8 @@ For consistent word ordering:
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../">Developers</a>
               </li>
@@ -504,11 +500,8 @@ For consistent word ordering:
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -527,13 +520,10 @@ For consistent word ordering:
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -564,7 +554,7 @@ For consistent word ordering:
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">

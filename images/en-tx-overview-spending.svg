@@ -80,7 +80,7 @@
 <g id="node10" class="node"><title>amount</title>
 <polygon fill="none" stroke="black" stroke-width="1.75" points="380,-212 298,-212 298,-170 380,-170 380,-212"/>
 <text text-anchor="middle" x="339" y="-195.4" font-family="Sans" font-size="14.00">Amount</text>
-<text text-anchor="middle" x="339" y="-178.4" font-family="Sans" font-size="14.00">(satoshis)</text>
+<text text-anchor="middle" x="339" y="-178.4" font-family="Sans" font-size="14.00">(jus)</text>
 </g>
 <!-- output0_label -->
 <g id="node11" class="node"><title>output0_label</title>

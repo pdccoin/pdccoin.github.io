@@ -210,7 +210,7 @@
 <p>In order to use this tutorial, you will need to setup <a class="reference external" href="https://pdccoin.github.io/download">Pandora Core</a> and create a regression test mode environment with 50 PDC in your test wallet.</p>
 <div class="section" id="simple-spending">
 <h3>Simple Spending<a class="headerlink" href="transactions.html#simple-spending" title="Permalink to this headline">¶</a></h3>
-<p>Pandora Core provides several <a class="reference external" href="../reference/rpc/">RPCs</a> which handle all the details of spending, including creating change outputs and paying appropriate fees. Even advanced users should use these <a class="reference external" href="../reference/rpc/">RPCs</a> whenever possible to decrease the chance that satoshis will be lost by mistake.</p>
+<p>Pandora Core provides several <a class="reference external" href="../reference/rpc/">RPCs</a> which handle all the details of spending, including creating change outputs and paying appropriate fees. Even advanced users should use these <a class="reference external" href="../reference/rpc/">RPCs</a> whenever possible to decrease the chance that jus will be lost by mistake.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest getnewaddress
 mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
 
@@ -223,7 +223,7 @@ mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
 </pre></div>
 </div>
 <p>Send 10 pandoras to the address using the <a class="reference external" href="../reference/rpc/sendtoaddress.html">“sendtoaddress” RPC</a>. The returned hex string is the transaction identifier (txid).</p>
-<p>The <a class="reference external" href="../reference/rpc/sendtoaddress.html">“sendtoaddress” RPC</a> automatically selects an unspent transaction output (UTXO) from which to spend the satoshis. In this case, it withdrew the satoshis from our only available UTXO, the coinbase transaction for block #1 which matured with the creation of block #101. To spend a specific UTXO, you could use the <code class="docutils literal notranslate"><span class="pre">sendfrom</span></code> <a class="reference external" href="../reference/rpc/">RPC</a> instead.</p>
+<p>The <a class="reference external" href="../reference/rpc/sendtoaddress.html">“sendtoaddress” RPC</a> automatically selects an unspent transaction output (UTXO) from which to spend the jus. In this case, it withdrew the jus from our only available UTXO, the coinbase transaction for block #1 which matured with the creation of block #101. To spend a specific UTXO, you could use the <code class="docutils literal notranslate"><span class="pre">sendfrom</span></code> <a class="reference external" href="../reference/rpc/">RPC</a> instead.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest listunspent
 <span class="o">[</span>
 <span class="o">]</span>
@@ -264,7 +264,7 @@ mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
 </pre></div>
 </div>
 </div>
-<p>Re-running the <a class="reference external" href="../reference/rpc/listunspent.html">“listunspent” RPC</a> with the argument “0” to also display unconfirmed transactions shows that we have two UTXOs, both with the same txid. The first UTXO shown is a change output that <a class="reference external" href="../reference/rpc/sendtoaddress.html">“sendtoaddress”</a> created using a new address from the key pool. The second UTXO shown is the spend to the address we provided. If we had spent those satoshis to someone else, that second transaction would not be displayed in our list of UTXOs.</p>
+<p>Re-running the <a class="reference external" href="../reference/rpc/listunspent.html">“listunspent” RPC</a> with the argument “0” to also display unconfirmed transactions shows that we have two UTXOs, both with the same txid. The first UTXO shown is a change output that <a class="reference external" href="../reference/rpc/sendtoaddress.html">“sendtoaddress”</a> created using a new address from the key pool. The second UTXO shown is the spend to the address we provided. If we had spent those jus to someone else, that second transaction would not be displayed in our list of UTXOs.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest -generate <span class="m">1</span>
 
 &gt; <span class="nb">unset</span> NEW_ADDRESS
@@ -274,7 +274,7 @@ mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
 </div>
 <div class="section" id="simple-raw-transaction">
 <h3>Simple Raw Transaction<a class="headerlink" href="transactions.html#simple-raw-transaction" title="Permalink to this headline">¶</a></h3>
-<p>The raw transaction <a class="reference external" href="../reference/rpc/">RPCs</a> allow users to create custom transactions and delay broadcasting those transactions. However, mistakes made in raw transactions may not be detected by Pandora Core, and a number of raw transaction users have permanently lost large numbers of satoshis, so please be careful using raw transactions on mainnet.</p>
+<p>The raw transaction <a class="reference external" href="../reference/rpc/">RPCs</a> allow users to create custom transactions and delay broadcasting those transactions. However, mistakes made in raw transactions may not be detected by Pandora Core, and a number of raw transaction users have permanently lost large numbers of jus, so please be careful using raw transactions on mainnet.</p>
 <p>This subsection covers one of the simplest possible raw transactions.</p>
 <div class="multicode docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest listunspent
@@ -751,7 +751,7 @@ mfdCHEFL2tW9eEUpizk7XLZJcnFM4hrp78
 &gt; <span class="nv">NEW_ADDRESS</span><span class="o">=</span>mfdCHEFL2tW9eEUpizk7XLZJcnFM4hrp78
 </pre></div>
 </div>
-<p>Get a new address to spend the satoshis to.</p>
+<p>Get a new address to spend the jus to.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">## Outputs - inputs = transaction fee, so always double-check your math!</span>
 &gt; pandora-cli -regtest createrawtransaction <span class="s1">&#39;&#39;&#39;</span>
 <span class="s1">    [</span>
@@ -859,7 +859,7 @@ mfdCHEFL2tW9eEUpizk7XLZJcnFM4hrp78
 </div>
 <div class="section" id="p2sh-multisig">
 <h3>P2SH Multisig<a class="headerlink" href="transactions.html#p2sh-multisig" title="Permalink to this headline">¶</a></h3>
-<p>In this subsection, we will create a P2SH multisig address, spend satoshis to it, and then spend those satoshis from it to another address.</p>
+<p>In this subsection, we will create a P2SH multisig address, spend jus to it, and then spend those jus from it to another address.</p>
 <p>Creating a multisig address is easy. Multisig outputs have two parameters, the <em>minimum</em> number of signatures required (<em>m</em>) and the <em>number</em> of public keys to use to validate those signatures. This is called m-of-n, and in this case we’ll be using 2-of-3.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest getnewaddress
 mhAXF4Eq7iRyvbYk1mpDVBiGdLP3YbY6Dm
@@ -923,8 +923,8 @@ mk2QpYatsKicvFVuTAQLBryyccRXMUaGHP
 </div>
 </div>
 <p>Use the <a class="reference external" href="../reference/rpc/createmultisig.html">“createmultisig” RPC</a> with two arguments, the number (<em>n</em>) of signatures required and a list of addresses or public keys. Because P2PKH addresses can’t be used in the multisig redeem script created by this <a class="reference external" href="../reference/rpc/">RPC</a>, the only addresses which can be provided are those belonging to a public key in the wallet. In this case, we provide two addresses and one public key—all of which will be converted to public keys in the redeem script.</p>
-<p>The P2SH address is returned along with the redeem script which must be provided when we spend satoshis sent to the P2SH address.</p>
-<p><img alt="Warning icon" src="../images/icon_warning.svg" /> <strong>Warning:</strong> You must not lose the redeem script, especially if you don’t have a record of which public keys you used to create the P2SH multisig address. You need the redeem script to spend any pandoras sent to the P2SH address. If you lose the redeem script, you can recreate it by running the same command above, with the public keys listed in the same order. However, if you lose both the redeem script and even one of the public keys, you will never be able to spend satoshis sent to that P2SH address.</p>
+<p>The P2SH address is returned along with the redeem script which must be provided when we spend jus sent to the P2SH address.</p>
+<p><img alt="Warning icon" src="../images/icon_warning.svg" /> <strong>Warning:</strong> You must not lose the redeem script, especially if you don’t have a record of which public keys you used to create the P2SH multisig address. You need the redeem script to spend any pandoras sent to the P2SH address. If you lose the redeem script, you can recreate it by running the same command above, with the public keys listed in the same order. However, if you lose both the redeem script and even one of the public keys, you will never be able to spend jus sent to that P2SH address.</p>
 <p>Neither the address nor the redeem script are stored in the wallet when you use <a class="reference external" href="../reference/rpc/createmultisig.html">“createmultisig”</a>. To store them in the wallet, use the <a class="reference external" href="../reference/rpc/addmultisigaddress.html">“addmultisigaddress” RPC</a> instead. If you add an address to the wallet, you should also make a new backup.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest sendtoaddress <span class="nv">$P2SH_ADDRESS</span> <span class="m">10</span>.00
 7278d7d030f042ebe633732b512bcb31fff14a697675a1fe1884db139876e175
@@ -1160,12 +1160,8 @@ cNmbnwwGzEghMMe1vBwH34DFHShEj5bcXD1QpFRPHgG9Mj1xc5hq
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../">Developers</a>
               </li>
@@ -1186,11 +1182,8 @@ cNmbnwwGzEghMMe1vBwH34DFHShEj5bcXD1QpFRPHgG9Mj1xc5hq
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -1209,13 +1202,10 @@ cNmbnwwGzEghMMe1vBwH34DFHShEj5bcXD1QpFRPHgG9Mj1xc5hq
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -1246,7 +1236,7 @@ cNmbnwwGzEghMMe1vBwH34DFHShEj5bcXD1QpFRPHgG9Mj1xc5hq
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">

@@ -425,7 +425,7 @@ Failure, aborted: two signature matches required but none found so far, and ther
 </div>
 <div class="section" id="txout-a-transaction-output">
 <span id="txout"></span><h3>TxOut: A Transaction Output<a class="headerlink" href="transactions.html#txout-a-transaction-output" title="Permalink to this headline">¶</a></h3>
-<p>Each output spends a certain number of satoshis, placing them under control of anyone who can satisfy the provided pubkey script.</p>
+<p>Each output spends a certain number of jus, placing them under control of anyone who can satisfy the provided pubkey script.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 3%" />
@@ -444,7 +444,7 @@ Failure, aborted: two signature matches required but none found so far, and ther
 <tr class="row-even"><td><p>8</p></td>
 <td><p>value</p></td>
 <td><p>int64_t</p></td>
-<td><p>Number of satoshis to spend. May be zero; the sum of all outputs may not exceed the sum of satoshis previously spent to the outpoints provided in the input section. (Exception: coinbase transactions spend the block subsidy and collected transaction fees.)</p></td>
+<td><p>Number of jus to spend. May be zero; the sum of all outputs may not exceed the sum of jus previously spent to the outpoints provided in the input section. (Exception: coinbase transactions spend the block subsidy and collected transaction fees.)</p></td>
 </tr>
 <tr class="row-odd"><td><p>1+</p></td>
 <td><p>pk_script bytes</p></td>
@@ -479,7 +479,7 @@ Failure, aborted: two signature matches required but none found so far, and ther
 | ffffffff ................................. Sequence number: UINT32_MAX
 
 01 ......................................... Number of outputs
-| f0ca052a01000000 ......................... Satoshis (49.99990000 PDC)
+| f0ca052a01000000 ......................... jus (49.99990000 PDC)
 |
 | 19 ....................................... Bytes in pubkey script: 25
 | | 76 ..................................... OP_DUP
@@ -565,7 +565,7 @@ Failure, aborted: two signature matches required but none found so far, and ther
 | 00000000 ............................ Sequence
 
 01 .................................... Output count
-| 2c37449500000000 .................... Satoshis (25.04275756 PDC)
+| 2c37449500000000 .................... jus (25.04275756 PDC)
 | 1976a914a09be8040cbf399926aeb1f4
 | 70c37d1341f3b46588ac ................ P2PKH script
 | 00000000 ............................ Locktime
@@ -646,12 +646,8 @@ Failure, aborted: two signature matches required but none found so far, and ther
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../">Developers</a>
               </li>
@@ -672,11 +668,8 @@ Failure, aborted: two signature matches required but none found so far, and ther
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -695,13 +688,10 @@ Failure, aborted: two signature matches required but none found so far, and ther
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -732,7 +722,7 @@ Failure, aborted: two signature matches required but none found so far, and ther
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">

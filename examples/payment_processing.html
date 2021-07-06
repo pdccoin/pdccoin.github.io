@@ -281,7 +281,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span><span class="o">.</span><span class="p">[</span><span class="n">network</span><span class="p">][</span><span class="n">network</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;test&quot;</span>  <span class="c1">## Default: main</span>
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">network</span></code>: (optional) tell the spender’s wallet program what Pandora <a class="reference external" href="../devguide/p2p_network.html">network</a> you’re using; <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0070.mediawiki">BIP70</a> defines “main” for mainnet (actual payments) and “test” for testnet (like mainnet, but fake satoshis are used). If the wallet program doesn’t run on the <a class="reference external" href="../devguide/p2p_network.html">network</a> you indicate, it will reject the <a class="reference internal" href="../terms.html#term-paymentrequest"><span class="std std-ref">PaymentRequest</span></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">network</span></code>: (optional) tell the spender’s wallet program what Pandora <a class="reference external" href="../devguide/p2p_network.html">network</a> you’re using; <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0070.mediawiki">BIP70</a> defines “main” for mainnet (actual payments) and “test” for testnet (like mainnet, but fake jus are used). If the wallet program doesn’t run on the <a class="reference external" href="../devguide/p2p_network.html">network</a> you indicate, it will reject the <a class="reference internal" href="../terms.html#term-paymentrequest"><span class="std std-ref">PaymentRequest</span></a>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span><span class="o">.</span><span class="n">payment_url</span> <span class="o">=</span> <span class="s2">&quot;https://example.com/pay.py&quot;</span>
 </pre></div>
 </div>
@@ -320,7 +320,7 @@
 <h4>Code Variables<a class="headerlink" href="payment_processing.html#code-variables" title="Permalink to this headline">¶</a></h4>
 <p>Now let’s look at the variables your CGI program will likely set for each payment.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Amount of the request</span>
-<span class="n">amount</span> <span class="o">=</span> <span class="mi">10000000</span>  <span class="c1">## In satoshis</span>
+<span class="n">amount</span> <span class="o">=</span> <span class="mi">10000000</span>  <span class="c1">## In jus</span>
 
 <span class="c1">## P2PKH pubkey hash</span>
 <span class="n">pubkey_hash</span> <span class="o">=</span> <span class="s2">&quot;2b14950b8d31620c6cc923c5408a701b1ec0a020&quot;</span>
@@ -341,7 +341,7 @@
 </pre></div>
 </div>
 <p>Each line is described below.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="mi">10000000</span>  <span class="c1">## In satoshis (=100 mPDC)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">amount</span> <span class="o">=</span> <span class="mi">10000000</span>  <span class="c1">## In jus (=100 mPDC)</span>
 </pre></div>
 </div>
 <p><a class="reference internal" href="../terms.html#term-pp-amount"><span class="std std-ref">“amount”</span></a>: (optional) the <a class="reference internal" href="../terms.html#term-pp-amount"><span class="std std-ref">amount</span></a> you want the spender to pay. You’ll probably get this value from your shopping cart application or <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a>-to-PDC exchange rate conversion tool. If you leave the amount blank, the wallet program will prompt the spender how much to pay (which can be useful for donations).</p>
@@ -401,7 +401,7 @@
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">details</span><span class="o">.</span><span class="n">expires</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">time</span><span class="p">())</span> <span class="o">+</span> <span class="mi">60</span> <span class="o">*</span> <span class="mi">10</span>  <span class="c1">## 10 minutes from now</span>
 </pre></div>
 </div>
-<p><a class="reference internal" href="../terms.html#term-pp-expires"><span class="std std-ref">“expires”</span></a>: (optional) the <a class="reference internal" href="../terms.html#term-paymentrequest"><span class="std std-ref">PaymentRequest</span></a> may also set an <a class="reference internal" href="../terms.html#term-pp-expires"><span class="std std-ref">“expires”</span></a> time after which they’re no longer valid. You probably want to give receivers the ability to configure the expiration time delta; here we used the reasonable choice of 10 minutes. If this request is tied to an order total based on a <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a>-to-satoshis exchange rate, you probably want to base this on a delta from the time you got the exchange rate.</p>
+<p><a class="reference internal" href="../terms.html#term-pp-expires"><span class="std std-ref">“expires”</span></a>: (optional) the <a class="reference internal" href="../terms.html#term-paymentrequest"><span class="std std-ref">PaymentRequest</span></a> may also set an <a class="reference internal" href="../terms.html#term-pp-expires"><span class="std std-ref">“expires”</span></a> time after which they’re no longer valid. You probably want to give receivers the ability to configure the expiration time delta; here we used the reasonable choice of 10 minutes. If this request is tied to an order total based on a <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a>-to-jus exchange rate, you probably want to base this on a delta from the time you got the exchange rate.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">request</span><span class="o">.</span><span class="n">serialized_payment_details</span> <span class="o">=</span> <span class="n">details</span><span class="o">.</span><span class="n">SerializeToString</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -475,12 +475,8 @@
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../">Developers</a>
               </li>
@@ -501,11 +497,8 @@
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -524,13 +517,10 @@
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -561,7 +551,7 @@
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">

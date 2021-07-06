@@ -215,13 +215,13 @@
 </div>
 <div class="section" id="pricing-orders">
 <h2>Pricing Orders<a class="headerlink" href="payment_processing.html#pricing-orders" title="Permalink to this headline">¶</a></h2>
-<p>Because of exchange rate variability between satoshis and national currencies (<a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a>), many Pandora orders are priced in <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> but paid in satoshis, necessitating a price conversion.</p>
+<p>Because of exchange rate variability between jus and national currencies (<a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a>), many Pandora orders are priced in <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> but paid in jus, necessitating a price conversion.</p>
 <p>Exchange rate data is widely available through HTTP-based APIs provided by currency exchanges. Several organizations also aggregate data from multiple exchanges to create index prices, which are also available using HTTP-based APIs.</p>
-<p>Any applications which automatically calculate order totals using exchange rate data must take steps to ensure the price quoted reflects the current general market value of satoshis, or the applications could accept too few satoshis for the product or service being sold. Alternatively, they could ask for too many satoshis, driving away potential spenders.</p>
+<p>Any applications which automatically calculate order totals using exchange rate data must take steps to ensure the price quoted reflects the current general market value of jus, or the applications could accept too few jus for the product or service being sold. Alternatively, they could ask for too many jus, driving away potential spenders.</p>
 <p>To minimize problems, your applications may want to collect data from at least two separate sources and compare them to see how much they differ. If the difference is substantial, your applications can enter a safe mode until a human is able to evaluate the situation.</p>
-<p>You may also want to program your applications to enter a safe mode if exchange rates are rapidly increasing or decreasing, indicating a possible problem in the Pandora market which could make it difficult to spend any satoshis received today.</p>
-<p>Exchange rates lie outside the control of Pandora and related technologies, so there are no new or planned technologies which will make it significantly easier for your program to correctly convert order totals from <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> into satoshis.</p>
-<p>Because the exchange rate fluctuates over time, order totals pegged to <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> must expire to prevent spenders from delaying payment in the hope that satoshis will drop in price. Most widely-used payment processing systems currently expire their invoices after 10 to 20 minutes.</p>
+<p>You may also want to program your applications to enter a safe mode if exchange rates are rapidly increasing or decreasing, indicating a possible problem in the Pandora market which could make it difficult to spend any jus received today.</p>
+<p>Exchange rates lie outside the control of Pandora and related technologies, so there are no new or planned technologies which will make it significantly easier for your program to correctly convert order totals from <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> into jus.</p>
+<p>Because the exchange rate fluctuates over time, order totals pegged to <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> must expire to prevent spenders from delaying payment in the hope that jus will drop in price. Most widely-used payment processing systems currently expire their invoices after 10 to 20 minutes.</p>
 <p>Shorter expiration periods increase the chance the invoice will expire before payment is received, possibly necessitating manual intervention to request an additional payment or to issue a <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a>. Longer expiration periods increase the chance that the exchange rate will fluctuate a significant amount before payment is received.</p>
 </div>
 <div class="section" id="requesting-payments">
@@ -333,7 +333,7 @@
 <p>Bob’s server automatically adds the following information to its invoice database:</p>
 <ul class="simple">
 <li><p>The details of Charlie’s order, including items ordered and shipping address.</p></li>
-<li><p>An order total in satoshis, perhaps created by converting prices in <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> to prices in satoshis.</p></li>
+<li><p>An order total in jus, perhaps created by converting prices in <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> to prices in jus.</p></li>
 <li><p>An expiration time when that total will no longer be acceptable.</p></li>
 <li><p>A pubkey script to which Charlie should send payment. Typically this will be a P2PKH or P2SH pubkey script containing a unique (never before used) <a class="reference external" href="http://www.secg.org/sec2-v2.pdf">secp256k1</a> public key.</p></li>
 </ul>
@@ -342,7 +342,7 @@
 <p>The <a class="reference internal" href="../terms.html#term-paymentrequest"><span class="std std-ref">PaymentRequest</span></a> message returned may include private information, such as Charlie’s mailing address, but the wallet must be able to access it without using prior authentication, such as HTTP cookies, so a publicly accessible HTTPS URL with a guess-resistant part is typically used. The unique public key created for the payment request can be used to create a unique identifier. This is why, in the example URI above, the <a class="reference internal" href="../terms.html#term-paymentrequest"><span class="std std-ref">PaymentRequest</span></a> URL contains the P2PKH address: <code class="docutils literal notranslate"><span class="pre">https://example.com/pay/mjSk1Ny9spzU2fouzYgLqGUD8U41iR35QN</span></code></p>
 <p>After receiving the HTTP GET to the URL above, the <a class="reference internal" href="../terms.html#term-paymentrequest"><span class="std std-ref">PaymentRequest</span></a>-generating CGI program on Bob’s webserver takes the unique identifier from the URL and looks up the corresponding details in the database. It then creates a <a class="reference internal" href="../terms.html#term-paymentdetails"><span class="std std-ref">PaymentDetails</span></a> message with the following information:</p>
 <ul class="simple">
-<li><p>The amount of the order in satoshis and the pubkey script to be paid.</p></li>
+<li><p>The amount of the order in jus and the pubkey script to be paid.</p></li>
 <li><p>A memo containing the list of items ordered, so Charlie knows what he’s paying for. It may also include Charlie’s mailing address so he can double-check it.</p></li>
 <li><p>The time the <a class="reference internal" href="../terms.html#term-paymentdetails"><span class="std std-ref">PaymentDetails</span></a> message was created plus the time it expires.</p></li>
 <li><p>A URL to which Charlie’s wallet should send its completed transaction.</p></li>
@@ -356,14 +356,14 @@
 <ul class="simple">
 <li><p>The signed transaction in which Charlie pays Bob.</p></li>
 <li><p>An optional memo Charlie can send to Bob. (There’s no guarantee that Bob will read it.)</p></li>
-<li><p>A <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a> address (pubkey script) which Bob can pay if he needs to return some or all of Charlie’s satoshis.</p></li>
+<li><p>A <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a> address (pubkey script) which Bob can pay if he needs to return some or all of Charlie’s jus.</p></li>
 </ul>
 <p>Bob’s server receives the Payment message, verifies the transaction pays the requested amount to the address provided, and then broadcasts the transaction to the <a class="reference external" href="p2p_network.html">network</a>. It also replies to the HTTP POSTed Payment message with a PaymentACK message, which includes an optional memo from Bob’s server thanking Charlie for his patronage and providing other information about the order, such as the expected arrival date.</p>
 <p>Charlie’s wallet sees the PaymentACK and tells Charlie that the payment has been sent. The PaymentACK doesn’t mean that Bob has verified Charlie’s payment—see the Verifying Payment subsection below—but it does mean that Charlie can go do something else while the transaction gets confirmed. After Bob’s server verifies from the block chain that Charlie’s transaction has been suitably confirmed, it authorizes shipping Charlie’s order.</p>
 <p>In the case of a dispute, Charlie can generate a cryptographically proven <a class="reference internal" href="../terms.html#term-receipt"><span class="std std-ref">receipt</span></a> out of the various signed or otherwise-proven information.</p>
 <ul class="simple">
-<li><p>The <a class="reference internal" href="../terms.html#term-paymentdetails"><span class="std std-ref">PaymentDetails</span></a> message signed by Bob’s webserver proves Charlie received an invoice to pay a specified pubkey script for a specified number of satoshis for goods specified in the memo field.</p></li>
-<li><p>The Pandora block chain can prove that the pubkey script specified by Bob was paid the specified number of satoshis.</p></li>
+<li><p>The <a class="reference internal" href="../terms.html#term-paymentdetails"><span class="std std-ref">PaymentDetails</span></a> message signed by Bob’s webserver proves Charlie received an invoice to pay a specified pubkey script for a specified number of jus for goods specified in the memo field.</p></li>
+<li><p>The Pandora block chain can prove that the pubkey script specified by Bob was paid the specified number of jus.</p></li>
 </ul>
 <p>If a <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a> needs to be issued, Bob’s server can safely pay the <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a>-to pubkey script provided by Charlie. See the <a class="reference external" href="payment_processing.html#issuing-refunds">Refunds</a> section below for more details.</p>
 </div>
@@ -391,13 +391,13 @@
 </div>
 <div class="section" id="issuing-refunds">
 <h2>Issuing Refunds<a class="headerlink" href="payment_processing.html#issuing-refunds" title="Permalink to this headline">¶</a></h2>
-<p>Occasionally receivers using your applications will need to issue <a class="reference external" href="payment_processing.html#issuing-refunds">refunds</a>. The obvious way to do that, which is very unsafe, is simply to return the satoshis to the pubkey script from which they came. For example:</p>
+<p>Occasionally receivers using your applications will need to issue <a class="reference external" href="payment_processing.html#issuing-refunds">refunds</a>. The obvious way to do that, which is very unsafe, is simply to return the jus to the pubkey script from which they came. For example:</p>
 <ul class="simple">
 <li><p>Alice wants to buy a widget from Bob, so Bob gives Alice a price and Pandora address.</p></li>
-<li><p>Alice opens her wallet program and sends some satoshis to that address. Her wallet program automatically chooses to spend those satoshis from one of its unspent outputs, an output corresponding to the Pandora address mjSk1Ny9spzU2fouzYgLqGUD8U41iR35QN.</p></li>
-<li><p>Bob discovers Alice paid too many satoshis. Being an honest fellow, Bob <a class="reference external" href="payment_processing.html#issuing-refunds">refunds</a> the extra satoshis to the mjSk… address.</p></li>
+<li><p>Alice opens her wallet program and sends some jus to that address. Her wallet program automatically chooses to spend those jus from one of its unspent outputs, an output corresponding to the Pandora address mjSk1Ny9spzU2fouzYgLqGUD8U41iR35QN.</p></li>
+<li><p>Bob discovers Alice paid too many jus. Being an honest fellow, Bob <a class="reference external" href="payment_processing.html#issuing-refunds">refunds</a> the extra jus to the mjSk… address.</p></li>
 </ul>
-<p>This seems like it should work, but Alice is using a centralized multi-user web wallet which doesn’t give <a class="reference internal" href="../terms.html#term-unique-address"><span class="std std-ref">unique addresses</span></a> to each user, so it has no way to know that Bob’s <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a> is meant for Alice. Now the <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a> is a unintentional donation to the company behind the centralized wallet, unless Alice opens a support ticket and proves those satoshis were meant for her.</p>
+<p>This seems like it should work, but Alice is using a centralized multi-user web wallet which doesn’t give <a class="reference internal" href="../terms.html#term-unique-address"><span class="std std-ref">unique addresses</span></a> to each user, so it has no way to know that Bob’s <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a> is meant for Alice. Now the <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a> is a unintentional donation to the company behind the centralized wallet, unless Alice opens a support ticket and proves those jus were meant for her.</p>
 <p>This leaves receivers only two correct ways to issue <a class="reference external" href="payment_processing.html#issuing-refunds">refunds</a>:</p>
 <ul class="simple">
 <li><p>If an address was copy-and-pasted or a basic <a class="reference internal" href="../terms.html#term-pandora-uri"><span class="std std-ref">“pandora:” URI</span></a> was used, contact the spender directly and ask them to provide a <a class="reference external" href="payment_processing.html#issuing-refunds">refund</a> address.</p></li>
@@ -407,19 +407,19 @@
 </div>
 <div class="section" id="disbursing-income-limiting-forex-risk">
 <h2>Disbursing Income (Limiting Forex Risk)<a class="headerlink" href="payment_processing.html#disbursing-income-limiting-forex-risk" title="Permalink to this headline">¶</a></h2>
-<p>Many receivers worry that their satoshis will be less valuable in the future than they are now, called foreign exchange (forex) risk. To limit forex risk, many receivers choose to disburse newly-acquired payments soon after they’re received.</p>
+<p>Many receivers worry that their jus will be less valuable in the future than they are now, called foreign exchange (forex) risk. To limit forex risk, many receivers choose to disburse newly-acquired payments soon after they’re received.</p>
 <p>If your application provides this business logic, it will need to choose which outputs to spend first. There are a few different algorithms which can lead to different results.</p>
 <ul class="simple">
-<li><p>A <a class="reference internal" href="../terms.html#term-merge-avoidance"><span class="std std-ref">merge avoidance</span></a> algorithm makes it harder for outsiders looking at block chain data to figure out how many satoshis the receiver has earned, spent, and saved.</p></li>
-<li><p>A last-in-first-out (LIFO) algorithm spends newly acquired satoshis while there’s still double spend risk, possibly pushing that risk on to others. This can be good for the receiver’s balance sheet but possibly bad for their reputation.</p></li>
-<li><p>A first-in-first-out (FIFO) algorithm spends the oldest satoshis first, which can help ensure that the receiver’s payments always confirm, although this has utility only in a few edge cases.</p></li>
+<li><p>A <a class="reference internal" href="../terms.html#term-merge-avoidance"><span class="std std-ref">merge avoidance</span></a> algorithm makes it harder for outsiders looking at block chain data to figure out how many jus the receiver has earned, spent, and saved.</p></li>
+<li><p>A last-in-first-out (LIFO) algorithm spends newly acquired jus while there’s still double spend risk, possibly pushing that risk on to others. This can be good for the receiver’s balance sheet but possibly bad for their reputation.</p></li>
+<li><p>A first-in-first-out (FIFO) algorithm spends the oldest jus first, which can help ensure that the receiver’s payments always confirm, although this has utility only in a few edge cases.</p></li>
 </ul>
 <div class="section" id="merge-avoidance">
 <h3>Merge Avoidance<a class="headerlink" href="payment_processing.html#merge-avoidance" title="Permalink to this headline">¶</a></h3>
-<p>When a receiver receives satoshis in an output, the spender can track (in a crude way) how the receiver spends those satoshis. But the spender can’t automatically see other satoshis paid to the receiver by other spenders as long as the receiver uses <a class="reference internal" href="../terms.html#term-unique-address"><span class="std std-ref">unique addresses</span></a> for each transaction.</p>
-<p>However, if the receiver spends satoshis from two different spenders in the same transaction, each of those spenders can see the other spender’s payment. This is called a <a class="reference internal" href="../terms.html#term-merge"><span class="std std-ref">merge</span></a>, and the more a receiver merges outputs, the easier it is for an outsider to track how many satoshis the receiver has earned, spent, and saved.</p>
+<p>When a receiver receives jus in an output, the spender can track (in a crude way) how the receiver spends those jus. But the spender can’t automatically see other jus paid to the receiver by other spenders as long as the receiver uses <a class="reference internal" href="../terms.html#term-unique-address"><span class="std std-ref">unique addresses</span></a> for each transaction.</p>
+<p>However, if the receiver spends jus from two different spenders in the same transaction, each of those spenders can see the other spender’s payment. This is called a <a class="reference internal" href="../terms.html#term-merge"><span class="std std-ref">merge</span></a>, and the more a receiver merges outputs, the easier it is for an outsider to track how many jus the receiver has earned, spent, and saved.</p>
 <p><a class="reference internal" href="../terms.html#term-merge-avoidance"><span class="std std-ref">Merge avoidance</span></a> means trying to avoid spending unrelated outputs in the same transaction. For persons and businesses which want to keep their transaction data secret from other people, it can be an important strategy.</p>
-<p>A crude <a class="reference internal" href="../terms.html#term-merge-avoidance"><span class="std std-ref">merge avoidance</span></a> strategy is to try to always pay with the smallest output you have which is larger than the amount being requested. For example, if you have four outputs holding, respectively, 100, 200, 500, and 900 satoshis, you would pay a bill for 300 satoshis with the 500-satoshi output. This way, as long as you have outputs larger than your bills, you avoid merging.</p>
+<p>A crude <a class="reference internal" href="../terms.html#term-merge-avoidance"><span class="std std-ref">merge avoidance</span></a> strategy is to try to always pay with the smallest output you have which is larger than the amount being requested. For example, if you have four outputs holding, respectively, 100, 200, 500, and 900 jus, you would pay a bill for 300 jus with the 500-satoshi output. This way, as long as you have outputs larger than your bills, you avoid merging.</p>
 <p>More advanced <a class="reference internal" href="../terms.html#term-merge-avoidance"><span class="std std-ref">merge avoidance</span></a> strategies largely depend on enhancements to the payment protocol which will allow payers to avoid merging by intelligently distributing their payments among multiple outputs provided by the receiver.</p>
 </div>
 <div class="section" id="last-in-first-out-lifo">
@@ -487,7 +487,7 @@
 <div class="section" id="rebilling-recurring-payments">
 <h2>Rebilling Recurring Payments<a class="headerlink" href="payment_processing.html#rebilling-recurring-payments" title="Permalink to this headline">¶</a></h2>
 <p>Automated recurring payments are not possible with decentralized Pandora wallets. Even if a wallet supported automatically sending non-reversible payments on a regular schedule, the user would still need to start the program at the appointed time, or leave it running all the time unprotected by encryption.</p>
-<p>This means automated recurring Pandora payments can only be made from a centralized server which handles satoshis on behalf of its spenders. In practice, receivers who want to set prices in <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> terms must also let the same centralized server choose the appropriate exchange rate.</p>
+<p>This means automated recurring Pandora payments can only be made from a centralized server which handles jus on behalf of its spenders. In practice, receivers who want to set prices in <a class="reference internal" href="../terms.html#term-fiat"><span class="std std-ref">fiat</span></a> terms must also let the same centralized server choose the appropriate exchange rate.</p>
 <p>Non-automated rebilling can be managed by the same mechanism used before credit-card recurring payments became common: contact the spender and ask them to pay again—for example, by sending them a <a class="reference internal" href="../terms.html#term-paymentrequest"><span class="std std-ref">PaymentRequest</span></a> <a class="reference internal" href="../terms.html#term-pandora-uri"><span class="std std-ref">“pandora:” URI</span></a> in an HTML email.</p>
 <p>In the future, extensions to the payment protocol and new wallet features may allow some wallet programs to manage a list of recurring transactions. The spender will still need to start the program on a regular basis and authorize payment—but it should be easier and more secure for the spender than clicking an emailed invoice, increasing the chance receivers get paid on time.</p>
 </div>
@@ -526,12 +526,8 @@
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../">Developers</a>
               </li>
@@ -552,11 +548,8 @@
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -575,13 +568,10 @@
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -612,7 +602,7 @@
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">

@@ -212,14 +212,14 @@
 </div>
 <p>The illustration above shows a simplified version of a block chain. A <a class="reference internal" href="../glossary.html#term-Block"><span class="xref std std-term">block</span></a> of one or more new transactions is collected into the transaction data part of a block. Copies of each transaction are hashed, and the hashes are then paired, hashed, paired again, and hashed again until a single hash remains, the <a class="reference internal" href="../glossary.html#term-Merkle-root"><span class="xref std std-term">merkle root</span></a> of a merkle tree.</p>
 <p>The merkle root is stored in the block header. Each block also stores the hash of the previous block’s header, chaining the blocks together. This ensures a transaction cannot be modified without modifying the block that records it and all following blocks.</p>
-<p>Transactions are also chained together. Pandora wallet software gives the impression that satoshis are sent from and to wallets, but pandoras really move from transaction to transaction. Each transaction spends the satoshis previously received in one or more earlier transactions, so the input of one transaction is the output of a previous transaction.</p>
+<p>Transactions are also chained together. Pandora wallet software gives the impression that jus are sent from and to wallets, but pandoras really move from transaction to transaction. Each transaction spends the jus previously received in one or more earlier transactions, so the input of one transaction is the output of a previous transaction.</p>
 <div class="figure align-default" id="id2">
 <img alt="Transaction Propagation" src="../images/en-transaction-propagation.svg" /><p class="caption"><span class="caption-text">Transaction Propagation</span><a class="headerlink" href="block_chain.html#id2" title="Permalink to this image">¶</a></p>
 </div>
-<p>A single transaction can create multiple outputs, as would be the case when sending to multiple addresses, but each output of a particular transaction can only be used as an input once in the block chain. Any subsequent reference is a forbidden double spend—an attempt to spend the same satoshis twice.</p>
+<p>A single transaction can create multiple outputs, as would be the case when sending to multiple addresses, but each output of a particular transaction can only be used as an input once in the block chain. Any subsequent reference is a forbidden double spend—an attempt to spend the same jus twice.</p>
 <p>Outputs are tied to <a class="reference internal" href="../glossary.html#term-Txid"><span class="xref std std-term">transaction identifiers (TXIDs)</span></a>, which are the hashes of signed transactions.</p>
 <p>Because each output of a particular transaction can only be spent once, the outputs of all transactions included in the block chain can be categorized as either <a class="reference internal" href="../glossary.html#term-UTXO"><span class="xref std std-term">Unspent Transaction Outputs (UTXOs)</span></a> or spent transaction outputs. For a payment to be valid, it must only use UTXOs as inputs.</p>
-<p>Ignoring coinbase transactions (described later), if the value of a transaction’s outputs exceed its inputs, the transaction will be rejected—but if the inputs exceed the value of the outputs, any difference in value may be claimed as a <a class="reference internal" href="../glossary.html#term-Transaction-fee"><span class="xref std std-term">transaction fee</span></a> by the Pandora <a class="reference internal" href="../glossary.html#term-Mining"><span class="xref std std-term">miner</span></a> who creates the block containing that transaction. For example, in the illustration above, each transaction spends 10,000 satoshis fewer than it receives from its combined inputs, effectively paying a 10,000 satoshi transaction fee.</p>
+<p>Ignoring coinbase transactions (described later), if the value of a transaction’s outputs exceed its inputs, the transaction will be rejected—but if the inputs exceed the value of the outputs, any difference in value may be claimed as a <a class="reference internal" href="../glossary.html#term-Transaction-fee"><span class="xref std std-term">transaction fee</span></a> by the Pandora <a class="reference internal" href="../glossary.html#term-Mining"><span class="xref std std-term">miner</span></a> who creates the block containing that transaction. For example, in the illustration above, each transaction spends 10,000 jus fewer than it receives from its combined inputs, effectively paying a 10,000 satoshi transaction fee.</p>
 </div>
 <div class="section" id="proof-of-work">
 <h2>Proof Of Work<a class="headerlink" href="block_chain.html#proof-of-work" title="Permalink to this headline">¶</a></h2>
@@ -335,12 +335,8 @@
           <div class="footermenu-item footermenu-introduction">
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
-              </li>
+              
+              
               <li>
                 <a href="../">Developers</a>
               </li>
@@ -361,11 +357,8 @@
           <div class="footermenu-item footermenu-resources">
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/resources">Resources</a>
-              <li>
-                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
-              </li>
+             
+              
               <li>
                 <a href="https://pdccoin.github.io/community">Community</a>
               </li>
@@ -384,13 +377,10 @@
           <div class="footermenu-item footermenu-participate">
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
-              <li>
-                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
-              
-              </li>
-              <li>
-                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
-              </li>
+             
+               <!-- <li>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
+              </li> -->
               <li>
                 <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
@@ -421,7 +411,7 @@
   <div>
     <div>
       <div class="modal-close-btn" onclick="closeDonationModal()">×</div>
-      <p class="modal-header-text">Donate to Pandora.org</p>
+      <p class="modal-header-text">Donate to pandoracoin.org</p>
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">
