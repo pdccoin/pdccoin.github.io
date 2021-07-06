@@ -25,7 +25,7 @@
 <!-- btcorg -->
 <g id="node2" class="node"><title>btcorg</title>
 <polygon fill="none" stroke="black" points="183,-111 53,-111 53,-75 183,-75 183,-111"/>
-<text text-anchor="middle" x="118" y="-88.9" font-family="Sans" font-size="14.00">www.pandora.org</text>
+<text text-anchor="middle" x="118" y="-88.9" font-family="Sans" font-size="14.00">www.pandoracoin.org</text>
 </g>
 <!-- rapidssl -->
 <g id="node3" class="node"><title>rapidssl</title>
@@ -50,7 +50,7 @@
 <!-- one -->
 <g id="node7" class="node"><title>one</title>
 <polygon fill="none" stroke="black" points="565,-255 245,-255 245,-219 565,-219 565,-255"/>
-<text text-anchor="middle" x="405" y="-232.9" font-family="Sans" font-size="14.00"> &#160;&#160;&#160;x509.certificate.append(pandora_org&#45;cert) </text>
+<text text-anchor="middle" x="405" y="-232.9" font-family="Sans" font-size="14.00"> &#160;&#160;&#160;x509.certificate.append(pandoracoin.org&#45;cert) </text>
 </g>
 <!-- two -->
 <g id="node8" class="node"><title>two</title>
