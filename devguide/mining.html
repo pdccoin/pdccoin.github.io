@@ -38,13 +38,13 @@
     <link rel="shortcut icon" href="../static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Reference" href="../reference/index.html" />
+    <link rel="next" title="Reference" href="../reference/" />
     <link rel="prev" title="P2P Network" href="p2p_network.html" /> 
   </head><body>
   
 <nav class="navbar navbar-expand-md  fixed-top navbar-dark">
 		<div class="content-container d-flex flex-wrap">
-			<a class="navbar-brand py-1" href="../index.html">
+			<a class="navbar-brand py-1" href="../">
 				<div class="header-logo">
 					<div class="logo-light"></div>
 				</div>
@@ -71,7 +71,7 @@
 		<!--<div class="row hidden-sm-up">
 						<div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
 								<div class="container">
-								　　 <a class="navbar-brand" href="../index.html">
+								　　 <a class="navbar-brand" href="../">
 												Pandora
 										</a>
 								</div>
@@ -97,7 +97,7 @@
 		<div class="d-flex justify-content-between flex-wrap">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="../index.html">Pandora</a>
+					<a href="../">Pandora</a>
 				</li>
 				<li class="breadcrumb-item">
 					<a href="index.html"  accesskey="U" class="active" >Developer Guides</a>
@@ -110,7 +110,7 @@
 					role="botton" accesskey="P">
 					&laquo; P2P Network
 				</a>
-				<a href="../reference/index.html" title="Next Chapter: Reference" class="btn btn-primary"
+				<a href="../reference/" title="Next Chapter: Reference" class="btn btn-primary"
 					role="botton" accesskey="N">
 					Reference &raquo;
 				</a>
@@ -141,16 +141,16 @@
 <li class="toctree-l2 current"><a class="current reference internal" href="mining.html#">Mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/wallets.html">Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/p2p_networking.html">P2P Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/index.html">RPC API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/">RPC API Reference</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/testing.html">Testing Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/transactions.html">Transactions</a></li>
@@ -168,7 +168,7 @@
   <p class="topless"><a href="p2p_network.html"
                         title="previous chapter">P2P Network</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="../reference/index.html"
+  <p class="topless"><a href="../reference/"
                         title="next chapter">Reference</a></p>
 
 
@@ -238,7 +238,7 @@
 <p>In both solo and pool mining, the mining software needs to get the information necessary to construct block headers. This subsection describes, in a linear way, how that information is transmitted and used. However, in actual implementations, parallel threads and queuing are used to keep ASIC hashers working at maximum capacity.</p>
 <div class="section" id="getwork-rpc">
 <h3>getwork RPC<a class="headerlink" href="mining.html#getwork-rpc" title="Permalink to this headline">¶</a></h3>
-<p>The simplest and earliest method was the now-deprecated Pandora Core <code class="docutils literal notranslate"><span class="pre">getwork</span></code> <a class="reference external" href="../reference/rpc/index.html">RPC</a>, which constructs a header for the miner directly. Since a header only contains a single 4-byte nonce good for about 4 gigahashes, many modern miners need to make dozens or hundreds of <code class="docutils literal notranslate"><span class="pre">getwork</span></code> requests a second. Solo miners may still use <code class="docutils literal notranslate"><span class="pre">getwork</span></code> on v0.9.5 or below, but most pools today discourage or disallow its use.</p>
+<p>The simplest and earliest method was the now-deprecated Pandora Core <code class="docutils literal notranslate"><span class="pre">getwork</span></code> <a class="reference external" href="../reference/rpc/">RPC</a>, which constructs a header for the miner directly. Since a header only contains a single 4-byte nonce good for about 4 gigahashes, many modern miners need to make dozens or hundreds of <code class="docutils literal notranslate"><span class="pre">getwork</span></code> requests a second. Solo miners may still use <code class="docutils literal notranslate"><span class="pre">getwork</span></code> on v0.9.5 or below, but most pools today discourage or disallow its use.</p>
 </div>
 <div class="section" id="getblocktemplate-rpc">
 <h3>getblocktemplate RPC<a class="headerlink" href="mining.html#getblocktemplate-rpc" title="Permalink to this headline">¶</a></h3>
@@ -250,7 +250,7 @@
 <li><p>The mining pool’s current target threshold for accepting shares. (For solo miners, this is the <a class="reference external" href="p2p_network.html">network</a> target.)</p></li>
 </ol>
 <p>Using the transactions received, the mining software adds a nonce to the coinbase extra nonce field and then converts all the transactions into a merkle tree to derive a merkle root it can use in a block header. Whenever the extra nonce field needs to be changed, the mining software rebuilds the necessary parts of the merkle tree and updates the time and merkle root fields in the block header.</p>
-<p>Like all <code class="docutils literal notranslate"><span class="pre">pandorad</span></code> <a class="reference external" href="../reference/rpc/index.html">RPCs</a>, <a class="reference external" href="../reference/rpc/getblocktemplate.html">“getblocktemplate”</a> is sent over HTTP. To ensure they get the most recent work, most miners use <a class="reference external" href="https://en.wikipedia.org/wiki/Push_technology#Long_polling">HTTP longpoll</a> to leave a <a class="reference external" href="../reference/rpc/getblocktemplate.html">“getblocktemplate”</a> request open at all times. This allows the mining pool to push a new <a class="reference external" href="../reference/rpc/getblocktemplate.html">“getblocktemplate”</a> to the miner as soon as any miner on the <a class="reference external" href="p2p_network.html">peer-to-peer network</a> publishes a new block or the pool wants to send more transactions to the mining software.</p>
+<p>Like all <code class="docutils literal notranslate"><span class="pre">pandorad</span></code> <a class="reference external" href="../reference/rpc/">RPCs</a>, <a class="reference external" href="../reference/rpc/getblocktemplate.html">“getblocktemplate”</a> is sent over HTTP. To ensure they get the most recent work, most miners use <a class="reference external" href="https://en.wikipedia.org/wiki/Push_technology#Long_polling">HTTP longpoll</a> to leave a <a class="reference external" href="../reference/rpc/getblocktemplate.html">“getblocktemplate”</a> request open at all times. This allows the mining pool to push a new <a class="reference external" href="../reference/rpc/getblocktemplate.html">“getblocktemplate”</a> to the miner as soon as any miner on the <a class="reference external" href="p2p_network.html">peer-to-peer network</a> publishes a new block or the pool wants to send more transactions to the mining software.</p>
 </div>
 </div>
 <div class="section" id="stratum">
@@ -288,10 +288,10 @@
         <div class="donate">
           <div class="donate-row">
             <div>
-              <span class="footer-title">Support Pandora.org:</span>
+              <span class="footer-title">Support pandoracoin.org :</span>
               <button onclick="openDonationModal()" class="donate-btn">Donate</button>
               <p class="donate-text">
-                <a class="donate-link" href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd" target="_blank">3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd</a>
+                <a class="donate-link" href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq" target="_blank">pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq</a>
               </p>
             </div>
           </div>
@@ -308,7 +308,7 @@
                 <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
-                <a href="../index.html">Developers</a>
+                <a href="../">Developers</a>
               </li>
               <li>
                 <a href="https://pdccoin.github.io/getting-started">Getting started</a>
@@ -391,15 +391,15 @@
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">
-      <div id="donation-qr-code" data-address="3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"></div>
+      <div id="donation-qr-code" data-address="pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"></div>
     </div>
     <div>
       <a
         class="donation-btc-address"
-        href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"
+        href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"
         target="_blank"
       >
-        3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd
+        pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq
       </a>
     </div>
     <div style="overflow-y:hidden;text-align: center;">

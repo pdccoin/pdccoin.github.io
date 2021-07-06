@@ -44,7 +44,7 @@
   
 <nav class="navbar navbar-expand-md  fixed-top navbar-dark">
 		<div class="content-container d-flex flex-wrap">
-			<a class="navbar-brand py-1" href="../index.html">
+			<a class="navbar-brand py-1" href="../">
 				<div class="header-logo">
 					<div class="logo-light"></div>
 				</div>
@@ -71,7 +71,7 @@
 		<!--<div class="row hidden-sm-up">
 						<div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
 								<div class="container">
-								　　 <a class="navbar-brand" href="../index.html">
+								　　 <a class="navbar-brand" href="../">
 												Pandora
 										</a>
 								</div>
@@ -97,7 +97,7 @@
 		<div class="d-flex justify-content-between flex-wrap">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="../index.html">Pandora</a>
+					<a href="../">Pandora</a>
 				</li>
 				<li class="breadcrumb-item">
 					<a href="index.html"  accesskey="U" class="active" >Developer Guides</a>
@@ -141,16 +141,16 @@
 <li class="toctree-l2"><a class="reference internal" href="mining.html">Mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/wallets.html">Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/p2p_networking.html">P2P Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/index.html">RPC API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/">RPC API Reference</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/testing.html">Testing Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/transactions.html">Transactions</a></li>
@@ -377,7 +377,7 @@
 <p><strong>1 confirmation</strong>: The transaction is included in the latest block and double-spend risk decreases dramatically. Transactions which pay sufficient transaction fees need 10 minutes on average to receive one confirmation. However, the most recent block gets replaced fairly often by accident, so a double spend is still a real possibility.</p>
 <p><strong>2 confirmations</strong>: The most recent block was chained to the block which includes the transaction. As of March 2014, two block replacements were exceedingly rare, and a two block replacement attack was impractical without expensive mining equipment.</p>
 <p><strong>6 confirmations</strong>: The <a class="reference external" href="p2p_network.html">network</a> has spent about an hour working to protect the transaction against double spends and the transaction is buried under six blocks. Even a reasonably lucky attacker would require a large percentage of the total <a class="reference external" href="p2p_network.html">network</a> hashing power to replace six blocks. Although this number is somewhat arbitrary, software handling high-value transactions, or otherwise at risk for fraud, should wait for at least six confirmations before treating a payment as accepted.</p>
-<p>Pandora Core provides several <a class="reference external" href="../reference/rpc/index.html">RPCs</a> which can provide your program with the confirmation score for transactions in your wallet or arbitrary transactions. For example, the <a class="reference external" href="../reference/rpc/listunspent.html">“listunspent” RPC</a> provides an array of every satoshi you can spend along with its confirmation score.</p>
+<p>Pandora Core provides several <a class="reference external" href="../reference/rpc/">RPCs</a> which can provide your program with the confirmation score for transactions in your wallet or arbitrary transactions. For example, the <a class="reference external" href="../reference/rpc/listunspent.html">“listunspent” RPC</a> provides an array of every satoshi you can spend along with its confirmation score.</p>
 <p>Although confirmations provide excellent double-spend protection most of the time, there are at least three cases where double-spend risk analysis can be required:</p>
 <ol class="arabic simple">
 <li><p>In the case when the program or its user cannot wait for a confirmation and wants to accept unconfirmed payments.</p></li>
@@ -513,10 +513,10 @@
         <div class="donate">
           <div class="donate-row">
             <div>
-              <span class="footer-title">Support Pandora.org:</span>
+              <span class="footer-title">Support pandoracoin.org :</span>
               <button onclick="openDonationModal()" class="donate-btn">Donate</button>
               <p class="donate-text">
-                <a class="donate-link" href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd" target="_blank">3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd</a>
+                <a class="donate-link" href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq" target="_blank">pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq</a>
               </p>
             </div>
           </div>
@@ -533,7 +533,7 @@
                 <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
-                <a href="../index.html">Developers</a>
+                <a href="../">Developers</a>
               </li>
               <li>
                 <a href="https://pdccoin.github.io/getting-started">Getting started</a>
@@ -616,15 +616,15 @@
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">
-      <div id="donation-qr-code" data-address="3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"></div>
+      <div id="donation-qr-code" data-address="pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"></div>
     </div>
     <div>
       <a
         class="donation-btc-address"
-        href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"
+        href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"
         target="_blank"
       >
-        3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd
+        pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq
       </a>
     </div>
     <div style="overflow-y:hidden;text-align: center;">

@@ -44,7 +44,7 @@
   
 <nav class="navbar navbar-expand-md  fixed-top navbar-dark">
 		<div class="content-container d-flex flex-wrap">
-			<a class="navbar-brand py-1" href="../index.html">
+			<a class="navbar-brand py-1" href="../">
 				<div class="header-logo">
 					<div class="logo-light"></div>
 				</div>
@@ -71,7 +71,7 @@
 		<!--<div class="row hidden-sm-up">
 						<div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
 								<div class="container">
-								　　 <a class="navbar-brand" href="../index.html">
+								　　 <a class="navbar-brand" href="../">
 												Pandora
 										</a>
 								</div>
@@ -97,7 +97,7 @@
 		<div class="d-flex justify-content-between flex-wrap">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="../index.html">Pandora</a>
+					<a href="../">Pandora</a>
 				</li>
 				<li class="breadcrumb-item">
 					<a href="index.html"  accesskey="U" class="active" >Developer Guides</a>
@@ -141,16 +141,16 @@
 <li class="toctree-l2"><a class="reference internal" href="mining.html">Mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/wallets.html">Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/p2p_networking.html">P2P Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/index.html">RPC API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/">RPC API Reference</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../examples/index.html">Examples</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../examples/">Examples</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../examples/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/testing.html">Testing Applications</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../examples/transactions.html">Transactions</a></li>
@@ -431,7 +431,7 @@
 <p>Although the modifications are non-functional—so they do not change what inputs the transaction uses nor what outputs it pays—they do change the computed hash of the transaction. Since each transaction links to previous transactions using hashes as a transaction identifier (txid), a modified transaction will not have the txid its creator expected.</p>
 <p>This isn’t a problem for most Pandora transactions which are designed to be added to the block chain immediately. But it does become a problem when the output from a transaction is spent before that transaction is added to the block chain.</p>
 <p>Pandora developers have been working to reduce transaction malleability among standard transaction types, one outcome of those efforts is <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0141.mediawiki">BIP 141: Segregated Witness</a>, which is supported by Pandora Core and was activated in August 2017. When SegWit is not being used, new transactions should not depend on previous transactions which have not been added to the block chain yet, especially if large amounts of satoshis are at stake.</p>
-<p>Transaction malleability also affects payment tracking. Pandora Core’s <a class="reference external" href="../reference/rpc/index.html">RPC</a> interface lets you track transactions by their txid—but if that txid changes because the transaction was modified, it may appear that the transaction has disappeared from the <a class="reference external" href="p2p_network.html">network</a>.</p>
+<p>Transaction malleability also affects payment tracking. Pandora Core’s <a class="reference external" href="../reference/rpc/">RPC</a> interface lets you track transactions by their txid—but if that txid changes because the transaction was modified, it may appear that the transaction has disappeared from the <a class="reference external" href="p2p_network.html">network</a>.</p>
 <p>Current best practices for transaction tracking dictate that a transaction should be tracked by the transaction outputs (UTXOs) it spends as inputs, as they cannot be changed without invalidating the transaction.</p>
 <p>Best practices further dictate that if a transaction does seem to disappear from the <a class="reference external" href="p2p_network.html">network</a> and needs to be reissued, that it be reissued in a way that invalidates the lost transaction. One method which will always work is to ensure the reissued payment spends all of the same outputs that the lost transaction used as inputs.</p>
 </div>
@@ -457,10 +457,10 @@
         <div class="donate">
           <div class="donate-row">
             <div>
-              <span class="footer-title">Support Pandora.org:</span>
+              <span class="footer-title">Support pandoracoin.org :</span>
               <button onclick="openDonationModal()" class="donate-btn">Donate</button>
               <p class="donate-text">
-                <a class="donate-link" href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd" target="_blank">3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd</a>
+                <a class="donate-link" href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq" target="_blank">pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq</a>
               </p>
             </div>
           </div>
@@ -477,7 +477,7 @@
                 <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
-                <a href="../index.html">Developers</a>
+                <a href="../">Developers</a>
               </li>
               <li>
                 <a href="https://pdccoin.github.io/getting-started">Getting started</a>
@@ -560,15 +560,15 @@
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">
-      <div id="donation-qr-code" data-address="3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"></div>
+      <div id="donation-qr-code" data-address="pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"></div>
     </div>
     <div>
       <a
         class="donation-btc-address"
-        href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"
+        href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"
         target="_blank"
       >
-        3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd
+        pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq
       </a>
     </div>
     <div style="overflow-y:hidden;text-align: center;">

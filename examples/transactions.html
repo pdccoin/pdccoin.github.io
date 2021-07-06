@@ -44,7 +44,7 @@
   
 <nav class="navbar navbar-expand-md  fixed-top navbar-dark">
 		<div class="content-container d-flex flex-wrap">
-			<a class="navbar-brand py-1" href="../index.html">
+			<a class="navbar-brand py-1" href="../">
 				<div class="header-logo">
 					<div class="logo-light"></div>
 				</div>
@@ -71,7 +71,7 @@
 		<!--<div class="row hidden-sm-up">
 						<div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
 								<div class="container">
-								　　 <a class="navbar-brand" href="../index.html">
+								　　 <a class="navbar-brand" href="../">
 												Pandora
 										</a>
 								</div>
@@ -97,7 +97,7 @@
 		<div class="d-flex justify-content-between flex-wrap">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="../index.html">Pandora</a>
+					<a href="../">Pandora</a>
 				</li>
 				<li class="breadcrumb-item">
 					<a href="index.html"  accesskey="U" class="active" >Examples</a>
@@ -130,7 +130,7 @@
             
               <div class="sidebartoctree">
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../devguide/index.html">Developer Guides</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">Developer Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/contracts.html">Contracts</a></li>
@@ -141,13 +141,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../devguide/mining.html">Mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/wallets.html">Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/p2p_networking.html">P2P Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/index.html">RPC API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/">RPC API Reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a><ul class="current">
@@ -205,12 +205,12 @@
 <h1>Transactions<a class="headerlink" href="transactions.html#transactions" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="transaction-tutorial">
 <h2>Transaction Tutorial<a class="headerlink" href="transactions.html#transaction-tutorial" title="Permalink to this headline">¶</a></h2>
-<p>Creating transactions is something most Pandora applications do. This section describes how to use Pandora Core’s <a class="reference external" href="../reference/rpc/index.html">RPC</a> interface to create transactions with various attributes.</p>
+<p>Creating transactions is something most Pandora applications do. This section describes how to use Pandora Core’s <a class="reference external" href="../reference/rpc/">RPC</a> interface to create transactions with various attributes.</p>
 <p>Your applications may use something besides Pandora Core to create transactions, but in any system, you will need to provide the same kinds of data to create transactions with the same attributes as those described below.</p>
 <p>In order to use this tutorial, you will need to setup <a class="reference external" href="https://pdccoin.github.io/download">Pandora Core</a> and create a regression test mode environment with 50 PDC in your test wallet.</p>
 <div class="section" id="simple-spending">
 <h3>Simple Spending<a class="headerlink" href="transactions.html#simple-spending" title="Permalink to this headline">¶</a></h3>
-<p>Pandora Core provides several <a class="reference external" href="../reference/rpc/index.html">RPCs</a> which handle all the details of spending, including creating change outputs and paying appropriate fees. Even advanced users should use these <a class="reference external" href="../reference/rpc/index.html">RPCs</a> whenever possible to decrease the chance that satoshis will be lost by mistake.</p>
+<p>Pandora Core provides several <a class="reference external" href="../reference/rpc/">RPCs</a> which handle all the details of spending, including creating change outputs and paying appropriate fees. Even advanced users should use these <a class="reference external" href="../reference/rpc/">RPCs</a> whenever possible to decrease the chance that satoshis will be lost by mistake.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest getnewaddress
 mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
 
@@ -223,7 +223,7 @@ mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
 </pre></div>
 </div>
 <p>Send 10 pandoras to the address using the <a class="reference external" href="../reference/rpc/sendtoaddress.html">“sendtoaddress” RPC</a>. The returned hex string is the transaction identifier (txid).</p>
-<p>The <a class="reference external" href="../reference/rpc/sendtoaddress.html">“sendtoaddress” RPC</a> automatically selects an unspent transaction output (UTXO) from which to spend the satoshis. In this case, it withdrew the satoshis from our only available UTXO, the coinbase transaction for block #1 which matured with the creation of block #101. To spend a specific UTXO, you could use the <code class="docutils literal notranslate"><span class="pre">sendfrom</span></code> <a class="reference external" href="../reference/rpc/index.html">RPC</a> instead.</p>
+<p>The <a class="reference external" href="../reference/rpc/sendtoaddress.html">“sendtoaddress” RPC</a> automatically selects an unspent transaction output (UTXO) from which to spend the satoshis. In this case, it withdrew the satoshis from our only available UTXO, the coinbase transaction for block #1 which matured with the creation of block #101. To spend a specific UTXO, you could use the <code class="docutils literal notranslate"><span class="pre">sendfrom</span></code> <a class="reference external" href="../reference/rpc/">RPC</a> instead.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest listunspent
 <span class="o">[</span>
 <span class="o">]</span>
@@ -274,7 +274,7 @@ mvbnrCX3bg1cDRUu8pkecrvP6vQkSLDSou
 </div>
 <div class="section" id="simple-raw-transaction">
 <h3>Simple Raw Transaction<a class="headerlink" href="transactions.html#simple-raw-transaction" title="Permalink to this headline">¶</a></h3>
-<p>The raw transaction <a class="reference external" href="../reference/rpc/index.html">RPCs</a> allow users to create custom transactions and delay broadcasting those transactions. However, mistakes made in raw transactions may not be detected by Pandora Core, and a number of raw transaction users have permanently lost large numbers of satoshis, so please be careful using raw transactions on mainnet.</p>
+<p>The raw transaction <a class="reference external" href="../reference/rpc/">RPCs</a> allow users to create custom transactions and delay broadcasting those transactions. However, mistakes made in raw transactions may not be detected by Pandora Core, and a number of raw transaction users have permanently lost large numbers of satoshis, so please be careful using raw transactions on mainnet.</p>
 <p>This subsection covers one of the simplest possible raw transactions.</p>
 <div class="multicode docutils container">
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest listunspent
@@ -421,7 +421,7 @@ f2f69e5355aa427045bc15e7c6c77288ac00000000
 </pre></div>
 </div>
 </div>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">signrawtransaction</span></code> <a class="reference external" href="../reference/rpc/index.html">RPC</a> to sign the transaction created by <a class="reference external" href="../reference/rpc/createrawtransaction.html">“createrawtransaction”</a> and save the returned “hex” raw format signed transaction to a shell variable.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">signrawtransaction</span></code> <a class="reference external" href="../reference/rpc/">RPC</a> to sign the transaction created by <a class="reference external" href="../reference/rpc/createrawtransaction.html">“createrawtransaction”</a> and save the returned “hex” raw format signed transaction to a shell variable.</p>
 <p>Even though the transaction is now complete, the Pandora Core node we’re connected to doesn’t know anything about the transaction, nor does any other part of the <a class="reference external" href="../devguide/p2p_network.html">network</a>. We’ve created a spend, but we haven’t actually spent anything because we could simply unset the <code class="docutils literal notranslate"><span class="pre">$SIGNED_RAW_TX</span></code> variable to eliminate the transaction.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt; pandora-cli -regtest sendrawtransaction <span class="nv">$SIGNED_RAW_TX</span>
 c7736a0a0046d5a8cc61c8c3c2821d4d7517f5de2bc66a966011aaa79965ffba
@@ -922,7 +922,7 @@ mk2QpYatsKicvFVuTAQLBryyccRXMUaGHP
 </pre></div>
 </div>
 </div>
-<p>Use the <a class="reference external" href="../reference/rpc/createmultisig.html">“createmultisig” RPC</a> with two arguments, the number (<em>n</em>) of signatures required and a list of addresses or public keys. Because P2PKH addresses can’t be used in the multisig redeem script created by this <a class="reference external" href="../reference/rpc/index.html">RPC</a>, the only addresses which can be provided are those belonging to a public key in the wallet. In this case, we provide two addresses and one public key—all of which will be converted to public keys in the redeem script.</p>
+<p>Use the <a class="reference external" href="../reference/rpc/createmultisig.html">“createmultisig” RPC</a> with two arguments, the number (<em>n</em>) of signatures required and a list of addresses or public keys. Because P2PKH addresses can’t be used in the multisig redeem script created by this <a class="reference external" href="../reference/rpc/">RPC</a>, the only addresses which can be provided are those belonging to a public key in the wallet. In this case, we provide two addresses and one public key—all of which will be converted to public keys in the redeem script.</p>
 <p>The P2SH address is returned along with the redeem script which must be provided when we spend satoshis sent to the P2SH address.</p>
 <p><img alt="Warning icon" src="../images/icon_warning.svg" /> <strong>Warning:</strong> You must not lose the redeem script, especially if you don’t have a record of which public keys you used to create the P2SH multisig address. You need the redeem script to spend any pandoras sent to the P2SH address. If you lose the redeem script, you can recreate it by running the same command above, with the public keys listed in the same order. However, if you lose both the redeem script and even one of the public keys, you will never be able to spend satoshis sent to that P2SH address.</p>
 <p>Neither the address nor the redeem script are stored in the wallet when you use <a class="reference external" href="../reference/rpc/createmultisig.html">“createmultisig”</a>. To store them in the wallet, use the <a class="reference external" href="../reference/rpc/addmultisigaddress.html">“addmultisigaddress” RPC</a> instead. If you add an address to the wallet, you should also make a new backup.</p>
@@ -1147,10 +1147,10 @@ cNmbnwwGzEghMMe1vBwH34DFHShEj5bcXD1QpFRPHgG9Mj1xc5hq
         <div class="donate">
           <div class="donate-row">
             <div>
-              <span class="footer-title">Support Pandora.org:</span>
+              <span class="footer-title">Support pandoracoin.org :</span>
               <button onclick="openDonationModal()" class="donate-btn">Donate</button>
               <p class="donate-text">
-                <a class="donate-link" href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd" target="_blank">3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd</a>
+                <a class="donate-link" href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq" target="_blank">pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq</a>
               </p>
             </div>
           </div>
@@ -1167,7 +1167,7 @@ cNmbnwwGzEghMMe1vBwH34DFHShEj5bcXD1QpFRPHgG9Mj1xc5hq
                 <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
-                <a href="../index.html">Developers</a>
+                <a href="../">Developers</a>
               </li>
               <li>
                 <a href="https://pdccoin.github.io/getting-started">Getting started</a>
@@ -1250,15 +1250,15 @@ cNmbnwwGzEghMMe1vBwH34DFHShEj5bcXD1QpFRPHgG9Mj1xc5hq
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">
-      <div id="donation-qr-code" data-address="3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"></div>
+      <div id="donation-qr-code" data-address="pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"></div>
     </div>
     <div>
       <a
         class="donation-btc-address"
-        href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"
+        href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"
         target="_blank"
       >
-        3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd
+        pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq
       </a>
     </div>
     <div style="overflow-y:hidden;text-align: center;">

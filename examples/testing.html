@@ -44,7 +44,7 @@
   
 <nav class="navbar navbar-expand-md  fixed-top navbar-dark">
 		<div class="content-container d-flex flex-wrap">
-			<a class="navbar-brand py-1" href="../index.html">
+			<a class="navbar-brand py-1" href="../">
 				<div class="header-logo">
 					<div class="logo-light"></div>
 				</div>
@@ -71,7 +71,7 @@
 		<!--<div class="row hidden-sm-up">
 						<div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
 								<div class="container">
-								　　 <a class="navbar-brand" href="../index.html">
+								　　 <a class="navbar-brand" href="../">
 												Pandora
 										</a>
 								</div>
@@ -97,7 +97,7 @@
 		<div class="d-flex justify-content-between flex-wrap">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="../index.html">Pandora</a>
+					<a href="../">Pandora</a>
 				</li>
 				<li class="breadcrumb-item">
 					<a href="index.html"  accesskey="U" class="active" >Examples</a>
@@ -130,7 +130,7 @@
             
               <div class="sidebartoctree">
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../devguide/index.html">Developer Guides</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">Developer Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/contracts.html">Contracts</a></li>
@@ -141,13 +141,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../devguide/mining.html">Mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/wallets.html">Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/p2p_networking.html">P2P Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/index.html">RPC API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/">RPC API Reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a><ul class="current">
@@ -228,13 +228,13 @@ pandora-cli -regtest generate <span class="m">101</span>
 pandora-cli -regtest generatetoaddress <span class="m">101</span> <span class="k">$(</span>pandora-cli -regtest getnewaddress<span class="k">)</span>
 </pre></div>
 </div>
-<p>Generate 101 blocks using a special <a class="reference external" href="../reference/rpc/index.html">RPC</a> which is only available in regtest mode. This takes less than a second on a generic PC. Because this is a new block chain using Pandora’s default rules, the first blocks pay a block reward of 50 pandoras. Unlike mainnet, in regtest mode only the first 150 blocks pay a reward of 50 pandoras. However, a block must have 100 confirmations before that reward can be spent, so we generate 101 blocks to get access to the coinbase transaction from block #1.</p>
+<p>Generate 101 blocks using a special <a class="reference external" href="../reference/rpc/">RPC</a> which is only available in regtest mode. This takes less than a second on a generic PC. Because this is a new block chain using Pandora’s default rules, the first blocks pay a block reward of 50 pandoras. Unlike mainnet, in regtest mode only the first 150 blocks pay a reward of 50 pandoras. However, a block must have 100 confirmations before that reward can be spent, so we generate 101 blocks to get access to the coinbase transaction from block #1.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pandora-cli -regtest getbalance
 <span class="m">50</span>.00000000
 </pre></div>
 </div>
 <p>Verify that we now have 50 pandoras available to spend.</p>
-<p>You can now use Pandora Core <a class="reference external" href="../reference/rpc/index.html">RPCs</a> prefixed with <code class="docutils literal notranslate"><span class="pre">pandora-cli</span> <span class="pre">-regtest</span></code>.</p>
+<p>You can now use Pandora Core <a class="reference external" href="../reference/rpc/">RPCs</a> prefixed with <code class="docutils literal notranslate"><span class="pre">pandora-cli</span> <span class="pre">-regtest</span></code>.</p>
 <p>Regtest wallets and block chain state (chainstate) are saved in the <code class="docutils literal notranslate"><span class="pre">regtest</span></code> subdirectory of the Pandora Core configuration directory. You can safely delete the <code class="docutils literal notranslate"><span class="pre">regtest</span></code> subdirectory and restart Pandora Core to start a new regtest. (See the <a class="reference external" href="index.html">Developer Examples Introduction</a> for default configuration directory locations on various operating systems. Always back up mainnet wallets before performing dangerous operations such as deleting.)</p>
 </div>
 </div>
@@ -259,10 +259,10 @@ pandora-cli -regtest generatetoaddress <span class="m">101</span> <span class="k
         <div class="donate">
           <div class="donate-row">
             <div>
-              <span class="footer-title">Support Pandora.org:</span>
+              <span class="footer-title">Support pandoracoin.org :</span>
               <button onclick="openDonationModal()" class="donate-btn">Donate</button>
               <p class="donate-text">
-                <a class="donate-link" href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd" target="_blank">3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd</a>
+                <a class="donate-link" href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq" target="_blank">pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq</a>
               </p>
             </div>
           </div>
@@ -279,7 +279,7 @@ pandora-cli -regtest generatetoaddress <span class="m">101</span> <span class="k
                 <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
-                <a href="../index.html">Developers</a>
+                <a href="../">Developers</a>
               </li>
               <li>
                 <a href="https://pdccoin.github.io/getting-started">Getting started</a>
@@ -362,15 +362,15 @@ pandora-cli -regtest generatetoaddress <span class="m">101</span> <span class="k
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">
-      <div id="donation-qr-code" data-address="3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"></div>
+      <div id="donation-qr-code" data-address="pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"></div>
     </div>
     <div>
       <a
         class="donation-btc-address"
-        href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"
+        href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"
         target="_blank"
       >
-        3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd
+        pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq
       </a>
     </div>
     <div style="overflow-y:hidden;text-align: center;">

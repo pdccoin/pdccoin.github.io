@@ -44,7 +44,7 @@
   
 <nav class="navbar navbar-expand-md  fixed-top navbar-dark">
 		<div class="content-container d-flex flex-wrap">
-			<a class="navbar-brand py-1" href="../index.html">
+			<a class="navbar-brand py-1" href="../">
 				<div class="header-logo">
 					<div class="logo-light"></div>
 				</div>
@@ -71,7 +71,7 @@
 		<!--<div class="row hidden-sm-up">
 						<div class="collapse navbar-toggleable-xs container" id="exCollapsingNavbar2">
 								<div class="container">
-								　　 <a class="navbar-brand" href="../index.html">
+								　　 <a class="navbar-brand" href="../">
 												Pandora
 										</a>
 								</div>
@@ -97,7 +97,7 @@
 		<div class="d-flex justify-content-between flex-wrap">
 			<ol class="breadcrumb">
 				<li class="breadcrumb-item">
-					<a href="../index.html">Pandora</a>
+					<a href="../">Pandora</a>
 				</li>
 				<li class="breadcrumb-item">
 					<a href="index.html"  accesskey="U" class="active" >Examples</a>
@@ -130,7 +130,7 @@
             
               <div class="sidebartoctree">
                 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../devguide/index.html">Developer Guides</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../devguide/">Developer Guides</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../devguide/contracts.html">Contracts</a></li>
@@ -141,13 +141,13 @@
 <li class="toctree-l2"><a class="reference internal" href="../devguide/mining.html">Mining</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../reference/index.html">Reference</a><ul>
+<li class="toctree-l1"><a class="reference internal" href="../reference/">Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="../reference/intro.html">Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/block_chain.html">Block Chain</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/transactions.html">Transactions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/wallets.html">Wallets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../reference/p2p_networking.html">P2P Network</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/index.html">RPC API Reference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../reference/rpc/">RPC API Reference</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal" href="index.html">Examples</a><ul class="current">
@@ -206,9 +206,9 @@
 <p>The following guide aims to provide examples to help you start building Pandora-based applications. To make the best use of this document, you may want to install the current version of Pandora Core, either from <a class="reference external" href="https://github.com/pdccoin/pandora">source</a> or from a <a class="reference external" href="https://pdccoin.github.io/download">pre-compiled executable</a>.</p>
 <p>Once installed, you’ll have access to three programs: <code class="docutils literal notranslate"><span class="pre">pandorad</span></code>, <code class="docutils literal notranslate"><span class="pre">pandora-qt</span></code>, and <code class="docutils literal notranslate"><span class="pre">pandora-cli</span></code>.</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">pandora-qt</span></code> provides a combination full Pandora peer and wallet frontend. From the Help menu, you can access a console where you can enter the <a class="reference external" href="../reference/rpc/index.html">RPC</a> commands used throughout this document.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pandorad</span></code> is more useful for programming: it provides a full peer which you can interact with through <a class="reference external" href="../reference/rpc/index.html">RPCs</a> to port 9337 (or 18332 for testnet).</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">pandora-cli</span></code> allows you to send <a class="reference external" href="../reference/rpc/index.html">RPC</a> commands to <code class="docutils literal notranslate"><span class="pre">pandorad</span></code> from the command line. For example, <code class="docutils literal notranslate"><span class="pre">pandora-cli</span> <span class="pre">help</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandora-qt</span></code> provides a combination full Pandora peer and wallet frontend. From the Help menu, you can access a console where you can enter the <a class="reference external" href="../reference/rpc/">RPC</a> commands used throughout this document.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandorad</span></code> is more useful for programming: it provides a full peer which you can interact with through <a class="reference external" href="../reference/rpc/">RPCs</a> to port 9337 (or 18332 for testnet).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pandora-cli</span></code> allows you to send <a class="reference external" href="../reference/rpc/">RPC</a> commands to <code class="docutils literal notranslate"><span class="pre">pandorad</span></code> from the command line. For example, <code class="docutils literal notranslate"><span class="pre">pandora-cli</span> <span class="pre">help</span></code></p></li>
 </ul>
 <p>All three programs get settings from <code class="docutils literal notranslate"><span class="pre">pandora.conf</span></code> in the <code class="docutils literal notranslate"><span class="pre">Pandora</span></code> application directory:</p>
 <ul class="simple">
@@ -216,7 +216,7 @@
 <li><p>OSX: <code class="docutils literal notranslate"><span class="pre">$HOME/Library/Application</span> <span class="pre">Support/Pandora/</span></code></p></li>
 <li><p>Linux: <code class="docutils literal notranslate"><span class="pre">$HOME/.pandora/</span></code></p></li>
 </ul>
-<p>To use <code class="docutils literal notranslate"><span class="pre">pandorad</span></code> and <code class="docutils literal notranslate"><span class="pre">pandora-cli</span></code>, you will need to add a <a class="reference external" href="../reference/rpc/index.html">RPC</a> password to your <code class="docutils literal notranslate"><span class="pre">pandora.conf</span></code> file. Both programs will read from the same file if both run on the same system as the same user, so any long random password will work:</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">pandorad</span></code> and <code class="docutils literal notranslate"><span class="pre">pandora-cli</span></code>, you will need to add a <a class="reference external" href="../reference/rpc/">RPC</a> password to your <code class="docutils literal notranslate"><span class="pre">pandora.conf</span></code> file. Both programs will read from the same file if both run on the same system as the same user, so any long random password will work:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rpcpassword</span><span class="o">=</span><span class="n">change_this_to_a_long_random_password</span>
 </pre></div>
 </div>
@@ -249,10 +249,10 @@
         <div class="donate">
           <div class="donate-row">
             <div>
-              <span class="footer-title">Support Pandora.org:</span>
+              <span class="footer-title">Support pandoracoin.org :</span>
               <button onclick="openDonationModal()" class="donate-btn">Donate</button>
               <p class="donate-text">
-                <a class="donate-link" href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd" target="_blank">3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd</a>
+                <a class="donate-link" href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq" target="_blank">pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq</a>
               </p>
             </div>
           </div>
@@ -269,7 +269,7 @@
                 <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
-                <a href="../index.html">Developers</a>
+                <a href="../">Developers</a>
               </li>
               <li>
                 <a href="https://pdccoin.github.io/getting-started">Getting started</a>
@@ -352,15 +352,15 @@
     </div>
     <p class="modal-subheader">Use this QR code or address below</p>
     <div style="text-align: center;">
-      <div id="donation-qr-code" data-address="3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"></div>
+      <div id="donation-qr-code" data-address="pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"></div>
     </div>
     <div>
       <a
         class="donation-btc-address"
-        href="pandora:3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd"
+        href="pandora:pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq"
         target="_blank"
       >
-        3E8ociqZa9mZUSwGdSmAEMAoAxBK3FNDcd
+        pdc1qdm5w4had2v389eqed64ap2xfkmqvzw7u0rfqjq
       </a>
     </div>
     <div style="overflow-y:hidden;text-align: center;">
