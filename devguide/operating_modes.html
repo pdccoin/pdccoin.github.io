@@ -189,7 +189,7 @@
   <div>
     <h4>Contribute</h4>
     <p class="topless">
-      <a href="https://github.com/pandora-documentation/website/blob/master/devguide/operating_modes.rst">Edit Page</a>
+      <a href="https://github.com/pdccoin-documentation/website/blob/master/devguide/operating_modes.rst">Edit Page</a>
     </p>
   </div>
         </div>
@@ -218,7 +218,7 @@
 </div>
 <div class="section" id="simplified-payment-verification-spv">
 <h2>Simplified Payment Verification (SPV)<a class="headerlink" href="operating_modes.html#simplified-payment-verification-spv" title="Permalink to this headline">¶</a></h2>
-<p>An alternative approach detailed in the <a class="reference external" href="https://pandora.org/en/pandora-paper">original Pandora paper</a> is a client that only downloads the headers of blocks during the initial syncing process and then requests transactions from full nodes as needed. This scales linearly with the height of the block chain at only 80 bytes per block header, or up to 4.2MB per year, regardless of total block size.</p>
+<p>An alternative approach detailed in the <a class="reference external" href="https://pdccoin.github.io/pandora-paper">original Pandora paper</a> is a client that only downloads the headers of blocks during the initial syncing process and then requests transactions from full nodes as needed. This scales linearly with the height of the block chain at only 80 bytes per block header, or up to 4.2MB per year, regardless of total block size.</p>
 <p>As described in the white paper, the merkle root in the block header along with a merkle branch can prove to the SPV client that the transaction in question is embedded in a block in the block chain. This does not guarantee validity of the transactions that are embedded. Instead it demonstrates the amount of work required to perform a double-spend attack.</p>
 <p>The block’s depth in the block chain corresponds to the cumulative difficulty that has been performed to build on top of that particular block. The SPV client knows the merkle root and associated transaction information, and requests the respective merkle branch from a full node. Once the merkle branch has been retrieved, proving the existence of the transaction in the block, the SPV client can then look to block <em>depth</em> as a proxy for transaction validity and security. The cost of an attack on a user by a malicious node who inserts an invalid transaction grows with the cumulative difficulty built on top of that block, since the malicious node alone will be mining this forged chain.</p>
 <div class="section" id="potential-spv-weaknesses">
@@ -242,7 +242,7 @@
 <p>An SPV client can not only add transactions as elements to the filter, but also public keys, data from signature scripts and pubkey scripts, and more. This enables P2SH transaction finding.</p>
 <p>If a user is more privacy-conscious, he can set the Bloom filter to include more false positives, at the expense of extra bandwidth used for transaction discovery. If a user is on a tight bandwidth budget, he can set the false-positive rate to low, knowing that this will allow full nodes a clear view of what transactions are associated with his client.</p>
 <p><strong>Resources:</strong> <a class="reference external" href="http://pandoraj.github.io">pandoraJ</a>, a Java implementation of Pandora that is based on the SPV security model and Bloom filters. Used in most Android wallets.</p>
-<p>Bloom filters were standardized for use via <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a>. Review the BIP for implementation details.</p>
+<p>Bloom filters were standardized for use via <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a>. Review the BIP for implementation details.</p>
 </div>
 </div>
 <div class="section" id="future-proposals">
@@ -265,7 +265,7 @@
 <footer class="footer">
   <div class="footer-with-logo">
     <div class="footer-container">
-      <a href="https://pandora.org/">
+      <a href="https://pdccoin.github.io/">
         <div class="footer-logo"></div>
       </a>
 
@@ -287,24 +287,24 @@
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/pandora-for-individuals">Individuals</a>
+                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-for-businesses">Businesses</a>
+                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
                 <a href="../index.html">Developers</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/getting-started">Getting started</a>
+                <a href="https://pdccoin.github.io/getting-started">Getting started</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/how-it-works">How it works</a>
+                <a href="https://pdccoin.github.io/how-it-works">How it works</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/you-need-to-know">You need to know</a>
+                <a href="https://pdccoin.github.io/you-need-to-know">You need to know</a>
               </li>
-                <a href="https://pandora.org/en/pandora-paper">White paper</a>
+                <a href="https://pdccoin.github.io/pandora-paper">White paper</a>
               </li>
             </ul>
           </div>
@@ -313,21 +313,21 @@
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/resources">Resources</a>
+                <a href="https://pdccoin.github.io/resources">Resources</a>
               <li>
-                <a href="https://pandora.org/en/exchanges">Exchanges</a>
+                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/community">Community</a>
+                <a href="https://pdccoin.github.io/community">Community</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/vocabulary">Vocabulary</a>
+                <a href="https://pdccoin.github.io/vocabulary">Vocabulary</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/events">Events</a>
+                <a href="https://pdccoin.github.io/events">Events</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-core/">Pandora Core</a>
+                <a href="https://pdccoin.github.io/pandora-core/">Pandora Core</a>
               </li>
             </ul>
           </div>
@@ -336,28 +336,28 @@
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/support-pandora">Support Pandora</a>
+                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
               
               </li>
               <li>
-                <a href="https://pandora.org/en/buy">Buy Pandora</a>
+                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/full-node">Running a full node</a>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/development">Development</a>
+                <a href="https://pdccoin.github.io/development">Development</a>
               </li>
             </ul>
           </div>
           <div class="footermenu-item footermenu-other">
             <p class="footer-title">Other:</p>
-            <a href="https://pandora.org/en/scams">Avoid Scams</a>
-            <a href="https://pandora.org/en/legal">Legal</a>
-            <a href="https://pandora.org/en/privacy">Privacy Policy</a>
-            <a href="https://pandora.org/en/press">Press</a>
-            <a href="https://pandora.org/en/about-us">About pandora.org</a>
-            <a href="https://pandora.org/en/blog">Blog</a>
+            <a href="https://pdccoin.github.io/scams">Avoid Scams</a>
+            <a href="https://pdccoin.github.io/legal">Legal</a>
+            <a href="https://pdccoin.github.io/privacy">Privacy Policy</a>
+            <a href="https://pdccoin.github.io/press">Press</a>
+            <a href="https://pdccoin.github.io/about-us">About pandora.org</a>
+            <a href="https://pdccoin.github.io/blog">Blog</a>
           </div>
         </div>
       </div>

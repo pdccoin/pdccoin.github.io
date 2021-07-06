@@ -189,7 +189,7 @@
   <div>
     <h4>Contribute</h4>
     <p class="topless">
-      <a href="https://github.com/pandora-documentation/website/blob/master/devguide/wallets.rst">Edit Page</a>
+      <a href="https://github.com/pdccoin-documentation/website/blob/master/devguide/wallets.rst">Edit Page</a>
     </p>
   </div>
         </div>
@@ -396,12 +396,12 @@ For consistent word ordering:
 <div class="figure align-default" id="id9">
 <img alt="Example HD Wallet Tree Using Prime Notation" src="../images/en-hd-tree.svg" /><p class="caption"><span class="caption-text">Example HD Wallet Tree Using Prime Notation</span><a class="headerlink" href="wallets.html#id9" title="Permalink to this image">¶</a></p>
 </div>
-<p>Wallets following the <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0032.mediawiki">BIP32</a> HD protocol only create hardened children of the master private key (<em>m</em>) to prevent a compromised child key from compromising the master key. As there are no normal children for the master keys, the master public key is not used in HD wallets. All other keys can have normal children, so the corresponding extended public keys may be used instead.</p>
-<p>The HD protocol also describes a serialization format for extended public keys and extended private keys. For details, please see the <a class="reference external" href="../reference/wallets.html">wallet section in the developer reference</a> or <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0032.mediawiki">BIP32</a> for the full HD protocol specification.</p>
+<p>Wallets following the <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> HD protocol only create hardened children of the master private key (<em>m</em>) to prevent a compromised child key from compromising the master key. As there are no normal children for the master keys, the master public key is not used in HD wallets. All other keys can have normal children, so the corresponding extended public keys may be used instead.</p>
+<p>The HD protocol also describes a serialization format for extended public keys and extended private keys. For details, please see the <a class="reference external" href="../reference/wallets.html">wallet section in the developer reference</a> or <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0032.mediawiki">BIP32</a> for the full HD protocol specification.</p>
 </div>
 <div class="section" id="storing-root-seeds">
 <h4>Storing Root Seeds<a class="headerlink" href="wallets.html#storing-root-seeds" title="Permalink to this headline">¶</a></h4>
-<p>Root seeds in the HD protocol are 128, 256, or 512 bits of random data which must be backed up precisely. To make it more convenient to use non-digital backup methods, such as memorization or hand-copying, <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0039.mediawiki">BIP39</a> defines a method for creating a 512-bit root seed from a pseudo-sentence (mnemonic) of common natural-language words which was itself created from 128 to 256 bits of entropy and optionally protected by a password.</p>
+<p>Root seeds in the HD protocol are 128, 256, or 512 bits of random data which must be backed up precisely. To make it more convenient to use non-digital backup methods, such as memorization or hand-copying, <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0039.mediawiki">BIP39</a> defines a method for creating a 512-bit root seed from a pseudo-sentence (mnemonic) of common natural-language words which was itself created from 128 to 256 bits of entropy and optionally protected by a password.</p>
 <p>The number of words generated correlates to the amount of entropy used:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -432,7 +432,7 @@ For consistent word ordering:
 </tbody>
 </table>
 <p>The passphrase can be of any length. It is simply appended to the mnemonic pseudo-sentence, and then both the mnemonic and password are hashed 2,048 times using HMAC-SHA512, resulting in a seemingly-random 512-bit seed. Because any input to the hash function creates a seemingly-random 512-bit seed, there is no fundamental way to prove the user entered the correct password, possibly allowing the user to protect a seed even when under duress.</p>
-<p>For implementation details, please see <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0039.mediawiki">BIP39</a>.</p>
+<p>For implementation details, please see <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0039.mediawiki">BIP39</a>.</p>
 </div>
 </div>
 <div class="section" id="loose-key-wallets">
@@ -457,7 +457,7 @@ For consistent word ordering:
 <footer class="footer">
   <div class="footer-with-logo">
     <div class="footer-container">
-      <a href="https://pandora.org/">
+      <a href="https://pdccoin.github.io/">
         <div class="footer-logo"></div>
       </a>
 
@@ -479,24 +479,24 @@ For consistent word ordering:
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/pandora-for-individuals">Individuals</a>
+                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-for-businesses">Businesses</a>
+                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
                 <a href="../index.html">Developers</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/getting-started">Getting started</a>
+                <a href="https://pdccoin.github.io/getting-started">Getting started</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/how-it-works">How it works</a>
+                <a href="https://pdccoin.github.io/how-it-works">How it works</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/you-need-to-know">You need to know</a>
+                <a href="https://pdccoin.github.io/you-need-to-know">You need to know</a>
               </li>
-                <a href="https://pandora.org/en/pandora-paper">White paper</a>
+                <a href="https://pdccoin.github.io/pandora-paper">White paper</a>
               </li>
             </ul>
           </div>
@@ -505,21 +505,21 @@ For consistent word ordering:
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/resources">Resources</a>
+                <a href="https://pdccoin.github.io/resources">Resources</a>
               <li>
-                <a href="https://pandora.org/en/exchanges">Exchanges</a>
+                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/community">Community</a>
+                <a href="https://pdccoin.github.io/community">Community</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/vocabulary">Vocabulary</a>
+                <a href="https://pdccoin.github.io/vocabulary">Vocabulary</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/events">Events</a>
+                <a href="https://pdccoin.github.io/events">Events</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-core/">Pandora Core</a>
+                <a href="https://pdccoin.github.io/pandora-core/">Pandora Core</a>
               </li>
             </ul>
           </div>
@@ -528,28 +528,28 @@ For consistent word ordering:
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/support-pandora">Support Pandora</a>
+                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
               
               </li>
               <li>
-                <a href="https://pandora.org/en/buy">Buy Pandora</a>
+                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/full-node">Running a full node</a>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/development">Development</a>
+                <a href="https://pdccoin.github.io/development">Development</a>
               </li>
             </ul>
           </div>
           <div class="footermenu-item footermenu-other">
             <p class="footer-title">Other:</p>
-            <a href="https://pandora.org/en/scams">Avoid Scams</a>
-            <a href="https://pandora.org/en/legal">Legal</a>
-            <a href="https://pandora.org/en/privacy">Privacy Policy</a>
-            <a href="https://pandora.org/en/press">Press</a>
-            <a href="https://pandora.org/en/about-us">About pandora.org</a>
-            <a href="https://pandora.org/en/blog">Blog</a>
+            <a href="https://pdccoin.github.io/scams">Avoid Scams</a>
+            <a href="https://pdccoin.github.io/legal">Legal</a>
+            <a href="https://pdccoin.github.io/privacy">Privacy Policy</a>
+            <a href="https://pdccoin.github.io/press">Press</a>
+            <a href="https://pdccoin.github.io/about-us">About pandora.org</a>
+            <a href="https://pdccoin.github.io/blog">Blog</a>
           </div>
         </div>
       </div>

@@ -189,7 +189,7 @@
   <div>
     <h4>Contribute</h4>
     <p class="topless">
-      <a href="https://github.com/pandora-documentation/website/blob/master/devguide/payment_processing.rst">Edit Page</a>
+      <a href="https://github.com/pdccoin-documentation/website/blob/master/devguide/payment_processing.rst">Edit Page</a>
     </p>
   </div>
         </div>
@@ -280,7 +280,7 @@
 </div>
 <div class="section" id="pandora-uri">
 <h3>pandora: URI<a class="headerlink" href="payment_processing.html#pandora-uri" title="Permalink to this headline">¶</a></h3>
-<p>The <a class="reference internal" href="../terms.html#term-pandora-uri"><span class="std std-ref">“pandora:” URI</span></a> scheme defined in <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0021.mediawiki">BIP21</a> eliminates denomination confusion and saves the spender from copying and pasting two separate values. It also lets the payment request provide some additional information to the spender. An example:</p>
+<p>The <a class="reference internal" href="../terms.html#term-pandora-uri"><span class="std std-ref">“pandora:” URI</span></a> scheme defined in <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0021.mediawiki">BIP21</a> eliminates denomination confusion and saves the spender from copying and pasting two separate values. It also lets the payment request provide some additional information to the spender. An example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>pandora:mjSk1Ny9spzU2fouzYgLqGUD8U41iR35QN?amount=100
 </pre></div>
 </div>
@@ -307,7 +307,7 @@
 </div>
 <div class="section" id="payment-protocol">
 <h3>Payment Protocol<a class="headerlink" href="payment_processing.html#payment-protocol" title="Permalink to this headline">¶</a></h3>
-<p><img alt="Warning icon" src="../images/icon_warning.svg" /> <strong>Warning:</strong> The payment protocol is considered to be deprecated and will be removed in a later version of Pandora Core. The protocol has multiple security design flaws and implementation flaws in some wallets. Users will begin receiving deprecation warnings in Pandora Core version 0.18 when using <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0070.mediawiki">BIP70</a> URI’s. Merchants should transition away from <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0070.mediawiki">BIP70</a> to more secure options such as <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0021.mediawiki">BIP21</a>. Merchants should never require <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0070.mediawiki">BIP70</a> payments and should provide <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0021.mediawiki">BIP21</a> fallbacks.</p>
+<p><img alt="Warning icon" src="../images/icon_warning.svg" /> <strong>Warning:</strong> The payment protocol is considered to be deprecated and will be removed in a later version of Pandora Core. The protocol has multiple security design flaws and implementation flaws in some wallets. Users will begin receiving deprecation warnings in Pandora Core version 0.18 when using <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0070.mediawiki">BIP70</a> URI’s. Merchants should transition away from <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0070.mediawiki">BIP70</a> to more secure options such as <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0021.mediawiki">BIP21</a>. Merchants should never require <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0070.mediawiki">BIP70</a> payments and should provide <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0021.mediawiki">BIP21</a> fallbacks.</p>
 <p>Pandora Core 0.9 supports the new <a class="reference internal" href="../glossary.html#term-Payment-protocol"><span class="xref std std-term">payment protocol</span></a>. The payment protocol adds many important features to payment requests:</p>
 <ul class="simple">
 <li><p>Supports <a class="reference external" href="https://en.wikipedia.org/wiki/X.509">X.509</a> certificates and SSL encryption to verify receivers’ identity and help prevent <a class="reference external" href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack">man-in-the-middle</a> attacks.</p></li>
@@ -328,7 +328,7 @@
 <div class="figure align-default" id="id3">
 <img alt="BIP70 Payment Protocol" src="../images/en-payment-protocol.svg" /><p class="caption"><span class="caption-text">BIP70 Payment Protocol</span><a class="headerlink" href="payment_processing.html#id3" title="Permalink to this image">¶</a></p>
 </div>
-<p>The Payment Protocol is described in depth in <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0070.mediawiki">BIP70</a>, <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0071.mediawiki">BIP71</a>, and <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0072.mediawiki">BIP72</a>. An example CGI program and description of all the parameters which can be used in the Payment Protocol is provided in the Developer Examples <a class="reference external" href="../examples/payment_processing.html#payment-protocol">Payment Protocol</a> subsection. In this subsection, we will briefly describe in story format how the Payment Protocol is typically used.</p>
+<p>The Payment Protocol is described in depth in <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0070.mediawiki">BIP70</a>, <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0071.mediawiki">BIP71</a>, and <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0072.mediawiki">BIP72</a>. An example CGI program and description of all the parameters which can be used in the Payment Protocol is provided in the Developer Examples <a class="reference external" href="../examples/payment_processing.html#payment-protocol">Payment Protocol</a> subsection. In this subsection, we will briefly describe in story format how the Payment Protocol is typically used.</p>
 <p>Charlie, the client, is shopping on a website run by Bob, the businessman. Charlie adds a few items to his shopping cart and clicks the “Checkout With Pandora” button.</p>
 <p>Bob’s server automatically adds the following information to its invoice database:</p>
 <ul class="simple">
@@ -436,7 +436,7 @@
 </div>
 <div class="section" id="first-in-first-out-fifo">
 <h3>First In, First Out (FIFO)<a class="headerlink" href="payment_processing.html#first-in-first-out-fifo" title="Permalink to this headline">¶</a></h3>
-<p>The oldest outputs are the most reliable, as the longer it’s been since they were received, the more blocks would need to be modified to double spend them. However, after just a few blocks, a point of rapidly diminishing returns is reached. The <a class="reference external" href="https://pandora.org/en/pandora-paper">original Pandora paper</a> predicts the chance of an attacker being able to modify old blocks, assuming the attacker has 30% of the total <a class="reference external" href="p2p_network.html">network</a> hashing power:</p>
+<p>The oldest outputs are the most reliable, as the longer it’s been since they were received, the more blocks would need to be modified to double spend them. However, after just a few blocks, a point of rapidly diminishing returns is reached. The <a class="reference external" href="https://pdccoin.github.io/pandora-paper">original Pandora paper</a> predicts the chance of an attacker being able to modify old blocks, assuming the attacker has 30% of the total <a class="reference external" href="p2p_network.html">network</a> hashing power:</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 15%" />
@@ -505,7 +505,7 @@
 <footer class="footer">
   <div class="footer-with-logo">
     <div class="footer-container">
-      <a href="https://pandora.org/">
+      <a href="https://pdccoin.github.io/">
         <div class="footer-logo"></div>
       </a>
 
@@ -527,24 +527,24 @@
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/pandora-for-individuals">Individuals</a>
+                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-for-businesses">Businesses</a>
+                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
                 <a href="../index.html">Developers</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/getting-started">Getting started</a>
+                <a href="https://pdccoin.github.io/getting-started">Getting started</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/how-it-works">How it works</a>
+                <a href="https://pdccoin.github.io/how-it-works">How it works</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/you-need-to-know">You need to know</a>
+                <a href="https://pdccoin.github.io/you-need-to-know">You need to know</a>
               </li>
-                <a href="https://pandora.org/en/pandora-paper">White paper</a>
+                <a href="https://pdccoin.github.io/pandora-paper">White paper</a>
               </li>
             </ul>
           </div>
@@ -553,21 +553,21 @@
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/resources">Resources</a>
+                <a href="https://pdccoin.github.io/resources">Resources</a>
               <li>
-                <a href="https://pandora.org/en/exchanges">Exchanges</a>
+                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/community">Community</a>
+                <a href="https://pdccoin.github.io/community">Community</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/vocabulary">Vocabulary</a>
+                <a href="https://pdccoin.github.io/vocabulary">Vocabulary</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/events">Events</a>
+                <a href="https://pdccoin.github.io/events">Events</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-core/">Pandora Core</a>
+                <a href="https://pdccoin.github.io/pandora-core/">Pandora Core</a>
               </li>
             </ul>
           </div>
@@ -576,28 +576,28 @@
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/support-pandora">Support Pandora</a>
+                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
               
               </li>
               <li>
-                <a href="https://pandora.org/en/buy">Buy Pandora</a>
+                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/full-node">Running a full node</a>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/development">Development</a>
+                <a href="https://pdccoin.github.io/development">Development</a>
               </li>
             </ul>
           </div>
           <div class="footermenu-item footermenu-other">
             <p class="footer-title">Other:</p>
-            <a href="https://pandora.org/en/scams">Avoid Scams</a>
-            <a href="https://pandora.org/en/legal">Legal</a>
-            <a href="https://pandora.org/en/privacy">Privacy Policy</a>
-            <a href="https://pandora.org/en/press">Press</a>
-            <a href="https://pandora.org/en/about-us">About pandora.org</a>
-            <a href="https://pandora.org/en/blog">Blog</a>
+            <a href="https://pdccoin.github.io/scams">Avoid Scams</a>
+            <a href="https://pdccoin.github.io/legal">Legal</a>
+            <a href="https://pdccoin.github.io/privacy">Privacy Policy</a>
+            <a href="https://pdccoin.github.io/press">Press</a>
+            <a href="https://pdccoin.github.io/about-us">About pandora.org</a>
+            <a href="https://pdccoin.github.io/blog">Blog</a>
           </div>
         </div>
       </div>

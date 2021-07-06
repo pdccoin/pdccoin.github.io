@@ -189,7 +189,7 @@
   <div>
     <h4>Contribute</h4>
     <p class="topless">
-      <a href="https://github.com/pandora-documentation/website/blob/master/devguide/p2p_network.rst">Edit Page</a>
+      <a href="https://github.com/pdccoin-documentation/website/blob/master/devguide/p2p_network.rst">Edit Page</a>
     </p>
   </div>
         </div>
@@ -230,7 +230,7 @@
 <p>To avoid this possible delay, <a class="reference external" href="http://pandoraj.github.io">pandoraJ</a> always uses dynamic DNS seeds to get IP addresses for nodes believed to be currently active. Pandora Core also tries to strike a balance between minimizing delays and avoiding unnecessary DNS seed use: if Pandora Core has entries in its peer database, it spends up to 11 seconds attempting to connect to at least one of them before falling back to seeds; if a connection is made within that time, it does not query any seeds.</p>
 <p>Both Pandora Core and <a class="reference external" href="http://pandoraj.github.io">pandoraJ</a> also include a hardcoded list of IP addresses and port numbers to several dozen nodes which were active around the time that particular version of the software was first released. Pandora Core will start attempting to connect to these nodes if none of the DNS seed servers have responded to a query within 60 seconds, providing an automatic fallback option.</p>
 <p>As a manual fallback option, Pandora Core also provides several command-line connection options, including the ability to get a list of peers from a specific node by IP address, or to make a persistent connection to a specific node by IP address. See the <code class="docutils literal notranslate"><span class="pre">-help</span></code> text for details. <a class="reference external" href="http://pandoraj.github.io">pandoraJ</a> can be programmed to do the same thing.</p>
-<p><strong>Resources:</strong> <a class="reference external" href="https://github.com/sipa/pandora-seeder">Pandora Seeder</a>, the program run by several of the seeds used by Pandora Core and <a class="reference external" href="http://pandoraj.github.io">pandoraJ</a>. The Pandora Core <a class="reference external" href="https://github.com/pandora/pandora/blob/master/doc/dnsseed-policy.md">DNS Seed Policy</a>. The hardcoded list of IP addresses used by Pandora Core and <a class="reference external" href="http://pandoraj.github.io">pandoraJ</a> is generated using the <a class="reference external" href="https://github.com/pandora/pandora/tree/master/contrib/seeds">makeseeds script</a>.</p>
+<p><strong>Resources:</strong> <a class="reference external" href="https://github.com/sipa/pandora-seeder">Pandora Seeder</a>, the program run by several of the seeds used by Pandora Core and <a class="reference external" href="http://pandoraj.github.io">pandoraJ</a>. The Pandora Core <a class="reference external" href="https://github.com/pdccoin/pandora/blob/master/doc/dnsseed-policy.md">DNS Seed Policy</a>. The hardcoded list of IP addresses used by Pandora Core and <a class="reference external" href="http://pandoraj.github.io">pandoraJ</a> is generated using the <a class="reference external" href="https://github.com/pdccoin/pandora/tree/master/contrib/seeds">makeseeds script</a>.</p>
 </div>
 <div class="section" id="connecting-to-peers">
 <h2>Connecting To Peers<a class="headerlink" href="p2p_network.html#connecting-to-peers" title="Permalink to this headline">¶</a></h2>
@@ -242,10 +242,10 @@
 <h2>Initial Block Download<a class="headerlink" href="p2p_network.html#initial-block-download" title="Permalink to this headline">¶</a></h2>
 <p>Before a full node can validate unconfirmed transactions and recently-mined blocks, it must download and validate all blocks from block 1 (the block after the hardcoded genesis block) to the current tip of the best block chain. This is the Initial Block Download (IBD) or initial sync.</p>
 <p>Although the word “initial” implies this method is only used once, it can also be used any time a large number of blocks need to be downloaded, such as when a previously-caught-up node has been offline for a long time. In this case, a node can use the IBD method to download all the blocks which were produced since the last time it was online.</p>
-<p>Pandora Core uses the IBD method any time the last block on its local best block chain has a block header time more than 24 hours in the past. <a class="reference external" href="https://pandora.org/en/release/v0.10.0">Pandora Core 0.10.0</a> will also perform IBD if its local best block chain is more than 144 blocks lower than its local best header chain (that is, the local block chain is more than about 24 hours in the past).</p>
+<p>Pandora Core uses the IBD method any time the last block on its local best block chain has a block header time more than 24 hours in the past. <a class="reference external" href="https://pdccoin.github.io/release/v0.10.0">Pandora Core 0.10.0</a> will also perform IBD if its local best block chain is more than 144 blocks lower than its local best header chain (that is, the local block chain is more than about 24 hours in the past).</p>
 <div class="section" id="blocks-first">
 <h3>Blocks-First<a class="headerlink" href="p2p_network.html#blocks-first" title="Permalink to this headline">¶</a></h3>
-<p>Pandora Core (up until version <a class="reference external" href="https://pandora.org/en/release/v0.9.3">0.9.3</a>) uses a simple initial block download (IBD) method we’ll call <em>blocks-first</em>. The goal is to download the blocks from the best block chain in sequence.</p>
+<p>Pandora Core (up until version <a class="reference external" href="https://pdccoin.github.io/release/v0.9.3">0.9.3</a>) uses a simple initial block download (IBD) method we’ll call <em>blocks-first</em>. The goal is to download the blocks from the best block chain in sequence.</p>
 <div class="figure align-default" id="id1">
 <img alt="Overview Of Blocks-First Method" src="../images/en-blocks-first-flowchart.svg" /><p class="caption"><span class="caption-text">Overview Of Blocks-First Method</span><a class="headerlink" href="p2p_network.html#id1" title="Permalink to this image">¶</a></p>
 </div>
@@ -285,7 +285,7 @@
 <li><p><strong>Disk Fill Attacks:</strong> Closely related to the download restarts, if the sync node sends a non-best (but otherwise valid) block chain, the chain will be stored on disk, wasting space and possibly filling up the disk drive with useless data.</p></li>
 <li><p><strong>High Memory Use:</strong> Whether maliciously or by accident, the sync node can send blocks out of order, creating orphan blocks which can’t be validated until their parents have been received and validated. Orphan blocks are stored in memory while they await validation, which may lead to high memory use.</p></li>
 </ul>
-<p>All of these problems are addressed in part or in full by the headers-first IBD method used in <a class="reference external" href="https://pandora.org/en/release/v0.10.0">Pandora Core 0.10.0</a>.</p>
+<p>All of these problems are addressed in part or in full by the headers-first IBD method used in <a class="reference external" href="https://pdccoin.github.io/release/v0.10.0">Pandora Core 0.10.0</a>.</p>
 <p><strong>Resources:</strong> The table below summarizes the messages mentioned throughout this subsection. The links in the message field will take you to the reference page for that message.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -322,7 +322,7 @@
 </div>
 <div class="section" id="headers-first">
 <h3>Headers-First<a class="headerlink" href="p2p_network.html#headers-first" title="Permalink to this headline">¶</a></h3>
-<p><a class="reference external" href="https://pandora.org/en/release/v0.10.0">Pandora Core 0.10.0</a> uses an initial block download (IBD) method called <em>headers-first</em>. The goal is to download the headers for the best <a class="reference internal" href="../glossary.html#term-Header-chain"><span class="xref std std-term">header chain</span></a>, partially validate them as best as possible, and then download the corresponding blocks in parallel. This solves several problems with the older blocks-first IBD method.</p>
+<p><a class="reference external" href="https://pdccoin.github.io/release/v0.10.0">Pandora Core 0.10.0</a> uses an initial block download (IBD) method called <em>headers-first</em>. The goal is to download the headers for the best <a class="reference internal" href="../glossary.html#term-Header-chain"><span class="xref std std-term">header chain</span></a>, partially validate them as best as possible, and then download the corresponding blocks in parallel. This solves several problems with the older blocks-first IBD method.</p>
 <div class="figure align-default" id="id7">
 <img alt="Overview Of Headers-First Method" src="../images/en-headers-first-flowchart.svg" /><p class="caption"><span class="caption-text">Overview Of Headers-First Method</span><a class="headerlink" href="p2p_network.html#id7" title="Permalink to this image">¶</a></p>
 </div>
@@ -474,8 +474,8 @@
 </div>
 <div class="section" id="alerts">
 <h2>Alerts<a class="headerlink" href="p2p_network.html#alerts" title="Permalink to this headline">¶</a></h2>
-<p><em>Removed in</em><a class="reference external" href="https://pandora.org/en/release/v0.13.0">Pandora Core 0.13.0</a></p>
-<p>Earlier versions of Pandora Core allowed developers and trusted community members to issue <a class="reference external" href="https://pandora.org/en/alerts">Pandora alerts</a> to notify users of critical <a class="reference external" href="p2p_network.html">network</a>-wide issues. This messaging system <a class="reference external" href="https://pandora.org/en/alert/2016-11-01-alert-retirement">was retired</a> in Pandora Core v0.13.0; however, internal alerts, partition detection warnings and the <code class="docutils literal notranslate"><span class="pre">-alertnotify</span></code> option features remain.</p>
+<p><em>Removed in</em><a class="reference external" href="https://pdccoin.github.io/release/v0.13.0">Pandora Core 0.13.0</a></p>
+<p>Earlier versions of Pandora Core allowed developers and trusted community members to issue <a class="reference external" href="https://pdccoin.github.io/alerts">Pandora alerts</a> to notify users of critical <a class="reference external" href="p2p_network.html">network</a>-wide issues. This messaging system <a class="reference external" href="https://pdccoin.github.io/alert/2016-11-01-alert-retirement">was retired</a> in Pandora Core v0.13.0; however, internal alerts, partition detection warnings and the <code class="docutils literal notranslate"><span class="pre">-alertnotify</span></code> option features remain.</p>
 </div>
 </div>
 
@@ -491,7 +491,7 @@
 <footer class="footer">
   <div class="footer-with-logo">
     <div class="footer-container">
-      <a href="https://pandora.org/">
+      <a href="https://pdccoin.github.io/">
         <div class="footer-logo"></div>
       </a>
 
@@ -513,24 +513,24 @@
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/pandora-for-individuals">Individuals</a>
+                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-for-businesses">Businesses</a>
+                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
                 <a href="../index.html">Developers</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/getting-started">Getting started</a>
+                <a href="https://pdccoin.github.io/getting-started">Getting started</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/how-it-works">How it works</a>
+                <a href="https://pdccoin.github.io/how-it-works">How it works</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/you-need-to-know">You need to know</a>
+                <a href="https://pdccoin.github.io/you-need-to-know">You need to know</a>
               </li>
-                <a href="https://pandora.org/en/pandora-paper">White paper</a>
+                <a href="https://pdccoin.github.io/pandora-paper">White paper</a>
               </li>
             </ul>
           </div>
@@ -539,21 +539,21 @@
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/resources">Resources</a>
+                <a href="https://pdccoin.github.io/resources">Resources</a>
               <li>
-                <a href="https://pandora.org/en/exchanges">Exchanges</a>
+                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/community">Community</a>
+                <a href="https://pdccoin.github.io/community">Community</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/vocabulary">Vocabulary</a>
+                <a href="https://pdccoin.github.io/vocabulary">Vocabulary</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/events">Events</a>
+                <a href="https://pdccoin.github.io/events">Events</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-core/">Pandora Core</a>
+                <a href="https://pdccoin.github.io/pandora-core/">Pandora Core</a>
               </li>
             </ul>
           </div>
@@ -562,28 +562,28 @@
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/support-pandora">Support Pandora</a>
+                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
               
               </li>
               <li>
-                <a href="https://pandora.org/en/buy">Buy Pandora</a>
+                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/full-node">Running a full node</a>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/development">Development</a>
+                <a href="https://pdccoin.github.io/development">Development</a>
               </li>
             </ul>
           </div>
           <div class="footermenu-item footermenu-other">
             <p class="footer-title">Other:</p>
-            <a href="https://pandora.org/en/scams">Avoid Scams</a>
-            <a href="https://pandora.org/en/legal">Legal</a>
-            <a href="https://pandora.org/en/privacy">Privacy Policy</a>
-            <a href="https://pandora.org/en/press">Press</a>
-            <a href="https://pandora.org/en/about-us">About pandora.org</a>
-            <a href="https://pandora.org/en/blog">Blog</a>
+            <a href="https://pdccoin.github.io/scams">Avoid Scams</a>
+            <a href="https://pdccoin.github.io/legal">Legal</a>
+            <a href="https://pdccoin.github.io/privacy">Privacy Policy</a>
+            <a href="https://pdccoin.github.io/press">Press</a>
+            <a href="https://pdccoin.github.io/about-us">About pandora.org</a>
+            <a href="https://pdccoin.github.io/blog">Blog</a>
           </div>
         </div>
       </div>

@@ -189,7 +189,7 @@
   <div>
     <h4>Contribute</h4>
     <p class="topless">
-      <a href="https://github.com/pandora-documentation/website/blob/master/reference/p2p_networking.rst">Edit Page</a>
+      <a href="https://github.com/pdccoin-documentation/website/blob/master/reference/p2p_networking.rst">Edit Page</a>
     </p>
   </div>
         </div>
@@ -208,7 +208,7 @@
 <p><strong>Note:</strong> unless their description says otherwise, all multi-byte integers mentioned in this section are transmitted in little-endian order.</p>
 <div class="section" id="constants-and-defaults">
 <h2>Constants And Defaults<a class="headerlink" href="p2p_networking.html#constants-and-defaults" title="Permalink to this headline">¶</a></h2>
-<p>The following constants and defaults are taken from Pandora Core’s <a class="reference external" href="https://github.com/pandora/pandora/blob/master/src/chainparams.cpp">chainparams.cpp</a> source code file.</p>
+<p>The following constants and defaults are taken from Pandora Core’s <a class="reference external" href="https://github.com/pdccoin/pandora/blob/master/src/chainparams.cpp">chainparams.cpp</a> source code file.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 39%" />
@@ -243,11 +243,11 @@
 </table>
 <p>Note: the testnet start string and nBits above are for testnet3; the original testnet used a different string and higher (less difficult) nBits.</p>
 <p>Command line parameters can change what port a node listens on (see <code class="docutils literal notranslate"><span class="pre">-help</span></code>). Start strings are hardcoded constants that appear at the start of all messages sent on the Pandora <a class="reference external" href="../devguide/p2p_network.html">network</a>; they may also appear in data files such as Pandora Core’s block database. The nBits displayed above are in big-endian order; they’re sent over the <a class="reference external" href="../devguide/p2p_network.html">network</a> in little-endian order.</p>
-<p>Pandora Core’s <a class="reference external" href="https://github.com/pandora/pandora/blob/master/src/chainparams.cpp">chainparams.cpp</a> also includes other constants useful to programs, such as the hash of the genesis blocks for the different networks.</p>
+<p>Pandora Core’s <a class="reference external" href="https://github.com/pdccoin/pandora/blob/master/src/chainparams.cpp">chainparams.cpp</a> also includes other constants useful to programs, such as the hash of the genesis blocks for the different networks.</p>
 </div>
 <div class="section" id="protocol-versions">
 <h2>Protocol Versions<a class="headerlink" href="p2p_networking.html#protocol-versions" title="Permalink to this headline">¶</a></h2>
-<p>The table below lists some notable versions of the P2P <a class="reference external" href="../devguide/p2p_network.html">network</a> protocol, with the most recent versions listed first. (If you know of a protocol version that implemented a major change but which is not listed here, please <a class="reference external" href="https://github.com/pandora-dot-org/pandora.org/issues">open an issue</a>.)</p>
+<p>The table below lists some notable versions of the P2P <a class="reference external" href="../devguide/p2p_network.html">network</a> protocol, with the most recent versions listed first. (If you know of a protocol version that implemented a major change but which is not listed here, please <a class="reference external" href="https://github.com/pdccoin-dot-org/pandora.org/issues">open an issue</a>.)</p>
 <p>As of Pandora Core 0.18.0, the most recent protocol version is 70015.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -263,84 +263,84 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>70015</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.13.2">Pandora Core 0.13.2</a> (Jan 2017)</p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.13.2">Pandora Core 0.13.2</a> (Jan 2017)</p></td>
 <td><ul class="simple">
-<li><p>New banning behavior for invalid compact blocks <a class="reference external" href="https://github.com/pandora/pandora/pull/9026">#9026</a> in v0.14.0, Backported to v0.13.2 in <a class="reference external" href="https://github.com/pandora/pandora/pull/9048">#9048</a>.</p></li>
+<li><p>New banning behavior for invalid compact blocks <a class="reference external" href="https://github.com/pdccoin/pandora/pull/9026">#9026</a> in v0.14.0, Backported to v0.13.2 in <a class="reference external" href="https://github.com/pdccoin/pandora/pull/9048">#9048</a>.</p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-odd"><td><p>70014</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.13.0">Pandora Core 0.13.0</a> (Aug 2016)</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0152.mediawiki">BIP152</a>: • Added <code class="docutils literal notranslate"><span class="pre">sendcmpct</span></code>, <code class="docutils literal notranslate"><span class="pre">cmpctblock</span></code>, <code class="docutils literal notranslate"><span class="pre">getblocktxn</span></code>, <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” messages</a> • Added <a class="reference internal" href="../terms.html#term-msg-cmpct-block"><span class="std std-ref">“MSG_CMPCT_BLOCK”</span></a> inventory type to <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a>.</p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.13.0">Pandora Core 0.13.0</a> (Aug 2016)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0152.mediawiki">BIP152</a>: • Added <code class="docutils literal notranslate"><span class="pre">sendcmpct</span></code>, <code class="docutils literal notranslate"><span class="pre">cmpctblock</span></code>, <code class="docutils literal notranslate"><span class="pre">getblocktxn</span></code>, <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” messages</a> • Added <a class="reference internal" href="../terms.html#term-msg-cmpct-block"><span class="std std-ref">“MSG_CMPCT_BLOCK”</span></a> inventory type to <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>70013</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.13.0">Pandora Core 0.13.0</a> (Aug 2016)</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0133.mediawiki">BIP133</a>: • Added <a class="reference external" href="p2p_networking.html#feefilter">“feefilter” message</a>. • Removed <a class="reference external" href="p2p_networking.html#alert">“alert” message</a> system. See <a class="reference external" href="https://pandora.org/en/alert/2016-11-01-alert-retirement">Alert System Retirement</a></p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.13.0">Pandora Core 0.13.0</a> (Aug 2016)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0133.mediawiki">BIP133</a>: • Added <a class="reference external" href="p2p_networking.html#feefilter">“feefilter” message</a>. • Removed <a class="reference external" href="p2p_networking.html#alert">“alert” message</a> system. See <a class="reference external" href="https://pdccoin.github.io/alert/2016-11-01-alert-retirement">Alert System Retirement</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>70012</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.12.0">Pandora Core 0.12.0</a> (Feb 2016)</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0130.mediawiki">BIP130</a>: • Added <a class="reference external" href="p2p_networking.html#sendheaders">“sendheaders” message</a>.</p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.12.0">Pandora Core 0.12.0</a> (Feb 2016)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0130.mediawiki">BIP130</a>: • Added <a class="reference external" href="p2p_networking.html#sendheaders">“sendheaders” message</a>.</p></td>
 </tr>
 <tr class="row-even"><td><p>70011</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.12.0">Pandora Core 0.12.0</a> (Feb 2016)</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0111.mediawiki">BIP111</a>: • <code class="docutils literal notranslate"><span class="pre">filter*</span></code> messages are disabled without NODE_BLOOM after and including this version.</p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.12.0">Pandora Core 0.12.0</a> (Feb 2016)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0111.mediawiki">BIP111</a>: • <code class="docutils literal notranslate"><span class="pre">filter*</span></code> messages are disabled without NODE_BLOOM after and including this version.</p></td>
 </tr>
 <tr class="row-odd"><td><p>70002</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.9.0">Pandora Core 0.9.0</a> (Mar 2014)</p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.9.0">Pandora Core 0.9.0</a> (Mar 2014)</p></td>
 <td><ul class="simple">
-<li><p>Send multiple <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> in response to a <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a> if necessary <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0061.mediawiki">BIP61</a>: • Added <a class="reference external" href="p2p_networking.html#reject">“reject” message</a></p></li>
+<li><p>Send multiple <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> in response to a <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a> if necessary <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0061.mediawiki">BIP61</a>: • Added <a class="reference external" href="p2p_networking.html#reject">“reject” message</a></p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-even"><td><p>70001</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.8.0">Pandora Core 0.8.0</a> (Feb 2013)</p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.8.0">Pandora Core 0.8.0</a> (Feb 2013)</p></td>
 <td><ul class="simple">
-<li><p>Added <a class="reference external" href="p2p_networking.html#notfound">“notfound” message</a>. <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a>: • Added <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a>. • Added <a class="reference external" href="p2p_networking.html#filteradd">“filteradd” message</a>. • Added <a class="reference external" href="p2p_networking.html#filterclear">“filterclear” message</a>. • Added <a class="reference external" href="p2p_networking.html#merkleblock">“merkleblock” message</a>. • Added relay field to <a class="reference external" href="p2p_networking.html#version">“version” message</a> • Added <a class="reference internal" href="../terms.html#term-msg-block"><span class="std std-ref">“MSG_FILTERED_BLOCK”</span></a> inventory type to <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a>.</p></li>
+<li><p>Added <a class="reference external" href="p2p_networking.html#notfound">“notfound” message</a>. <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a>: • Added <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a>. • Added <a class="reference external" href="p2p_networking.html#filteradd">“filteradd” message</a>. • Added <a class="reference external" href="p2p_networking.html#filterclear">“filterclear” message</a>. • Added <a class="reference external" href="p2p_networking.html#merkleblock">“merkleblock” message</a>. • Added relay field to <a class="reference external" href="p2p_networking.html#version">“version” message</a> • Added <a class="reference internal" href="../terms.html#term-msg-block"><span class="std std-ref">“MSG_FILTERED_BLOCK”</span></a> inventory type to <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a>.</p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-odd"><td><p>60002</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.7.0">Pandora Core 0.7.0</a> (Sep 2012)</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0035.mediawiki">BIP35</a>: • Added <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a>. • Extended <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a> to allow download of memory pool transactions</p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.7.0">Pandora Core 0.7.0</a> (Sep 2012)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0035.mediawiki">BIP35</a>: • Added <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a>. • Extended <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a> to allow download of memory pool transactions</p></td>
 </tr>
 <tr class="row-even"><td><p>60001</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.6.1">Pandora Core 0.6.1</a> (May 2012)</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0031.mediawiki">BIP31</a>: • Added nonce field to <a class="reference external" href="p2p_networking.html#ping">“ping” message</a> • Added <a class="reference external" href="p2p_networking.html#pong">“pong” message</a></p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.6.1">Pandora Core 0.6.1</a> (May 2012)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0031.mediawiki">BIP31</a>: • Added nonce field to <a class="reference external" href="p2p_networking.html#ping">“ping” message</a> • Added <a class="reference external" href="p2p_networking.html#pong">“pong” message</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>60000</p></td>
-<td><p><a class="reference external" href="https://pandora.org/en/release/v0.6.0">Pandora Core 0.6.0</a> (Mar 2012)</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0014.mediawiki">BIP14</a>: • Separated protocol version from Pandora Core version</p></td>
+<td><p><a class="reference external" href="https://pdccoin.github.io/release/v0.6.0">Pandora Core 0.6.0</a> (Mar 2012)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0014.mediawiki">BIP14</a>: • Separated protocol version from Pandora Core version</p></td>
 </tr>
 <tr class="row-even"><td><p>31800</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/pandora/commit/82201801336f64ee77851b9eaab9383ee4e442f0">Pandora Core 0.3.18</a> (Dec 2010)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/pandora/commit/82201801336f64ee77851b9eaab9383ee4e442f0">Pandora Core 0.3.18</a> (Dec 2010)</p></td>
 <td><ul class="simple">
 <li><p>Added <a class="reference external" href="p2p_networking.html#getheaders">“getheaders” message</a> and <a class="reference external" href="p2p_networking.html#headers">“headers” message</a>.</p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-odd"><td><p>31402</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/pandora/commit/c891967b6fcab2e8dc4ce0c787312b36c07efa4d">Pandora Core 0.3.15</a> (Oct 2010)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/pandora/commit/c891967b6fcab2e8dc4ce0c787312b36c07efa4d">Pandora Core 0.3.15</a> (Oct 2010)</p></td>
 <td><ul class="simple">
 <li><p>Added time field to <a class="reference external" href="p2p_networking.html#addr">“addr” message</a>.</p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-even"><td><p>311</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/pandora/commit/343328c6b8db85e58a1feea85f0d10e62967fa19">Pandora Core 0.3.11</a> (Aug 2010)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/pandora/commit/343328c6b8db85e58a1feea85f0d10e62967fa19">Pandora Core 0.3.11</a> (Aug 2010)</p></td>
 <td><ul class="simple">
 <li><p>Added <a class="reference external" href="p2p_networking.html#alert">“alert” message</a>.</p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-odd"><td><p>209</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/pandora/commit/42605ce8bcc9bd01b86491c74fee14de77960868">Pandora Core 0.2.9</a> (May 2010)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/pandora/commit/42605ce8bcc9bd01b86491c74fee14de77960868">Pandora Core 0.2.9</a> (May 2010)</p></td>
 <td><ul class="simple">
 <li><p>Added checksum field to message headers, added <a class="reference external" href="p2p_networking.html#verack">“verack” message</a>, and added starting height field to <a class="reference external" href="p2p_networking.html#version">“version” message</a>.</p></li>
 </ul>
 </td>
 </tr>
 <tr class="row-even"><td><p>106</p></td>
-<td><p><a class="reference external" href="https://github.com/pandora/pandora/commit/cc0b4c3b62367a2aebe5fc1f4d0ed4b97e9c2ac9">Pandora Core 0.1.6</a> (Oct 2009)</p></td>
+<td><p><a class="reference external" href="https://github.com/pdccoin/pandora/commit/cc0b4c3b62367a2aebe5fc1f4d0ed4b97e9c2ac9">Pandora Core 0.1.6</a> (Oct 2009)</p></td>
 <td><ul class="simple">
 <li><p>Added transmitter IP address fields, nonce, and User Agent (subVer) to <a class="reference external" href="p2p_networking.html#version">“version” message</a>.</p></li>
 </ul>
@@ -380,7 +380,7 @@
 <tr class="row-even"><td><p>4</p></td>
 <td><p>payload size</p></td>
 <td><p>uint32_t</p></td>
-<td><p>Number of bytes in payload. The current maximum number of bytes (<a class="reference external" href="https://github.com/pandora/pandora/blob/60abd463ac2eaa8bc1d616d8c07880dc53d97211/src/serialize.h#L23">“MAX_SIZE”</a>) allowed in the payload by Pandora Core is 32 MiB—messages with a payload size larger than this will be dropped or rejected.</p></td>
+<td><p>Number of bytes in payload. The current maximum number of bytes (<a class="reference external" href="https://github.com/pdccoin/pandora/blob/60abd463ac2eaa8bc1d616d8c07880dc53d97211/src/serialize.h#L23">“MAX_SIZE”</a>) allowed in the payload by Pandora Core is 32 MiB—messages with a payload size larger than this will be dropped or rejected.</p></td>
 </tr>
 <tr class="row-odd"><td><p>4</p></td>
 <td><p>checksum</p></td>
@@ -514,7 +514,7 @@
 <tr class="row-odd"><td><p><em>Varies</em></p></td>
 <td><p>hash count</p></td>
 <td><p>compactSize uint</p></td>
-<td><p>The number of header hashes provided not including the stop hash. There is no limit except that the byte size of the entire message must be below the <a class="reference external" href="https://github.com/pandora/pandora/blob/60abd463ac2eaa8bc1d616d8c07880dc53d97211/src/serialize.h#L23">“MAX_SIZE”</a> limit; typically from 1 to 200 hashes are sent.</p></td>
+<td><p>The number of header hashes provided not including the stop hash. There is no limit except that the byte size of the entire message must be below the <a class="reference external" href="https://github.com/pdccoin/pandora/blob/60abd463ac2eaa8bc1d616d8c07880dc53d97211/src/serialize.h#L23">“MAX_SIZE”</a> limit; typically from 1 to 200 hashes are sent.</p></td>
 </tr>
 <tr class="row-even"><td><p><em>Varies</em></p></td>
 <td><p>block header hashes</p></td>
@@ -654,14 +654,14 @@ a055aaf1d872e94ae85e9817b2c68dc7 ... Hash (TXID)
 <p>Sending the <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a> is mostly useful when a program first connects to the <a class="reference external" href="../devguide/p2p_network.html">network</a>. Full nodes can use it to quickly gather most or all of the unconfirmed transactions available on the <a class="reference external" href="../devguide/p2p_network.html">network</a>; this is especially useful for miners trying to gather transactions for their transaction fees. SPV clients can set a filter before sending a <code class="docutils literal notranslate"><span class="pre">mempool</span></code> to only receive transactions that match that filter; this allows a recently-started client to get most or all unconfirmed transactions related to its wallet.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">inv</span></code> response to the <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a> is, at best, one node’s view of the <a class="reference external" href="../devguide/p2p_network.html">network</a>—not a complete list of unconfirmed transactions on the <a class="reference external" href="../devguide/p2p_network.html">network</a>. Here are some additional reasons the list might not be complete:</p>
 <ul class="simple">
-<li><p>Before <a class="reference external" href="https://pandora.org/en/release/v0.9.0">Pandora Core 0.9.0</a>, the response to the <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a> was only one <a class="reference external" href="p2p_networking.html#inv">“inv” message</a>. An <a class="reference external" href="p2p_networking.html#inv">“inv” message</a> is limited to 50,000 inventories, so a node with a memory pool larger than 50,000 entries would not send everything. Later versions of Pandora Core send as many <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> as needed to reference its complete memory pool.</p></li>
-<li><p>The <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a> is not currently fully compatible with the <a class="reference external" href="p2p_networking.html#filterload">“filterload” message’s</a> <code class="docutils literal notranslate"><span class="pre">BLOOM_UPDATE_ALL</span></code> and <code class="docutils literal notranslate"><span class="pre">BLOOM_UPDATE_P2PUBKEY_ONLY</span></code> flags. Mempool transactions are not sorted like in-block transactions, so a transaction (tx2) spending an output can appear before the transaction (tx1) containing that output, which means the automatic filter update mechanism won’t operate until the second-appearing transaction (tx1) is seen—missing the first-appearing transaction (tx2). It has been proposed in <a class="reference external" href="https://github.com/pandora/pandora/issues/2381">Pandora Core issue #2381</a> that the transactions should be sorted before being processed by the filter.</p></li>
+<li><p>Before <a class="reference external" href="https://pdccoin.github.io/release/v0.9.0">Pandora Core 0.9.0</a>, the response to the <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a> was only one <a class="reference external" href="p2p_networking.html#inv">“inv” message</a>. An <a class="reference external" href="p2p_networking.html#inv">“inv” message</a> is limited to 50,000 inventories, so a node with a memory pool larger than 50,000 entries would not send everything. Later versions of Pandora Core send as many <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> as needed to reference its complete memory pool.</p></li>
+<li><p>The <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a> is not currently fully compatible with the <a class="reference external" href="p2p_networking.html#filterload">“filterload” message’s</a> <code class="docutils literal notranslate"><span class="pre">BLOOM_UPDATE_ALL</span></code> and <code class="docutils literal notranslate"><span class="pre">BLOOM_UPDATE_P2PUBKEY_ONLY</span></code> flags. Mempool transactions are not sorted like in-block transactions, so a transaction (tx2) spending an output can appear before the transaction (tx1) containing that output, which means the automatic filter update mechanism won’t operate until the second-appearing transaction (tx1) is seen—missing the first-appearing transaction (tx2). It has been proposed in <a class="reference external" href="https://github.com/pdccoin/pandora/issues/2381">Pandora Core issue #2381</a> that the transactions should be sorted before being processed by the filter.</p></li>
 </ul>
 <p>There is no payload in a <a class="reference external" href="p2p_networking.html#mempool">“mempool” message</a>. See the <a class="reference external" href="p2p_networking.html#message-headers">message header section</a> for an example of a message without a payload.</p>
 </div>
 <div class="section" id="merkleblock">
 <h3>MerkleBlock<a class="headerlink" href="p2p_networking.html#merkleblock" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#merkleblock">“merkleblock” message</a> is a reply to a <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a> which requested a block using the inventory type <code class="docutils literal notranslate"><span class="pre">MSG_MERKLEBLOCK</span></code>. It is only part of the reply: if any matching transactions are found, they will be sent separately as <a class="reference external" href="p2p_networking.html#tx">“tx” messages</a>.</p>
 <p>If a filter has been previously set with the <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a>, the <a class="reference external" href="p2p_networking.html#merkleblock">“merkleblock” message</a> will contain the TXIDs of any transactions in the requested block that matched the filter, as well as any parts of the block’s merkle tree necessary to connect those transactions to the block header’s merkle root. The message also contains a complete copy of the block header to allow the client to hash it and confirm its proof of work.</p>
 <table class="docutils align-default">
@@ -824,7 +824,7 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 </div>
 <div class="section" id="cmpctblock">
 <h3>CmpctBlock<a class="headerlink" href="p2p_networking.html#cmpctblock" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70014</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0152.mediawiki">BIP152</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70014</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0152.mediawiki">BIP152</a><em>.</em></p>
 <p><strong>Version 1 compact blocks are pre-segwit (txids)</strong> <strong>Version 2 compact blocks are post-segwit (wtxids)</strong></p>
 <p>The <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> is a reply to a <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a> which requested a block using the inventory type <a class="reference internal" href="../terms.html#term-msg-cmpct-block"><span class="std std-ref">“MSG_CMPCT_BLOCK”</span></a>. If the requested block was recently announced and is close to the tip of the best chain of the receiver and after having sent the requesting peer a <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” message</a>, nodes respond with a <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> containing data for the block.</p>
 <p><strong>If the requested block is too old, the node responds with a full non-compact block</strong></p>
@@ -892,7 +892,7 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 <tr class="row-odd"><td><p><em>Varies</em></p></td>
 <td><p>shortids</p></td>
 <td><p>byte[]</p></td>
-<td><p>The short transaction IDs calculated from the transactions which were not provided explicitly in prefilledtxn. Vector of 6-byte integers in the spec, padded with two null-bytes so it can be read as an 8-byte integer. <strong>In version 2 of compact blocks, shortids should use the wtxid instead of txid as defined by</strong><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0141.mediawiki">BIP141</a></p></td>
+<td><p>The short transaction IDs calculated from the transactions which were not provided explicitly in prefilledtxn. Vector of 6-byte integers in the spec, padded with two null-bytes so it can be read as an 8-byte integer. <strong>In version 2 of compact blocks, shortids should use the wtxid instead of txid as defined by</strong><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0141.mediawiki">BIP141</a></p></td>
 </tr>
 <tr class="row-even"><td><p><em>Varies</em></p></td>
 <td><p>prefilled txn length</p></td>
@@ -907,12 +907,12 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 </tbody>
 </table>
 <p><strong>Important</strong><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70015</a><strong>notes regarding Compact Blocks</strong></p>
-<p>New banning behavior was added to the compact block logic in <a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70015</a> to prevent node abuse, the new changes are outlined below as defined in <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0152.mediawiki">BIP152</a>.</p>
+<p>New banning behavior was added to the compact block logic in <a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70015</a> to prevent node abuse, the new changes are outlined below as defined in <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0152.mediawiki">BIP152</a>.</p>
 <p>Any undefined behavior in this spec may cause failure to transfer block to, peer disconnection by, or self-destruction by the receiving node. A node receiving non-minimally-encoded CompactSize encodings should make a best-effort to eat the sender’s cat.</p>
 <p>As high-bandwidth mode permits relaying of <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” messages</a> prior to full validation (requiring only that the block header is valid before relay), nodes SHOULD NOT ban a peer for announcing a new block with a <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> that is invalid, but has a valid header.</p>
 <p>For avoidance of doubt, nodes SHOULD bump their <a class="reference external" href="../devguide/p2p_network.html">peer-to-peer</a> protocol version to 70015 or higher to signal that they will not ban or punish a peer for announcing compact blocks prior to full validation, and nodes SHOULD NOT announce a <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> to a peer with a version number below 70015 before fully validating the block.</p>
 <p><strong>Version 2 compact blocks notes</strong></p>
-<p>Transactions inside <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” messages</a> (both those used as direct announcement and those in response to getdata) and in <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” messages</a> should include witness data, using the same format as responses to getdata <a class="reference internal" href="../terms.html#term-msg-witness-tx"><span class="std std-ref">“MSG_WITNESS_TX”</span></a>, specified in <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0144.mediawiki">BIP144</a>.</p>
+<p>Transactions inside <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” messages</a> (both those used as direct announcement and those in response to getdata) and in <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” messages</a> should include witness data, using the same format as responses to getdata <a class="reference internal" href="../terms.html#term-msg-witness-tx"><span class="std std-ref">“MSG_WITNESS_TX”</span></a>, specified in <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0144.mediawiki">BIP144</a>.</p>
 <p>Upon <a class="reference internal" href="../terms.html#term-receipt"><span class="std std-ref">receipt</span></a> of a <a class="reference external" href="p2p_networking.html#getdata">“getdata” message</a> containing a request for a <a class="reference internal" href="../terms.html#term-msg-cmpct-block"><span class="std std-ref">“MSG_CMPCT_BLOCK”</span></a> object for which a <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> is not sent in response, the block message containing the requested block in non-compact form MUST be encoded with witnesses (as is sent in reply to a <a class="reference internal" href="../terms.html#term-msg-witness-block"><span class="std std-ref">“MSG_WITNESS_BLOCK”</span></a>) if the protocol version used to encode the <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> would have been 2, and encoded without witnesses (as is sent in response to a <a class="reference internal" href="../terms.html#term-msg-block"><span class="std std-ref">“MSG_BLOCK”</span></a>) if the protocol version used to encode the <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> would have been 1.</p>
 <p><strong>Short Transaction ID calculation</strong></p>
 <p>Short transaction IDs are used to represent a transaction without sending a full 256-bit hash. They are calculated as follows,</p>
@@ -925,10 +925,10 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 </div>
 <div class="section" id="sendcmpct">
 <h3>SendCmpct<a class="headerlink" href="p2p_networking.html#sendcmpct" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70014</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0152.mediawiki">BIP152</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70014</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0152.mediawiki">BIP152</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” message</a> is defined as a message containing a 1-byte integer followed by a 8-byte integer. The first integer is interpreted as a boolean and should have a value of either 1 or 0. The second integer is be interpreted as a little-endian version number.</p>
 <p>Upon <a class="reference internal" href="../terms.html#term-receipt"><span class="std std-ref">receipt</span></a> of a <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” message</a> with the first and second integers set to 1, the node should announce new blocks by sending a <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a>.</p>
-<p>Upon <a class="reference internal" href="../terms.html#term-receipt"><span class="std std-ref">receipt</span></a> of a <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” message</a> with the first integer set to 0, the node shouldn’t announce new blocks by sending a <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a>, but instead announce new blocks by sending invs or headers, as defined by <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0130.mediawiki">BIP130</a>.</p>
+<p>Upon <a class="reference internal" href="../terms.html#term-receipt"><span class="std std-ref">receipt</span></a> of a <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” message</a> with the first integer set to 0, the node shouldn’t announce new blocks by sending a <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a>, but instead announce new blocks by sending invs or headers, as defined by <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0130.mediawiki">BIP130</a>.</p>
 <p>Upon <a class="reference internal" href="../terms.html#term-receipt"><span class="std std-ref">receipt</span></a> of a <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” message</a> with the second integer set to something other than 1, nodes should treat the peer as if they had not received the message (as it indicates the peer will provide an unexpected encoding in <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” messages</a>, and/or other, messages). This allows future versions to send duplicate <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” messages</a> with different versions as a part of a version handshake for future versions.</p>
 <p>Nodes should check for a protocol version of &gt;= 70014 before sending <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” messages</a>. Nodes shouldn’t send a request for a <a class="reference internal" href="../terms.html#term-msg-cmpct-block"><span class="std std-ref">“MSG_CMPCT_BLOCK”</span></a> object to a peer before having received a <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” message</a> from that peer. Nodes shouldn’t request a <a class="reference internal" href="../terms.html#term-msg-cmpct-block"><span class="std std-ref">“MSG_CMPCT_BLOCK”</span></a> object before having sent all <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” messages</a> to that peer which they intend to send, as the peer cannot know what version protocol to use in the response.</p>
 <p>The structure of a <a class="reference external" href="p2p_networking.html#sendcmpct">“sendcmpct” message</a> is defined below.</p>
@@ -962,7 +962,7 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 </div>
 <div class="section" id="getblocktxn">
 <h3>GetBlockTxn<a class="headerlink" href="p2p_networking.html#getblocktxn" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70014</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0152.mediawiki">BIP152</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70014</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0152.mediawiki">BIP152</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#getblocktxn">“getblocktxn” message</a> is defined as a message containing a serialized <a class="reference external" href="p2p_networking.html#getblocktxn">“BlockTransactionsRequest”</a> message. Upon <a class="reference internal" href="../terms.html#term-receipt"><span class="std std-ref">receipt</span></a> of a properly-formatted <a class="reference external" href="p2p_networking.html#getblocktxn">“getblocktxn” message</a>, nodes which recently provided the sender of such a message a <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> for the block hash identified in this message must respond with either an appropriate <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” message</a>, or a full block message.</p>
 <p>A <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” message</a> response must contain exactly and only each transaction which is present in the appropriate block at the index specified in the <a class="reference external" href="p2p_networking.html#getblocktxn">“getblocktxn” message</a> indexes list, in the order requested.</p>
 <p>The structure of <a class="reference external" href="p2p_networking.html#getblocktxn">“BlockTransactionsRequest”</a> is defined below.</p>
@@ -994,14 +994,14 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 <tr class="row-even"><td><p><em>Varies</em></p></td>
 <td><p>indexes</p></td>
 <td><p>compactSize uint[]</p></td>
-<td><p>Vector of compactSize containing the indexes of the transactions being requested in the block. <strong>In version 2 of compact blocks, the wtxid should be used instead of the txid as defined by</strong><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0141.mediawiki">BIP141</a></p></td>
+<td><p>Vector of compactSize containing the indexes of the transactions being requested in the block. <strong>In version 2 of compact blocks, the wtxid should be used instead of the txid as defined by</strong><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0141.mediawiki">BIP141</a></p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div class="section" id="blocktxn">
 <h3>BlockTxn<a class="headerlink" href="p2p_networking.html#blocktxn" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70014</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0152.mediawiki">BIP152</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70014</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0152.mediawiki">BIP152</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” message</a> is defined as a message containing a serialized <a class="reference external" href="p2p_networking.html#blocktxn">“BlockTransactions”</a> message. Upon <a class="reference internal" href="../terms.html#term-receipt"><span class="std std-ref">receipt</span></a> of a properly-formatted requested <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” message</a>, nodes should attempt to reconstruct the full block by taking the prefilledtxn transactions from the original <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a> and placing them in the marked positions, then for each short transaction ID from the original <a class="reference external" href="p2p_networking.html#cmpctblock">“cmpctblock” message</a>, in order, find the corresponding transaction either from the <a class="reference external" href="p2p_networking.html#blocktxn">“blocktxn” message</a> or from other sources and place it in the first available position in the block then once the block has been reconstructed, it shall be processed as normal, keeping in mind that short transaction IDs are expected to occasionally collide, and that nodes must not be penalized for such collisions, wherever they appear.</p>
 <p>The structure of <a class="reference external" href="p2p_networking.html#blocktxn">“BlockTransactions”</a> is defined below.</p>
 <table class="docutils align-default">
@@ -1060,7 +1060,7 @@ bb3183301d7a1fb3bd174fcfa40a2b65 ... Hash #2
 <div class="figure align-default" id="id4">
 <img alt="Overview Of P2P Protocol Control And Advisory Messages" src="../images/en-p2p-control-messages.svg" /><p class="caption"><span class="caption-text">Overview Of P2P Protocol Control And Advisory Messages</span><a class="headerlink" href="p2p_networking.html#id4" title="Permalink to this image">¶</a></p>
 </div>
-<p>Note that almost none of the control messages are authenticated in any way, meaning they can contain incorrect or intentionally harmful information. In addition, this section does not yet cover P2P protocol operation over the <a class="reference external" href="https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29">Tor network</a>; if you would like to contribute information about Tor, please <a class="reference external" href="https://github.com/pandora-dot-org/pandora.org/issues">open an issue</a>.</p>
+<p>Note that almost none of the control messages are authenticated in any way, meaning they can contain incorrect or intentionally harmful information. In addition, this section does not yet cover P2P protocol operation over the <a class="reference external" href="https://en.wikipedia.org/wiki/Tor_%28anonymity_network%29">Tor network</a>; if you would like to contribute information about Tor, please <a class="reference external" href="https://github.com/pdccoin-dot-org/pandora.org/issues">open an issue</a>.</p>
 <div class="section" id="addr">
 <h3>Addr<a class="headerlink" href="p2p_networking.html#addr" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">addr</span></code> (IP address) message relays connection information for peers on the <a class="reference external" href="../devguide/p2p_network.html">network</a>. Each peer which wants to accept incoming connections creates an <a class="reference external" href="p2p_networking.html#addr">“addr”</a> or <a class="reference external" href="p2p_networking.html#addrv2">“addrv2”</a> message providing its connection information and then sends that message to its peers unsolicited. Some of its peers send that information to their peers (also unsolicited), some of which further distribute it, allowing decentralized peer discovery for any program already on the <a class="reference external" href="../devguide/p2p_network.html">network</a>.</p>
@@ -1201,7 +1201,7 @@ d91f4854 ........................... [Epoch time][unix epoch time]: 1414012889
 <tr class="row-even"><td><p>1</p></td>
 <td><p>network id</p></td>
 <td><p>uint8_t</p></td>
-<td><p>The id of the network to which the address belongs to, as defined in <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0155.mediawiki">BIP155</a>.</p></td>
+<td><p>The id of the network to which the address belongs to, as defined in <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0155.mediawiki">BIP155</a>.</p></td>
 </tr>
 <tr class="row-odd"><td><p><em>Varies</em></p></td>
 <td><p>address length</p></td>
@@ -1236,14 +1236,14 @@ c0000233 ........................... Address: 192.0.2.51
 </div>
 <div class="section" id="alert">
 <h3>Alert<a class="headerlink" href="p2p_networking.html#alert" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 311</a><em>.</em> <em>Removed in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70013</a><em>and released in</em><a class="reference external" href="https://pandora.org/en/release/v0.13.0">Pandora Core 0.13.0</a></p>
-<p>The legacy p2p <a class="reference external" href="../devguide/p2p_network.html">network</a> alert messaging system has been retired; however, internal alerts, partition detection warnings and the <code class="docutils literal notranslate"><span class="pre">-alertnotify</span></code> option features remain. See <a class="reference external" href="https://pandora.org/en/alert/2016-11-01-alert-retirement">Alert System Retirement</a> for details.</p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 311</a><em>.</em> <em>Removed in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70013</a><em>and released in</em><a class="reference external" href="https://pdccoin.github.io/release/v0.13.0">Pandora Core 0.13.0</a></p>
+<p>The legacy p2p <a class="reference external" href="../devguide/p2p_network.html">network</a> alert messaging system has been retired; however, internal alerts, partition detection warnings and the <code class="docutils literal notranslate"><span class="pre">-alertnotify</span></code> option features remain. See <a class="reference external" href="https://pdccoin.github.io/alert/2016-11-01-alert-retirement">Alert System Retirement</a> for details.</p>
 </div>
 <div class="section" id="feefilter">
 <h3>FeeFilter<a class="headerlink" href="p2p_networking.html#feefilter" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70013</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0133.mediawiki">BIP133</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70013</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0133.mediawiki">BIP133</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#feefilter">“feefilter” message</a> is a request to the receiving peer to not relay any transaction inv messages to the sending peer where the fee rate for the transaction is below the fee rate specified in the feefilter message.</p>
-<p><code class="docutils literal notranslate"><span class="pre">feefilter</span></code> was introduced in <a class="reference external" href="https://pandora.org/en/release/v0.13.0">Pandora Core 0.13.0</a> following the introduction of mempool limiting in <a class="reference external" href="https://pandora.org/en/release/v0.12.0">Pandora Core 0.12.0</a>. Mempool limiting provides protection against attacks and spam transactions that have low fee rates and are unlikely to be included in mined blocks. The <a class="reference external" href="p2p_networking.html#feefilter">“feefilter” messages</a> allows a node to inform its peers that it will not accept transactions below a specified fee rate into its mempool, and therefore that the peers can skip relaying inv messages for transactions below that fee rate to that node.</p>
+<p><code class="docutils literal notranslate"><span class="pre">feefilter</span></code> was introduced in <a class="reference external" href="https://pdccoin.github.io/release/v0.13.0">Pandora Core 0.13.0</a> following the introduction of mempool limiting in <a class="reference external" href="https://pdccoin.github.io/release/v0.12.0">Pandora Core 0.12.0</a>. Mempool limiting provides protection against attacks and spam transactions that have low fee rates and are unlikely to be included in mined blocks. The <a class="reference external" href="p2p_networking.html#feefilter">“feefilter” messages</a> allows a node to inform its peers that it will not accept transactions below a specified fee rate into its mempool, and therefore that the peers can skip relaying inv messages for transactions below that fee rate to that node.</p>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 5%" />
@@ -1277,7 +1277,7 @@ c0000233 ........................... Address: 192.0.2.51
 </div>
 <div class="section" id="filteradd">
 <h3>FilterAdd<a class="headerlink" href="p2p_networking.html#filteradd" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#filteradd">“filteradd” message</a> tells the receiving peer to add a single element to a previously-set bloom filter, such as a new public key. The element is sent directly to the receiving peer; the peer then uses the parameters set in the <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a> to add the element to the bloom filter.</p>
 <p>Because the element is sent directly to the receiving peer, there is no obfuscation of the element and none of the plausible-deniability privacy provided by the bloom filter. Clients that want to maintain greater privacy should recalculate the bloom filter themselves and send a new <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a> with the recalculated bloom filter.</p>
 <table class="docutils align-default">
@@ -1317,14 +1317,14 @@ fdacf9b3eb077412e7a968d2e4f11b9a
 </div>
 <div class="section" id="filterclear">
 <h3>FilterClear<a class="headerlink" href="p2p_networking.html#filterclear" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#filterclear">“filterclear” message</a> tells the receiving peer to remove a previously-set bloom filter. This also undoes the effect of setting the relay field in the <a class="reference external" href="p2p_networking.html#version">“version” message</a> to 0, allowing unfiltered access to <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> announcing new transactions.</p>
 <p>Pandora Core does not require a <a class="reference external" href="p2p_networking.html#filterclear">“filterclear” message</a> before a replacement filter is loaded with <code class="docutils literal notranslate"><span class="pre">filterload</span></code>. It also doesn’t require a <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a> before a <a class="reference external" href="p2p_networking.html#filterclear">“filterclear” message</a>.</p>
 <p>There is no payload in a <a class="reference external" href="p2p_networking.html#filterclear">“filterclear” message</a>. See the <a class="reference external" href="p2p_networking.html#message-headers">message header section</a> for an example of a message without a payload.</p>
 </div>
 <div class="section" id="filterload">
 <h3>FilterLoad<a class="headerlink" href="p2p_networking.html#filterload" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a> tells the receiving peer to filter all relayed transactions and requested merkle blocks through the provided filter. This allows clients to receive transactions relevant to their wallet plus a configurable rate of false positive transactions which can provide plausible-deniability privacy.</p>
 <table class="docutils align-default">
 <colgroup>
@@ -1377,13 +1377,13 @@ b50f ....... Filter: 1010 1101 1111 0000
 </pre></div>
 </div>
 <p><strong>Initializing A Bloom Filter</strong></p>
-<p>Filters have two core parameters: the size of the bit field and the number of hash functions to run against each data element. The following formulas from <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a> will allow you to automatically select appropriate values based on the number of elements you plan to insert into the filter (<em>n</em>) and the false positive rate (<em>p</em>) you desire to maintain plausible deniability.</p>
+<p>Filters have two core parameters: the size of the bit field and the number of hash functions to run against each data element. The following formulas from <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a> will allow you to automatically select appropriate values based on the number of elements you plan to insert into the filter (<em>n</em>) and the false positive rate (<em>p</em>) you desire to maintain plausible deniability.</p>
 <ul class="simple">
 <li><p>Size of the bit field in bytes (<em>nFilterBytes</em>), up to a maximum of 36,000: <code class="docutils literal notranslate"><span class="pre">(-1</span> <span class="pre">/</span> <span class="pre">log(2)**2</span> <span class="pre">*</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">log(p))</span> <span class="pre">/</span> <span class="pre">8</span></code></p></li>
 <li><p>Hash functions to use (<em>nHashFuncs</em>), up to a maximum of 50: <code class="docutils literal notranslate"><span class="pre">nFilterBytes</span> <span class="pre">*</span> <span class="pre">8</span> <span class="pre">/</span> <span class="pre">n</span> <span class="pre">*</span> <span class="pre">log(2)</span></code></p></li>
 </ul>
 <p>Note that the filter matches parts of transactions (transaction elements), so the false positive rate is relative to the number of elements checked—not the number of transactions checked. Each normal transaction has a minimum of four matchable elements (described in the comparison subsection below), so a filter with a false-positive rate of 1 percent will match about 4 percent of all transactions at a minimum.</p>
-<p>According to <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a>, the formulas and limits described above provide support for bloom filters containing 20,000 items with a false positive rate of less than 0.1 percent or 10,000 items with a false positive rate of less than 0.0001 percent.</p>
+<p>According to <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a>, the formulas and limits described above provide support for bloom filters containing 20,000 items with a false positive rate of less than 0.1 percent or 10,000 items with a false positive rate of less than 0.0001 percent.</p>
 <p>Once the size of the bit field is known, the bit field should be initialized as all zeroes.</p>
 <p><strong>Populating A Bloom Filter</strong></p>
 <p>The bloom filter is populated using between 1 and 50 unique hash functions (the number specified per filter by the <em>nHashFuncs</em> field). Instead of using up to 50 different hash function implementations, a single implementation is used with a unique seed value for each function.</p>
@@ -1397,7 +1397,7 @@ b50f ....... Filter: 1010 1101 1111 0000
 <p>The actual hash function implementation used is the <a class="reference external" href="https://en.wikipedia.org/wiki/MurmurHash">32-bit Murmur3 hash function</a>.</p>
 <p><img alt="Warning icon" src="../images/icon_warning.svg" /> <strong>Warning:</strong> the Murmur3 hash function has separate 32-bit and 64-bit versions that produce different results for the same input. Only the 32-bit Murmur3 version is used with Pandora bloom filters.</p>
 <p>The data to be hashed can be any transaction element which the bloom filter can match. See the next subsection for the list of transaction elements checked against the filter. The largest element which can be matched is a script data push of 520 bytes, so the data should never exceed 520 bytes.</p>
-<p>The example below from Pandora Core <a class="reference external" href="https://github.com/pandora/pandora/blob/cbf28c6619fe348a258dfd7d08bdbd2392d07511/src/bloom.cpp#L46">bloom.cpp</a> combines all the steps above to create the hash function template. The seed is the first parameter; the data to be hashed is the second parameter. The result is a uint32_t modulo the size of the bit field in bits.</p>
+<p>The example below from Pandora Core <a class="reference external" href="https://github.com/pdccoin/pandora/blob/cbf28c6619fe348a258dfd7d08bdbd2392d07511/src/bloom.cpp#L46">bloom.cpp</a> combines all the steps above to create the hash function template. The seed is the first parameter; the data to be hashed is the second parameter. The result is a uint32_t modulo the size of the bit field in bits.</p>
 <div class="highlight-c++ notranslate"><div class="highlight"><pre><span></span><span class="n">MurmurHash3</span><span class="p">(</span><span class="n">nHashNum</span> <span class="o">*</span> <span class="mh">0xFBA4C795</span> <span class="o">+</span> <span class="n">nTweak</span><span class="p">,</span> <span class="n">vDataToHash</span><span class="p">)</span> <span class="o">%</span> <span class="p">(</span><span class="n">vData</span><span class="p">.</span><span class="n">size</span><span class="p">()</span> <span class="o">*</span> <span class="mi">8</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1509,7 +1509,7 @@ b50f ....... Filter: 1010 1101 1111 0000
 <tr class="row-even"><td><p>8</p></td>
 <td><p>nonce</p></td>
 <td><p>uint64_t</p></td>
-<td><p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 60001</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0031.mediawiki">BIP31</a><em>.</em> Random nonce assigned to this <a class="reference external" href="p2p_networking.html#ping">“ping” message</a>. The responding <a class="reference external" href="p2p_networking.html#pong">“pong” message</a> will include this nonce to identify the <a class="reference external" href="p2p_networking.html#ping">“ping” message</a> to which it is replying.</p></td>
+<td><p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 60001</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0031.mediawiki">BIP31</a><em>.</em> Random nonce assigned to this <a class="reference external" href="p2p_networking.html#ping">“ping” message</a>. The responding <a class="reference external" href="p2p_networking.html#pong">“pong” message</a> will include this nonce to identify the <a class="reference external" href="p2p_networking.html#ping">“ping” message</a> to which it is replying.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1520,14 +1520,14 @@ b50f ....... Filter: 1010 1101 1111 0000
 </div>
 <div class="section" id="pong">
 <h3>Pong<a class="headerlink" href="p2p_networking.html#pong" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 60001</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0031.mediawiki">BIP31</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 60001</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0031.mediawiki">BIP31</a><em>.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#pong">“pong” message</a> replies to a <a class="reference external" href="p2p_networking.html#ping">“ping” message</a>, proving to the pinging node that the ponging node is still alive. Pandora Core will, by default, disconnect from any clients which have not responded to a <a class="reference external" href="p2p_networking.html#ping">“ping” message</a> within 20 minutes.</p>
 <p>To allow nodes to keep track of latency, the <a class="reference external" href="p2p_networking.html#pong">“pong” message</a> sends back the same nonce received in the <a class="reference external" href="p2p_networking.html#ping">“ping” message</a> it is replying to.</p>
 <p>The format of the <a class="reference external" href="p2p_networking.html#pong">“pong” message</a> is identical to the <a class="reference external" href="p2p_networking.html#ping">“ping” message</a>; only the message header differs.</p>
 </div>
 <div class="section" id="reject">
 <h3>Reject<a class="headerlink" href="p2p_networking.html#reject" title="Permalink to this headline">¶</a></h3>
-<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70002</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0061.mediawiki">BIP61</a><em>.</em></p>
+<p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70002</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0061.mediawiki">BIP61</a><em>.</em></p>
 <p><em>Deprecated in Pandora Core 0.18.0.</em></p>
 <p>The <a class="reference external" href="p2p_networking.html#reject">“reject” message</a> informs the receiving node that one of its previous messages has been rejected.</p>
 <table class="docutils align-default">
@@ -1781,7 +1781,7 @@ b50f ....... Filter: 1010 1101 1111 0000
 <td><p>user_agent</p></td>
 <td><p>string</p></td>
 <td><p>Required if user_agent bytes &gt; 0</p></td>
-<td><p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 106</a><em>. Renamed in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 60000</a><em>.</em> User agent as defined by <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0014.mediawiki">BIP14</a>. Previously called subVer.</p></td>
+<td><p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 106</a><em>. Renamed in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 60000</a><em>.</em> User agent as defined by <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0014.mediawiki">BIP14</a>. Previously called subVer.</p></td>
 </tr>
 <tr class="row-even"><td><p>4</p></td>
 <td><p>start_height</p></td>
@@ -1793,7 +1793,7 @@ b50f ....... Filter: 1010 1101 1111 0000
 <td><p>relay</p></td>
 <td><p>bool</p></td>
 <td><p>Optional</p></td>
-<td><p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em> Transaction relay flag. If 0x00, no <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> or <a class="reference external" href="p2p_networking.html#tx">“tx” messages</a> announcing new transactions should be sent to this client until it sends a <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a> or <a class="reference external" href="p2p_networking.html#filterclear">“filterclear” message</a>. If the relay field is not present or is set to 0x01, this node wants <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> and <a class="reference external" href="p2p_networking.html#tx">“tx” messages</a> announcing new transactions.</p></td>
+<td><p><em>Added in</em><a class="reference external" href="p2p_networking.html#protocol-versions">protocol version 70001</a><em>as described by</em><a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0037.mediawiki">BIP37</a><em>.</em> Transaction relay flag. If 0x00, no <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> or <a class="reference external" href="p2p_networking.html#tx">“tx” messages</a> announcing new transactions should be sent to this client until it sends a <a class="reference external" href="p2p_networking.html#filterload">“filterload” message</a> or <a class="reference external" href="p2p_networking.html#filterclear">“filterclear” message</a>. If the relay field is not present or is set to 0x01, this node wants <a class="reference external" href="p2p_networking.html#inv">“inv” messages</a> and <a class="reference external" href="p2p_networking.html#tx">“tx” messages</a> announcing new transactions.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1821,15 +1821,15 @@ b50f ....... Filter: 1010 1101 1111 0000
 </tr>
 <tr class="row-even"><td><p>0x02</p></td>
 <td><p>NODE_GETUTXO</p></td>
-<td><p>This is a full node capable of responding to the getutxo protocol request. This is not supported by any currently-maintained Pandora node. See <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0064.mediawiki">BIP64</a> for details on how this is implemented.</p></td>
+<td><p>This is a full node capable of responding to the getutxo protocol request. This is not supported by any currently-maintained Pandora node. See <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0064.mediawiki">BIP64</a> for details on how this is implemented.</p></td>
 </tr>
 <tr class="row-odd"><td><p>0x04</p></td>
 <td><p>NODE_BLOOM</p></td>
-<td><p>This is a full node capable and willing to handle bloom-filtered connections. See <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0111.mediawiki">BIP111</a> for details.</p></td>
+<td><p>This is a full node capable and willing to handle bloom-filtered connections. See <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0111.mediawiki">BIP111</a> for details.</p></td>
 </tr>
 <tr class="row-even"><td><p>0x08</p></td>
 <td><p>NODE_WITNESS</p></td>
-<td><p>This is a full node that can be asked for blocks and transactions including witness data. See <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0144.mediawiki">BIP144</a> for details.</p></td>
+<td><p>This is a full node that can be asked for blocks and transactions including witness data. See <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0144.mediawiki">BIP144</a> for details.</p></td>
 </tr>
 <tr class="row-odd"><td><p>0x10</p></td>
 <td><p>NODE_XTHIN</p></td>
@@ -1837,7 +1837,7 @@ b50f ....... Filter: 1010 1101 1111 0000
 </tr>
 <tr class="row-even"><td><p>0x0400</p></td>
 <td><p>NODE_NETWORK_LIMITED</p></td>
-<td><p>This is the same as NODE_NETWORK but the node has at least the last 288 blocks (last 2 days). See <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0159.mediawiki">BIP159</a> for details on how this is implemented.</p></td>
+<td><p>This is the same as NODE_NETWORK but the node has at least the last 288 blocks (last 2 days). See <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0159.mediawiki">BIP159</a> for details on how this is implemented.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1880,7 +1880,7 @@ cf050500 ........................... Start height: 329167
 <footer class="footer">
   <div class="footer-with-logo">
     <div class="footer-container">
-      <a href="https://pandora.org/">
+      <a href="https://pdccoin.github.io/">
         <div class="footer-logo"></div>
       </a>
 
@@ -1902,24 +1902,24 @@ cf050500 ........................... Start height: 329167
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/pandora-for-individuals">Individuals</a>
+                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-for-businesses">Businesses</a>
+                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
                 <a href="../index.html">Developers</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/getting-started">Getting started</a>
+                <a href="https://pdccoin.github.io/getting-started">Getting started</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/how-it-works">How it works</a>
+                <a href="https://pdccoin.github.io/how-it-works">How it works</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/you-need-to-know">You need to know</a>
+                <a href="https://pdccoin.github.io/you-need-to-know">You need to know</a>
               </li>
-                <a href="https://pandora.org/en/pandora-paper">White paper</a>
+                <a href="https://pdccoin.github.io/pandora-paper">White paper</a>
               </li>
             </ul>
           </div>
@@ -1928,21 +1928,21 @@ cf050500 ........................... Start height: 329167
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/resources">Resources</a>
+                <a href="https://pdccoin.github.io/resources">Resources</a>
               <li>
-                <a href="https://pandora.org/en/exchanges">Exchanges</a>
+                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/community">Community</a>
+                <a href="https://pdccoin.github.io/community">Community</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/vocabulary">Vocabulary</a>
+                <a href="https://pdccoin.github.io/vocabulary">Vocabulary</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/events">Events</a>
+                <a href="https://pdccoin.github.io/events">Events</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-core/">Pandora Core</a>
+                <a href="https://pdccoin.github.io/pandora-core/">Pandora Core</a>
               </li>
             </ul>
           </div>
@@ -1951,28 +1951,28 @@ cf050500 ........................... Start height: 329167
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/support-pandora">Support Pandora</a>
+                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
               
               </li>
               <li>
-                <a href="https://pandora.org/en/buy">Buy Pandora</a>
+                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/full-node">Running a full node</a>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/development">Development</a>
+                <a href="https://pdccoin.github.io/development">Development</a>
               </li>
             </ul>
           </div>
           <div class="footermenu-item footermenu-other">
             <p class="footer-title">Other:</p>
-            <a href="https://pandora.org/en/scams">Avoid Scams</a>
-            <a href="https://pandora.org/en/legal">Legal</a>
-            <a href="https://pandora.org/en/privacy">Privacy Policy</a>
-            <a href="https://pandora.org/en/press">Press</a>
-            <a href="https://pandora.org/en/about-us">About pandora.org</a>
-            <a href="https://pandora.org/en/blog">Blog</a>
+            <a href="https://pdccoin.github.io/scams">Avoid Scams</a>
+            <a href="https://pdccoin.github.io/legal">Legal</a>
+            <a href="https://pdccoin.github.io/privacy">Privacy Policy</a>
+            <a href="https://pdccoin.github.io/press">Press</a>
+            <a href="https://pdccoin.github.io/about-us">About pandora.org</a>
+            <a href="https://pdccoin.github.io/blog">Blog</a>
           </div>
         </div>
       </div>

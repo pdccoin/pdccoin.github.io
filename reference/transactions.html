@@ -189,7 +189,7 @@
   <div>
     <h4>Contribute</h4>
     <p class="topless">
-      <a href="https://github.com/pandora-documentation/website/blob/master/reference/transactions.rst">Edit Page</a>
+      <a href="https://github.com/pdccoin-documentation/website/blob/master/reference/transactions.rst">Edit Page</a>
     </p>
   </div>
         </div>
@@ -223,7 +223,7 @@
 </li>
 <li><p><a class="reference internal" href="../terms.html#term-op-return"><span class="std std-ref">“OP_RETURN”</span></a> terminates the script in failure when executed.</p></li>
 </ul>
-<p>A complete list of opcodes can be found on the Pandora Wiki <a class="reference external" href="https://en.pandora.it/wiki/Script">Script Page</a>, with an authoritative list in the <code class="docutils literal notranslate"><span class="pre">opcodetype</span></code> enum of the Pandora Core <a class="reference external" href="https://github.com/pandora/pandora/blob/master/src/script/script.h">script header file</a></p>
+<p>A complete list of opcodes can be found on the Pandora Wiki <a class="reference external" href="https://en.pandora.it/wiki/Script">Script Page</a>, with an authoritative list in the <code class="docutils literal notranslate"><span class="pre">opcodetype</span></code> enum of the Pandora Core <a class="reference external" href="https://github.com/pdccoin/pandora/blob/master/src/script/script.h">script header file</a></p>
 <p><img alt="Warning icon" src="../images/icon_warning.svg" /> <strong>Signature script modification warning:</strong> Signature scripts are not signed, so anyone can modify them. This means signature scripts should only contain data and data-pushing opcodes which can’t be modified without causing the pubkey script to fail. Placing non-data-pushing opcodes in the signature script currently makes a transaction non-standard, and future consensus rules may forbid such transactions altogether. (Non-data-pushing opcodes are already forbidden in signature scripts when spending a P2SH pubkey script.)</p>
 <p><img alt="Warning icon" src="../images/icon_warning.svg" /> <a class="reference internal" href="../terms.html#term-op-checkmultisig"><span class="std std-ref">“OP_CHECKMULTISIG”</span></a><strong>warning:</strong> The multisig verification process described above requires that signatures in the signature script be provided in the same order as their corresponding public keys in the pubkey script or redeem script. For example, the following combined signature and pubkey script will produce the stack and comparisons shown:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>OP_0 &lt;A sig&gt; &lt;B sig&gt; OP_2 &lt;A pubkey&gt; &lt;B pubkey&gt; &lt;C pubkey&gt; OP_3
@@ -294,14 +294,14 @@ Failure, aborted: two signature matches required but none found so far, and ther
 <span class="n">output_string</span><span class="p">.</span><span class="n">reverse</span><span class="p">();</span>
 </pre></div>
 </div>
-<p>Pandora’s own code can be traced using the <a class="reference external" href="https://github.com/pandora/pandora/blob/master/src/base58.h">base58 header file</a>.</p>
+<p>Pandora’s own code can be traced using the <a class="reference external" href="https://github.com/pdccoin/pandora/blob/master/src/base58.h">base58 header file</a>.</p>
 <p>To convert addresses back into hashes, reverse the base58 encoding, extract the checksum, repeat the steps to create the checksum and compare it against the extracted checksum, and then remove the version byte.</p>
 </div>
 <div class="section" id="raw-transaction-format">
 <h2>Raw Transaction Format<a class="headerlink" href="transactions.html#raw-transaction-format" title="Permalink to this headline">¶</a></h2>
 <p>Pandora transactions are broadcast between peers in a serialized byte format, called <a class="reference internal" href="../glossary.html#term-Serialized-transaction"><span class="xref std std-term">raw format</span></a>. It is this form of a transaction which is SHA256(SHA256()) hashed to create the TXID and, ultimately, the merkle root of a block containing the transaction—making the transaction format part of the consensus rules.</p>
 <p>Pandora Core and many other tools print and accept raw transactions encoded as hex.</p>
-<p>As of <a class="reference external" href="https://pandora.org/en/release/v0.9.3">Pandora Core 0.9.3</a> (October 2014), all transactions use the version 1 format described below. (Note: transactions in the block chain are allowed to list a higher version number to permit soft forks, but they are treated as version 1 transactions by current software.)</p>
+<p>As of <a class="reference external" href="https://pdccoin.github.io/release/v0.9.3">Pandora Core 0.9.3</a> (October 2014), all transactions use the version 1 format described below. (Note: transactions in the block chain are allowed to list a higher version number to permit soft forks, but they are treated as version 1 transactions by current software.)</p>
 <p>A raw transaction has the following top-level format:</p>
 <table class="docutils align-default">
 <colgroup>
@@ -321,7 +321,7 @@ Failure, aborted: two signature matches required but none found so far, and ther
 <tr class="row-even"><td><p>4</p></td>
 <td><p>version</p></td>
 <td><p>int32_t</p></td>
-<td><p><a class="reference internal" href="../terms.html#term-transaction-version-number"><span class="std std-ref">Transaction version number</span></a> (note, this is signed); currently version 1 or 2. Programs creating transactions using newer consensus rules may use higher version numbers. Version 2 means that <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0068.mediawiki#specification">BIP 68</a> applies.</p></td>
+<td><p><a class="reference internal" href="../terms.html#term-transaction-version-number"><span class="std std-ref">Transaction version number</span></a> (note, this is signed); currently version 1 or 2. Programs creating transactions using newer consensus rules may use higher version numbers. Version 2 means that <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0068.mediawiki#specification">BIP 68</a> applies.</p></td>
 </tr>
 <tr class="row-odd"><td><p><em>Varies</em></p></td>
 <td><p>tx_in count</p></td>
@@ -530,7 +530,7 @@ Failure, aborted: two signature matches required but none found so far, and ther
 <tr class="row-odd"><td><p><em>Varies</em> (4)</p></td>
 <td><p>height</p></td>
 <td><p>script</p></td>
-<td><p>The <a class="reference internal" href="../glossary.html#term-Coinbase"><span class="xref std std-term">block height</span></a> of this block as required by <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0034.mediawiki">BIP34</a>. Uses script language: starts with a data-pushing opcode that indicates how many bytes to push to the stack followed by the block height as a little-endian unsigned integer. This script must be as short as possible, otherwise it may be rejected. The data-pushing opcode will be 0x03 and the total size four bytes until block 16,777,216 about 300 years from now.</p></td>
+<td><p>The <a class="reference internal" href="../glossary.html#term-Coinbase"><span class="xref std std-term">block height</span></a> of this block as required by <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0034.mediawiki">BIP34</a>. Uses script language: starts with a data-pushing opcode that indicates how many bytes to push to the stack followed by the block height as a little-endian unsigned integer. This script must be as short as possible, otherwise it may be rejected. The data-pushing opcode will be 0x03 and the total size four bytes until block 16,777,216 about 300 years from now.</p></td>
 </tr>
 <tr class="row-even"><td><p><em>Varies</em></p></td>
 <td><p>coinbase script</p></td>
@@ -625,7 +625,7 @@ Failure, aborted: two signature matches required but none found so far, and ther
 <footer class="footer">
   <div class="footer-with-logo">
     <div class="footer-container">
-      <a href="https://pandora.org/">
+      <a href="https://pdccoin.github.io/">
         <div class="footer-logo"></div>
       </a>
 
@@ -647,24 +647,24 @@ Failure, aborted: two signature matches required but none found so far, and ther
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/pandora-for-individuals">Individuals</a>
+                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-for-businesses">Businesses</a>
+                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
                 <a href="../index.html">Developers</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/getting-started">Getting started</a>
+                <a href="https://pdccoin.github.io/getting-started">Getting started</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/how-it-works">How it works</a>
+                <a href="https://pdccoin.github.io/how-it-works">How it works</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/you-need-to-know">You need to know</a>
+                <a href="https://pdccoin.github.io/you-need-to-know">You need to know</a>
               </li>
-                <a href="https://pandora.org/en/pandora-paper">White paper</a>
+                <a href="https://pdccoin.github.io/pandora-paper">White paper</a>
               </li>
             </ul>
           </div>
@@ -673,21 +673,21 @@ Failure, aborted: two signature matches required but none found so far, and ther
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/resources">Resources</a>
+                <a href="https://pdccoin.github.io/resources">Resources</a>
               <li>
-                <a href="https://pandora.org/en/exchanges">Exchanges</a>
+                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/community">Community</a>
+                <a href="https://pdccoin.github.io/community">Community</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/vocabulary">Vocabulary</a>
+                <a href="https://pdccoin.github.io/vocabulary">Vocabulary</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/events">Events</a>
+                <a href="https://pdccoin.github.io/events">Events</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-core/">Pandora Core</a>
+                <a href="https://pdccoin.github.io/pandora-core/">Pandora Core</a>
               </li>
             </ul>
           </div>
@@ -696,28 +696,28 @@ Failure, aborted: two signature matches required but none found so far, and ther
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/support-pandora">Support Pandora</a>
+                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
               
               </li>
               <li>
-                <a href="https://pandora.org/en/buy">Buy Pandora</a>
+                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/full-node">Running a full node</a>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/development">Development</a>
+                <a href="https://pdccoin.github.io/development">Development</a>
               </li>
             </ul>
           </div>
           <div class="footermenu-item footermenu-other">
             <p class="footer-title">Other:</p>
-            <a href="https://pandora.org/en/scams">Avoid Scams</a>
-            <a href="https://pandora.org/en/legal">Legal</a>
-            <a href="https://pandora.org/en/privacy">Privacy Policy</a>
-            <a href="https://pandora.org/en/press">Press</a>
-            <a href="https://pandora.org/en/about-us">About pandora.org</a>
-            <a href="https://pandora.org/en/blog">Blog</a>
+            <a href="https://pdccoin.github.io/scams">Avoid Scams</a>
+            <a href="https://pdccoin.github.io/legal">Legal</a>
+            <a href="https://pdccoin.github.io/privacy">Privacy Policy</a>
+            <a href="https://pdccoin.github.io/press">Press</a>
+            <a href="https://pdccoin.github.io/about-us">About pandora.org</a>
+            <a href="https://pdccoin.github.io/blog">Blog</a>
           </div>
         </div>
       </div>

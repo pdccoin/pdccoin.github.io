@@ -189,7 +189,7 @@
   <div>
     <h4>Contribute</h4>
     <p class="topless">
-      <a href="https://github.com/pandora-documentation/website/blob/master/reference/block_chain.rst">Edit Page</a>
+      <a href="https://github.com/pdccoin-documentation/website/blob/master/reference/block_chain.rst">Edit Page</a>
     </p>
   </div>
         </div>
@@ -272,12 +272,12 @@ fe9f0864 ........................... Nonce
 <h3>Block Versions<a class="headerlink" href="block_chain.html#block-versions" title="Permalink to this headline">¶</a></h3>
 <ul class="simple">
 <li><p><strong>Version 1</strong> was introduced in the genesis block (January 2009).</p></li>
-<li><p><a class="reference internal" href="../terms.html#term-v2-block"><span class="std std-ref">Version 2</span></a> was introduced in <a class="reference external" href="https://pandora.org/en/release/v0.7.0">Pandora Core 0.7.0</a> (September 2012) as a soft fork. As described in <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0034.mediawiki">BIP34</a>, valid <a class="reference internal" href="../terms.html#term-v2-block"><span class="std std-ref">version 2 blocks</span></a> require a <a class="reference internal" href="../terms.html#term-coinbase-block-height"><span class="std std-ref">block height parameter in the coinbase</span></a>. Also described in <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0034.mediawiki">BIP34</a> are rules for rejecting certain blocks; based on those rules, <a class="reference external" href="https://pandora.org/en/release/v0.7.0">Pandora Core 0.7.0</a> and later versions began to reject <a class="reference internal" href="../terms.html#term-v2-block"><span class="std std-ref">version 2 blocks</span></a> without the block height in coinbase at block height 224,412 (March 2013) and began to reject new version 1 blocks three weeks later at block height 227,930.</p></li>
-<li><p><strong>Version 3</strong> blocks were introduced in <a class="reference external" href="https://pandora.org/en/release/v0.10.0">Pandora Core 0.10.0</a> (February 2015) as a soft fork. When the fork reached full enforcement (July 2015), it required strict <a class="reference external" href="https://en.wikipedia.org/wiki/X.690#DER_encoding">DER</a> encoding of all <a class="reference external" href="https://en.wikipedia.org/wiki/Elliptic_Curve_DSA">ECDSA</a> signatures in new blocks as described in <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0066.mediawiki">BIP66</a>. Transactions that do not use strict <a class="reference external" href="https://en.wikipedia.org/wiki/X.690#DER_encoding">DER</a> encoding had previously been non-standard since <a class="reference external" href="https://pandora.org/en/release/v0.8.0">Pandora Core 0.8.0</a> (February 2012).</p></li>
-<li><p><strong>Version 4</strong> blocks specified in BIP65 and introduced in <a class="reference external" href="https://pandora.org/en/release/v0.11.2">Pandora Core 0.11.2</a> (November 2015) as a soft fork became active in December 2015. These blocks now support the new <code class="docutils literal notranslate"><span class="pre">OP_CHECKLOCKTIMEVERIFY</span></code> opcode described in that BIP.</p></li>
+<li><p><a class="reference internal" href="../terms.html#term-v2-block"><span class="std std-ref">Version 2</span></a> was introduced in <a class="reference external" href="https://pdccoin.github.io/release/v0.7.0">Pandora Core 0.7.0</a> (September 2012) as a soft fork. As described in <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0034.mediawiki">BIP34</a>, valid <a class="reference internal" href="../terms.html#term-v2-block"><span class="std std-ref">version 2 blocks</span></a> require a <a class="reference internal" href="../terms.html#term-coinbase-block-height"><span class="std std-ref">block height parameter in the coinbase</span></a>. Also described in <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0034.mediawiki">BIP34</a> are rules for rejecting certain blocks; based on those rules, <a class="reference external" href="https://pdccoin.github.io/release/v0.7.0">Pandora Core 0.7.0</a> and later versions began to reject <a class="reference internal" href="../terms.html#term-v2-block"><span class="std std-ref">version 2 blocks</span></a> without the block height in coinbase at block height 224,412 (March 2013) and began to reject new version 1 blocks three weeks later at block height 227,930.</p></li>
+<li><p><strong>Version 3</strong> blocks were introduced in <a class="reference external" href="https://pdccoin.github.io/release/v0.10.0">Pandora Core 0.10.0</a> (February 2015) as a soft fork. When the fork reached full enforcement (July 2015), it required strict <a class="reference external" href="https://en.wikipedia.org/wiki/X.690#DER_encoding">DER</a> encoding of all <a class="reference external" href="https://en.wikipedia.org/wiki/Elliptic_Curve_DSA">ECDSA</a> signatures in new blocks as described in <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0066.mediawiki">BIP66</a>. Transactions that do not use strict <a class="reference external" href="https://en.wikipedia.org/wiki/X.690#DER_encoding">DER</a> encoding had previously been non-standard since <a class="reference external" href="https://pdccoin.github.io/release/v0.8.0">Pandora Core 0.8.0</a> (February 2012).</p></li>
+<li><p><strong>Version 4</strong> blocks specified in BIP65 and introduced in <a class="reference external" href="https://pdccoin.github.io/release/v0.11.2">Pandora Core 0.11.2</a> (November 2015) as a soft fork became active in December 2015. These blocks now support the new <code class="docutils literal notranslate"><span class="pre">OP_CHECKLOCKTIMEVERIFY</span></code> opcode described in that BIP.</p></li>
 </ul>
-<p>The mechanism used for the version 2, 3, and 4 upgrades is commonly called IsSuperMajority() after the function added to Pandora Core to manage those soft forking changes. See <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0034.mediawiki">BIP34</a> for a full description of this method.</p>
-<p>As of this writing, a newer method called <em>version bits</em> is being designed to manage future soft forking changes, although it’s not known whether version 4 will be the last soft fork to use the IsSuperMajority() function. Draft <a class="reference external" href="https://github.com/pandora/bips/blob/master/bip-0009.mediawiki">BIP9</a> describes the version bits design as of this writing, although it is still being actively edited and may substantially change while in the draft state.</p>
+<p>The mechanism used for the version 2, 3, and 4 upgrades is commonly called IsSuperMajority() after the function added to Pandora Core to manage those soft forking changes. See <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0034.mediawiki">BIP34</a> for a full description of this method.</p>
+<p>As of this writing, a newer method called <em>version bits</em> is being designed to manage future soft forking changes, although it’s not known whether version 4 will be the last soft fork to use the IsSuperMajority() function. Draft <a class="reference external" href="https://github.com/pdccoin/bips/blob/master/bip-0009.mediawiki">BIP9</a> describes the version bits design as of this writing, although it is still being actively edited and may substantially change while in the draft state.</p>
 </div>
 <div class="section" id="merkle-trees">
 <h3>Merkle Trees<a class="headerlink" href="block_chain.html#merkle-trees" title="Permalink to this headline">¶</a></h3>
@@ -405,7 +405,7 @@ fe9f0864 ........................... Nonce
 <footer class="footer">
   <div class="footer-with-logo">
     <div class="footer-container">
-      <a href="https://pandora.org/">
+      <a href="https://pdccoin.github.io/">
         <div class="footer-logo"></div>
       </a>
 
@@ -427,24 +427,24 @@ fe9f0864 ........................... Nonce
             <p class="footer-title">Introduction:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/pandora-for-individuals">Individuals</a>
+                <a href="https://pdccoin.github.io/pandora-for-individuals">Individuals</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-for-businesses">Businesses</a>
+                <a href="https://pdccoin.github.io/pandora-for-businesses">Businesses</a>
               </li>
               <li>
                 <a href="../index.html">Developers</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/getting-started">Getting started</a>
+                <a href="https://pdccoin.github.io/getting-started">Getting started</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/how-it-works">How it works</a>
+                <a href="https://pdccoin.github.io/how-it-works">How it works</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/you-need-to-know">You need to know</a>
+                <a href="https://pdccoin.github.io/you-need-to-know">You need to know</a>
               </li>
-                <a href="https://pandora.org/en/pandora-paper">White paper</a>
+                <a href="https://pdccoin.github.io/pandora-paper">White paper</a>
               </li>
             </ul>
           </div>
@@ -453,21 +453,21 @@ fe9f0864 ........................... Nonce
             <p class="footer-title">Resources:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/resources">Resources</a>
+                <a href="https://pdccoin.github.io/resources">Resources</a>
               <li>
-                <a href="https://pandora.org/en/exchanges">Exchanges</a>
+                <a href="https://pdccoin.github.io/exchanges">Exchanges</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/community">Community</a>
+                <a href="https://pdccoin.github.io/community">Community</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/vocabulary">Vocabulary</a>
+                <a href="https://pdccoin.github.io/vocabulary">Vocabulary</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/events">Events</a>
+                <a href="https://pdccoin.github.io/events">Events</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/pandora-core/">Pandora Core</a>
+                <a href="https://pdccoin.github.io/pandora-core/">Pandora Core</a>
               </li>
             </ul>
           </div>
@@ -476,28 +476,28 @@ fe9f0864 ........................... Nonce
             <p class="footer-title">Participate:</p>
             <ul class="footermenu-list">
               <li>
-                <a href="https://pandora.org/en/support-pandora">Support Pandora</a>
+                <a href="https://pdccoin.github.io/support-pandora">Support Pandora</a>
               
               </li>
               <li>
-                <a href="https://pandora.org/en/buy">Buy Pandora</a>
+                <a href="https://pdccoin.github.io/buy">Buy Pandora</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/full-node">Running a full node</a>
+                <a href="https://pdccoin.github.io/full-node">Running a full node</a>
               </li>
               <li>
-                <a href="https://pandora.org/en/development">Development</a>
+                <a href="https://pdccoin.github.io/development">Development</a>
               </li>
             </ul>
           </div>
           <div class="footermenu-item footermenu-other">
             <p class="footer-title">Other:</p>
-            <a href="https://pandora.org/en/scams">Avoid Scams</a>
-            <a href="https://pandora.org/en/legal">Legal</a>
-            <a href="https://pandora.org/en/privacy">Privacy Policy</a>
-            <a href="https://pandora.org/en/press">Press</a>
-            <a href="https://pandora.org/en/about-us">About pandora.org</a>
-            <a href="https://pandora.org/en/blog">Blog</a>
+            <a href="https://pdccoin.github.io/scams">Avoid Scams</a>
+            <a href="https://pdccoin.github.io/legal">Legal</a>
+            <a href="https://pdccoin.github.io/privacy">Privacy Policy</a>
+            <a href="https://pdccoin.github.io/press">Press</a>
+            <a href="https://pdccoin.github.io/about-us">About pandora.org</a>
+            <a href="https://pdccoin.github.io/blog">Blog</a>
           </div>
         </div>
       </div>
